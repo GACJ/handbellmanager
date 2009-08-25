@@ -62,17 +62,28 @@
 			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.monitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.controllersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tmrTurn = new System.Windows.Forms.Timer(this.components);
+			this.txtCountB33 = new System.Windows.Forms.TextBox();
+			this.txtCountB32 = new System.Windows.Forms.TextBox();
+			this.txtCountB31 = new System.Windows.Forms.TextBox();
+			this.txtCountB30 = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.txtCountB43 = new System.Windows.Forms.TextBox();
+			this.txtCountB42 = new System.Windows.Forms.TextBox();
+			this.txtCountB41 = new System.Windows.Forms.TextBox();
+			this.txtCountB40 = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnFindControllers
 			// 
-			this.btnFindControllers.Location = new System.Drawing.Point(70, 146);
+			this.btnFindControllers.Location = new System.Drawing.Point(67, 196);
 			this.btnFindControllers.Name = "btnFindControllers";
 			this.btnFindControllers.Size = new System.Drawing.Size(127, 23);
 			this.btnFindControllers.TabIndex = 25;
@@ -123,9 +134,9 @@
 			// 
 			// btnReset
 			// 
-			this.btnReset.Location = new System.Drawing.Point(202, 146);
+			this.btnReset.Location = new System.Drawing.Point(199, 196);
 			this.btnReset.Name = "btnReset";
-			this.btnReset.Size = new System.Drawing.Size(127, 23);
+			this.btnReset.Size = new System.Drawing.Size(123, 23);
 			this.btnReset.TabIndex = 26;
 			this.btnReset.Text = "Reset Counts";
 			this.btnReset.UseVisualStyleBackColor = true;
@@ -134,7 +145,7 @@
 			// txtCountB23
 			// 
 			this.txtCountB23.Enabled = false;
-			this.txtCountB23.Location = new System.Drawing.Point(73, 120);
+			this.txtCountB23.Location = new System.Drawing.Point(73, 121);
 			this.txtCountB23.MaxLength = 1;
 			this.txtCountB23.Name = "txtCountB23";
 			this.txtCountB23.Size = new System.Drawing.Size(50, 20);
@@ -145,7 +156,7 @@
 			// txtCountB22
 			// 
 			this.txtCountB22.Enabled = false;
-			this.txtCountB22.Location = new System.Drawing.Point(139, 120);
+			this.txtCountB22.Location = new System.Drawing.Point(139, 121);
 			this.txtCountB22.MaxLength = 1;
 			this.txtCountB22.Name = "txtCountB22";
 			this.txtCountB22.Size = new System.Drawing.Size(50, 20);
@@ -156,7 +167,7 @@
 			// txtCountB21
 			// 
 			this.txtCountB21.Enabled = false;
-			this.txtCountB21.Location = new System.Drawing.Point(205, 120);
+			this.txtCountB21.Location = new System.Drawing.Point(205, 121);
 			this.txtCountB21.MaxLength = 1;
 			this.txtCountB21.Name = "txtCountB21";
 			this.txtCountB21.Size = new System.Drawing.Size(50, 20);
@@ -167,7 +178,7 @@
 			// txtCountB20
 			// 
 			this.txtCountB20.Enabled = false;
-			this.txtCountB20.Location = new System.Drawing.Point(271, 120);
+			this.txtCountB20.Location = new System.Drawing.Point(271, 121);
 			this.txtCountB20.MaxLength = 1;
 			this.txtCountB20.Name = "txtCountB20";
 			this.txtCountB20.Size = new System.Drawing.Size(50, 20);
@@ -178,7 +189,7 @@
 			// txtCountB13
 			// 
 			this.txtCountB13.Enabled = false;
-			this.txtCountB13.Location = new System.Drawing.Point(73, 97);
+			this.txtCountB13.Location = new System.Drawing.Point(73, 98);
 			this.txtCountB13.MaxLength = 1;
 			this.txtCountB13.Name = "txtCountB13";
 			this.txtCountB13.Size = new System.Drawing.Size(50, 20);
@@ -189,7 +200,7 @@
 			// txtCountB12
 			// 
 			this.txtCountB12.Enabled = false;
-			this.txtCountB12.Location = new System.Drawing.Point(139, 97);
+			this.txtCountB12.Location = new System.Drawing.Point(139, 98);
 			this.txtCountB12.MaxLength = 1;
 			this.txtCountB12.Name = "txtCountB12";
 			this.txtCountB12.Size = new System.Drawing.Size(50, 20);
@@ -200,7 +211,7 @@
 			// txtCountB11
 			// 
 			this.txtCountB11.Enabled = false;
-			this.txtCountB11.Location = new System.Drawing.Point(205, 97);
+			this.txtCountB11.Location = new System.Drawing.Point(205, 98);
 			this.txtCountB11.MaxLength = 1;
 			this.txtCountB11.Name = "txtCountB11";
 			this.txtCountB11.Size = new System.Drawing.Size(50, 20);
@@ -211,7 +222,7 @@
 			// txtCountB10
 			// 
 			this.txtCountB10.Enabled = false;
-			this.txtCountB10.Location = new System.Drawing.Point(271, 97);
+			this.txtCountB10.Location = new System.Drawing.Point(271, 98);
 			this.txtCountB10.MaxLength = 1;
 			this.txtCountB10.Name = "txtCountB10";
 			this.txtCountB10.Size = new System.Drawing.Size(50, 20);
@@ -310,20 +321,20 @@
 			// label27
 			// 
 			this.label27.AutoSize = true;
-			this.label27.Location = new System.Drawing.Point(5, 124);
+			this.label27.Location = new System.Drawing.Point(5, 125);
 			this.label27.Name = "label27";
-			this.label27.Size = new System.Drawing.Size(51, 13);
+			this.label27.Size = new System.Drawing.Size(50, 13);
 			this.label27.TabIndex = 20;
-			this.label27.Text = "Button B:";
+			this.label27.Text = "Button 2:";
 			// 
 			// label28
 			// 
 			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(5, 101);
+			this.label28.Location = new System.Drawing.Point(5, 102);
 			this.label28.Name = "label28";
-			this.label28.Size = new System.Drawing.Size(51, 13);
+			this.label28.Size = new System.Drawing.Size(50, 13);
 			this.label28.TabIndex = 15;
-			this.label28.Text = "Button A:";
+			this.label28.Text = "Button 1:";
 			// 
 			// label29
 			// 
@@ -351,7 +362,7 @@
             this.toolStripMenuItem1});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(335, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(330, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "mainMenuStrip";
 			// 
@@ -376,6 +387,7 @@
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.monitorToolStripMenuItem,
             this.toolStripSeparator1,
+            this.controllersToolStripMenuItem,
             this.optionsToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
 			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -385,20 +397,28 @@
 			// 
 			this.monitorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("monitorToolStripMenuItem.Image")));
 			this.monitorToolStripMenuItem.Name = "monitorToolStripMenuItem";
-			this.monitorToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+			this.monitorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
 			this.monitorToolStripMenuItem.Text = "Monitor";
 			this.monitorToolStripMenuItem.Click += new System.EventHandler(this.monitorToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
+			// 
+			// controllersToolStripMenuItem
+			// 
+			this.controllersToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controllersToolStripMenuItem.Image")));
+			this.controllersToolStripMenuItem.Name = "controllersToolStripMenuItem";
+			this.controllersToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+			this.controllersToolStripMenuItem.Text = "Assign Controllers";
+			this.controllersToolStripMenuItem.Click += new System.EventHandler(this.controllersToolStripMenuItem_Click);
 			// 
 			// optionsToolStripMenuItem
 			// 
 			this.optionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("optionsToolStripMenuItem.Image")));
 			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-			this.optionsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+			this.optionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
 			this.optionsToolStripMenuItem.Text = "Options";
 			this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
 			// 
@@ -433,11 +453,128 @@
 			this.tmrTurn.Interval = 10;
 			this.tmrTurn.Tick += new System.EventHandler(this.tmrTurn_Tick);
 			// 
+			// txtCountB33
+			// 
+			this.txtCountB33.Enabled = false;
+			this.txtCountB33.Location = new System.Drawing.Point(73, 144);
+			this.txtCountB33.MaxLength = 1;
+			this.txtCountB33.Name = "txtCountB33";
+			this.txtCountB33.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB33.TabIndex = 28;
+			this.txtCountB33.Text = "0";
+			this.txtCountB33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// txtCountB32
+			// 
+			this.txtCountB32.Enabled = false;
+			this.txtCountB32.Location = new System.Drawing.Point(139, 144);
+			this.txtCountB32.MaxLength = 1;
+			this.txtCountB32.Name = "txtCountB32";
+			this.txtCountB32.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB32.TabIndex = 29;
+			this.txtCountB32.Text = "0";
+			this.txtCountB32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// txtCountB31
+			// 
+			this.txtCountB31.Enabled = false;
+			this.txtCountB31.Location = new System.Drawing.Point(205, 144);
+			this.txtCountB31.MaxLength = 1;
+			this.txtCountB31.Name = "txtCountB31";
+			this.txtCountB31.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB31.TabIndex = 30;
+			this.txtCountB31.Text = "0";
+			this.txtCountB31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// txtCountB30
+			// 
+			this.txtCountB30.Enabled = false;
+			this.txtCountB30.Location = new System.Drawing.Point(271, 144);
+			this.txtCountB30.MaxLength = 1;
+			this.txtCountB30.Name = "txtCountB30";
+			this.txtCountB30.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB30.TabIndex = 31;
+			this.txtCountB30.Text = "0";
+			this.txtCountB30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(5, 148);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(50, 13);
+			this.label1.TabIndex = 27;
+			this.label1.Text = "Button 3:";
+			// 
+			// txtCountB43
+			// 
+			this.txtCountB43.Enabled = false;
+			this.txtCountB43.Location = new System.Drawing.Point(73, 167);
+			this.txtCountB43.MaxLength = 1;
+			this.txtCountB43.Name = "txtCountB43";
+			this.txtCountB43.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB43.TabIndex = 33;
+			this.txtCountB43.Text = "0";
+			this.txtCountB43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// txtCountB42
+			// 
+			this.txtCountB42.Enabled = false;
+			this.txtCountB42.Location = new System.Drawing.Point(139, 167);
+			this.txtCountB42.MaxLength = 1;
+			this.txtCountB42.Name = "txtCountB42";
+			this.txtCountB42.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB42.TabIndex = 34;
+			this.txtCountB42.Text = "0";
+			this.txtCountB42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// txtCountB41
+			// 
+			this.txtCountB41.Enabled = false;
+			this.txtCountB41.Location = new System.Drawing.Point(205, 167);
+			this.txtCountB41.MaxLength = 1;
+			this.txtCountB41.Name = "txtCountB41";
+			this.txtCountB41.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB41.TabIndex = 35;
+			this.txtCountB41.Text = "0";
+			this.txtCountB41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// txtCountB40
+			// 
+			this.txtCountB40.Enabled = false;
+			this.txtCountB40.Location = new System.Drawing.Point(271, 167);
+			this.txtCountB40.MaxLength = 1;
+			this.txtCountB40.Name = "txtCountB40";
+			this.txtCountB40.Size = new System.Drawing.Size(50, 20);
+			this.txtCountB40.TabIndex = 36;
+			this.txtCountB40.Text = "0";
+			this.txtCountB40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(5, 171);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(50, 13);
+			this.label2.TabIndex = 32;
+			this.label2.Text = "Button 4:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
 			// ConfigForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(335, 176);
+			this.ClientSize = new System.Drawing.Size(330, 224);
+			this.Controls.Add(this.txtCountB43);
+			this.Controls.Add(this.txtCountB42);
+			this.Controls.Add(this.txtCountB41);
+			this.Controls.Add(this.txtCountB40);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.txtCountB33);
+			this.Controls.Add(this.txtCountB32);
+			this.Controls.Add(this.txtCountB31);
+			this.Controls.Add(this.txtCountB30);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnReset);
 			this.Controls.Add(this.txtCountB23);
 			this.Controls.Add(this.btnFindControllers);
@@ -518,6 +655,17 @@
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
 		private System.Windows.Forms.Timer tmrTurn;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.TextBox txtCountB33;
+		private System.Windows.Forms.TextBox txtCountB32;
+		private System.Windows.Forms.TextBox txtCountB31;
+		private System.Windows.Forms.TextBox txtCountB30;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox txtCountB43;
+		private System.Windows.Forms.TextBox txtCountB42;
+		private System.Windows.Forms.TextBox txtCountB41;
+		private System.Windows.Forms.TextBox txtCountB40;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ToolStripMenuItem controllersToolStripMenuItem;
 	}
 }
 

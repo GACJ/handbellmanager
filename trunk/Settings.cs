@@ -25,6 +25,7 @@ namespace HandbellManager
 {
 	static class Settings
 	{
+		public static int settingsVersion = 110; //Change when Settings File format changes
 		public static string abelProcessName = " ";
 		public static int debounceDelay = 0;
 		public static int handstrokeStrikeDelay = 0;
@@ -33,10 +34,13 @@ namespace HandbellManager
 		public static string[] keyHS = new string[] { " ", " ", " ", " " };
 		public static string[] keyB1 = new string[] { " ", " ", " ", " " };
 		public static string[] keyB2 = new string[] { " ", " ", " ", " " };
+		public static string[] keyB3 = new string[] { " ", " ", " ", " " };
+		public static string[] keyB4 = new string[] { " ", " ", " ", " " };
 		public static bool useKeyUpDown = false;
 
-		public static int[] zBSP = new int[] { 0, 0, 0, 0 };
-		public static int[] zHSP = new int[] { 0, 0, 0, 0 };
+		public static int[] swingAxis = new int[] { 2, 2, 2, 2 };
+		public static int[] BSP = new int[] { 0, 0, 0, 0 };
+		public static int[] HSP = new int[] { 0, 0, 0, 0 };
 
 		public static void Default()
 		{
@@ -48,9 +52,12 @@ namespace HandbellManager
 			keyHS = new string[] { "J", "F", "R", "U" };
 			keyB1 = new string[] { "F9", "A", "F9", "A" };
 			keyB2 = new string[] { "G", ";", "G", ";" };
+			keyB3 = new string[] { "F9", "A", "F9", "A" };
+			keyB4 = new string[] { "G", ";", "G", ";" };
 			useKeyUpDown = true;
-			zBSP = new int[] { -600, -600, -600, -600 };
-			zHSP = new int[] { 100, 100, 100, 100 };
+			swingAxis = new int[] { 2, 2, 2, 2 };
+			BSP = new int[] { -600, -600, -600, -600 };
+			HSP = new int[] { 100, 100, 100, 100 };
 		}
 
 		public static string Filename
@@ -59,7 +66,7 @@ namespace HandbellManager
 			{
 				string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 				string appName = "Handbell Manager";
-				string settingsFile = "settings.cfg";
+				string settingsFile = "settings" + settingsVersion + ".cfg";
 				return Path.Combine(Path.Combine(appData, appName), settingsFile);
 			}
 		}
@@ -102,20 +109,27 @@ namespace HandbellManager
 				fs = new FileStream(Filename, FileMode.Open, FileAccess.Read);
 				br = new BinaryReader(fs);
 
-				abelProcessName = br.ReadString();
-				debounceDelay = br.ReadInt32();
-				handstrokeStrikeDelay = br.ReadInt32();
-				backstrokeStrikeDelay = br.ReadInt32();
-				for (int i = 0; i < 4; i++)
+				int fileversion = br.ReadInt32();
+				if (fileversion == settingsVersion)
 				{
-					keyBS[i] = br.ReadString();
-					keyHS[i] = br.ReadString();
-					keyB1[i] = br.ReadString();
-					keyB2[i] = br.ReadString();
-					zBSP[i] = br.ReadInt32();
-					zHSP[i] = br.ReadInt32();
+					abelProcessName = br.ReadString();
+					debounceDelay = br.ReadInt32();
+					handstrokeStrikeDelay = br.ReadInt32();
+					backstrokeStrikeDelay = br.ReadInt32();
+					for (int i = 0; i < 4; i++)
+					{
+						keyBS[i] = br.ReadString();
+						keyHS[i] = br.ReadString();
+						keyB1[i] = br.ReadString();
+						keyB2[i] = br.ReadString();
+						keyB3[i] = br.ReadString();
+						keyB4[i] = br.ReadString();
+						BSP[i] = br.ReadInt32();
+						HSP[i] = br.ReadInt32();
+						swingAxis[i] = br.ReadInt32();
+					}
+					useKeyUpDown = br.ReadBoolean();
 				}
-				useKeyUpDown = br.ReadBoolean();
 			}
 			catch (Exception ex)
 			{
@@ -136,6 +150,7 @@ namespace HandbellManager
 				FileStream fs = new FileStream(Filename, FileMode.Create, FileAccess.ReadWrite);
 				BinaryWriter bw = new BinaryWriter(fs);
 
+				bw.Write(settingsVersion);
 				bw.Write(abelProcessName);
 				bw.Write(debounceDelay);
 				bw.Write(handstrokeStrikeDelay);
@@ -146,8 +161,11 @@ namespace HandbellManager
 					bw.Write(keyHS[i]);
 					bw.Write(keyB1[i]);
 					bw.Write(keyB2[i]);
-					bw.Write(zBSP[i]);
-					bw.Write(zHSP[i]);
+					bw.Write(keyB3[i]);
+					bw.Write(keyB4[i]);
+					bw.Write(BSP[i]);
+					bw.Write(HSP[i]);
+					bw.Write(swingAxis[i]);
 				}
 				bw.Write(useKeyUpDown);
 				bw.Close();

@@ -11,17 +11,16 @@ include('header.php');
 <p>Many handbell ringers have been looking for a better way to practice ringing two handbells with Abel's change
 ringing simulator than pressing keys on the keyboard. Here, at last, is a cheap and easy way to obtain and use dummy handbells.</p>
 <p>Handbell Manager is free software (under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</a>) that enables USB motion controllers to be used as dummy handbells with Abel.</p>
-<p>For background on this project, visit the <a href="background.php">Background</a> page, or for features of the software see the <a href="HMHelp.htm">Handbell Manager help file</a>.</p>
-<p>If you a software developer, the source code for Handbell Manager is available from <a href="http://sourceforge.net/projects/handbellmanager">Sourceforge</a>.</p>
-
-<p>Click on play below to see a demonstration video of three leads of Bristol using Abel, Handbell Manager and ActionXL wired motion controllers.
+<p>Click on play below to see a demonstration video of three leads of Bristol using Abel, Handbell Manager and ActionXL wired motion controllers.</p> 
 <div align="center">
 <object width="425" height="344<object width="425" height="344"><param name="movie" value="http://www.youtube-nocookie.com/v/Ik8fSZILYCk&hl=en&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/Ik8fSZILYCk&hl=en&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 </div>
 <br>
+<p>There is no computer keyboard or mouse interaction during the video - the controllers are swung to ring two bells, and buttons on the controllers are used to start the others ringing, initiate "Go Bristol" and call the three bobs.</p>
+
 <h3>What do you need?</h3>
 <ul>
-<li>One to four ActionXL USB motion controllers (available from <a target="_top"
+<li>Two ActionXL USB motion controllers (available from <a target="_top"
 href="http://www.actionxl.com">www.actionxl.com</a>
 at $19.95 each for the wired model and $39.95 each for the wireless model. 
 The wired model is also available from <a target="_top"
@@ -39,14 +38,14 @@ href="http://www.microsoft.com">www.microsoft.com</a>)</li>
 
 <p><a href="http://sourceforge.net/projects/handbellmanager">Download Handbell Manager</a></p>
 
-<h3>Abel Enhancements</h3>
-<p>As a result of discussions with Chris Hughes, author of Abel, during the development of Handbell Manager,
-some enhancements to Abel were identified that will make ringing dummy handbells much easier. 
-In particular, the introduction of moving rather than flipping handbells on screen makes handbell "ropesight"
-very much easier to see. Together with the use of dummy handbells, these enhancements take the experience of
-ringing handbells with Abel a big step closer to the real thing.</p>
-<p>For information on the availability of the latest version of Abel, see <a target="_top"
-href="http://www.abelsim.co.uk">www.abelsim.co.uk</a>.</p>
+<h3>Further Information</h3>
+
+<p>For background on this project, visit the <a href="background.php">Background</a> page, or for features of the software see the <a href="HMHelp.htm">Handbell Manager help file</a>. 
+If you are a software developer, the source code for Handbell Manager is available from <a href="http://sourceforge.net/projects/handbellmanager">Sourceforge</a>. If you already have controllers and are
+interested in seeking more realism then check out the ideas on the <a href="improvements.php">Improvements</a> page.</p>
+
+<h3>Enquiries</h3>
+<p>If you have any queries that are not answered in these pages, you can email the author via the email link in the footer. 
 <?php
 
 include('footer.php');

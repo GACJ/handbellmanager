@@ -85,7 +85,7 @@ namespace HandbellManager
 		private void tmrCalibration_Tick(object sender, EventArgs e)
 		{
 			_handbell.Update(0);
-			if (_handbell.ButtonAPressed || _handbell.ButtonBPressed)
+			if (_handbell.Button1Pressed || _handbell.Button2Pressed)
 			{
 				switch (_question)
 				{
@@ -106,8 +106,8 @@ namespace HandbellManager
 
 		private void SaveSettings()
 		{
-			Settings.zBSP[_index] = _bsz;
-			Settings.zHSP[_index] = _hsz;
+			Settings.BSP[_index] = _bsz;
+			Settings.HSP[_index] = _hsz;
 
 			_handbell.UpdateSettings();
 		}

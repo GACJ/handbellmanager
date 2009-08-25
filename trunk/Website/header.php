@@ -3,8 +3,8 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="A dummy handbell interface to Abel change ringing simulator" />
-	<meta name="keywords" content="changeringing ringing dummy handbell manager handbellmanager motion controller sensor ActionXL Abel simulator graham john" />
-	<meta name="author" content="GACJ" />
+	<meta name="keywords" content="changeringing ringing dummy handbell manager handbellmanager motion controller sensor ActionXL Abel simulator" />
+	<meta name="author" content="Graham John" />
 	<link rel="stylesheet" type="text/css" href="complib.css" media="screen,projection" />
 	<title>Handbell Manager - <?php echo $title ?></title>
 </head>
@@ -23,13 +23,35 @@
 		<h2 class="hide">Menu:</h2>
 		
 		<ul class="avmenu">
-			<li><a class="current" href="index.php">Introduction</a></li>
-			<li><a href="background.php">Background</a></li>
-			<li><a href="HMHelp.htm">Software</a></li>
+			<?php
+
+			$output = '<li><a ';
+			if ($title == 'Introduction') $output .= 'class="current" ';
+			$output .= 'href="index.php">Introduction</a></li>';
+			echo $output;
+
+			$output = '<li><a ';
+			if ($title == 'Background') $output .= 'class="current" ';
+			$output .= 'href="background.php">Background</a></li>';
+			echo $output;
+
+			$output = '<li><a ';
+			if ($title == 'Features') $output .= 'class="current" ';
+			$output .= 'href="HMHelp.htm">Features</a></li>';
+			echo $output;
+			
+			$output = '<li><a ';
+			if ($title == 'Improving the Experience') $output .= 'class="current" ';
+			$output .= 'href="improvements.php">Improvements</a></li>';
+			echo $output;
+			
+			?>
 		</ul>
 		
 		<div class="announce">
 			<h2><u>Updates:</u></h2>
+			<p><strong>Aug 25, 2009:</strong><br />Handbell Manager v1.1 released.</p>
+			<p><strong>Aug 19, 2009:</strong><br />Improvements section added to site.</p>
 			<p><strong>Aug 15, 2009:</strong><br />Handbell Manager v1.0 released.</p>
 			<p><a href="http://sourceforge.net/projects/handbellmanager">Sourceforge &raquo;</a></p>
 			<p><a href="http://www.abelsim.co.uk">Abel Simulator &raquo;</a></p>

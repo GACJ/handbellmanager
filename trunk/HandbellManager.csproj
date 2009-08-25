@@ -71,10 +71,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FatSDK\Microsoft.DirectX.DirectInput.dll</HintPath>
     </Reference>
-    <Reference Include="MotionControllerManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FatSDK\MotionControllerManager.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -110,6 +106,12 @@
     <Compile Include="ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControllerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerForm.Designer.cs">
+      <DependentUpon>ControllerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Handbell.cs" />
     <Compile Include="MonitorForm.cs">
       <SubType>Form</SubType>
@@ -117,6 +119,8 @@
     <Compile Include="MonitorForm.Designer.cs">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MotionControllerController.cs" />
+    <Compile Include="MotionDetector.cs" />
     <Compile Include="NumericalTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -138,6 +142,9 @@
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerForm.resx">
+      <DependentUpon>ControllerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>

@@ -26,16 +26,24 @@ namespace HandbellManager
 	{
 		private MotionControllerManager.MotionControllerManager _manager;
 		private MotionDetector _motionController = null;
-		private int _index;
-		private int _backstrokeStrikeZ;
-		private int _handstrokeStrikeZ;
-		private int _currentZ;
+		private int _backstrokeStrikePoint;
+		private int _handstrokeStrikePoint;
+		private int _currentSwingValue;
 		private int _lasttick;
+		private int _axis;
+		private int _controller;
+		private int _handbell;
 
-		private bool _buttonAPressed;
-		private bool _buttonADown;
-		private bool _buttonBPressed;
-		private bool _buttonBDown;
+		private bool _enabled;
+
+		private bool _button1Pressed;
+		private bool _button1Down;
+		private bool _button2Pressed;
+		private bool _button2Down;
+		private bool _button3Pressed;
+		private bool _button3Down;
+		private bool _button4Pressed;
+		private bool _button4Down;
 
 		private bool _handstroke;
 		private bool _backstroke;
@@ -47,12 +55,14 @@ namespace HandbellManager
 		public Handbell(MotionControllerManager.MotionControllerManager manager, int index)
 		{
 			_manager = manager;
-			_index = index;
-			_motionController = _manager.getDetector(_index);
-		    _buttonAPressed = false;
-			_buttonADown = false;
-			_buttonBPressed = false;
-			_buttonBDown = false;
+		    _button1Pressed = false;
+			_button1Down = false;
+			_button2Pressed = false;
+			_button2Down = false;
+			_button3Pressed = false;
+			_button3Down = false;
+			_button4Pressed = false;
+			_button4Down = false;
 			_handstroke = true;
 			_backstroke = false;
 			_handstrokeStrike = false;
@@ -60,13 +70,26 @@ namespace HandbellManager
 			_handstrokeStrikePending = false;
 			_backstrokeStrikePending = false;
 			_lasttick = 0;
-
+			_axis = 2; //Z-axis
+			if (index < _manager.Count)
+			{
+				_controller = index;
+				_handbell = index;
+				_motionController = _manager.getDetector(_controller);
+				_enabled = true;
+			}
+			else
+			{
+				_enabled = false;
+				_controller = -1;
+			}
 		}
 
 		public void UpdateSettings()
 		{
-			HandstrokeStrikeZ = Settings.zHSP[_index];
-			BackstrokeStrikeZ = Settings.zBSP[_index];
+			HandstrokeStrikePoint = Settings.HSP[_handbell];
+			BackstrokeStrikePoint = Settings.BSP[_handbell];
+			SwingAxis = Settings.swingAxis[_handbell];
 		}
 
 		public void Update(int tick)
@@ -74,7 +97,7 @@ namespace HandbellManager
 			if (_motionController == null)
 				return;
 
-			_currentZ = _manager.getAxis(2, _index);
+			_currentSwingValue = _manager.getAxis(_axis, _controller);
 
 			UpdateButtons();
 			UpdateStrokes(tick);
@@ -89,10 +112,10 @@ namespace HandbellManager
 			if (tick > _lasttick + Settings.debounceDelay)
 			{
 				//Check whether Z is higher for handstroke or backstroke
-				if (_backstrokeStrikeZ > _handstrokeStrikeZ)
+				if (_backstrokeStrikePoint > _handstrokeStrikePoint)
 				{
 					//Handstroke?
-					if (_currentZ < _handstrokeStrikeZ)
+					if (_currentSwingValue < _handstrokeStrikePoint)
 					{
 						//Flag if change of State
 						if (_handstroke)
@@ -105,7 +128,7 @@ namespace HandbellManager
 
 					}
 					//Backstroke?
-					if (_currentZ > _backstrokeStrikeZ)
+					if (_currentSwingValue > _backstrokeStrikePoint)
 					{
 						//Flag if change of State
 						if (_backstroke)
@@ -120,7 +143,7 @@ namespace HandbellManager
 				else
 				{
 					//Handstroke?
-					if (_currentZ > _handstrokeStrikeZ)
+					if (_currentSwingValue > _handstrokeStrikePoint)
 					{
 						//Flag if change of State
 						if (_handstroke)
@@ -132,7 +155,7 @@ namespace HandbellManager
 						}
 					}
 					//Backstroke?
-					if (_currentZ < _backstrokeStrikeZ)
+					if (_currentSwingValue < _backstrokeStrikePoint)
 					{
 						//Flag if change of State
 						if (_backstroke)
@@ -166,42 +189,78 @@ namespace HandbellManager
 
 		private void UpdateButtons()
 		{
-			//Button A
-			if (_manager.getButton(0, _index))
+			//Button 1
+			if (_manager.getButton(0, _controller))
 			{
-				if (!_buttonADown)
+				if (!_button1Down)
 				{
-					_buttonADown = true;
-					_buttonAPressed = true;
+					_button1Down = true;
+					_button1Pressed = true;
 				}
 				else
 				{
-					_buttonAPressed = false;
+					_button1Pressed = false;
 				}
 			}
 			else
 			{
-				_buttonADown = false;
-				_buttonAPressed = false;
+				_button1Down = false;
+				_button1Pressed = false;
 			}
 
-			//Button B
-			if (_manager.getButton(1, _index))
+			//Button 2
+			if (_manager.getButton(1, _controller))
 			{
-				if (!_buttonBDown)
+				if (!_button2Down)
 				{
-					_buttonBDown = true;
-					_buttonBPressed = true;
+					_button2Down = true;
+					_button2Pressed = true;
 				}
 				else
 				{
-					_buttonBPressed = false;
+					_button2Pressed = false;
 				}
 			}
 			else
 			{
-				_buttonBDown = false;
-				_buttonBPressed = false;
+				_button2Down = false;
+				_button2Pressed = false;
+			}
+			//Button 3
+			if (_manager.getButton(2, _controller))
+			{
+				if (!_button3Down)
+				{
+					_button3Down = true;
+					_button3Pressed = true;
+				}
+				else
+				{
+					_button3Pressed = false;
+				}
+			}
+			else
+			{
+				_button3Down = false;
+				_button3Pressed = false;
+			}
+			//Button 4
+			if (_manager.getButton(3, _controller))
+			{
+				if (!_button4Down)
+				{
+					_button4Down = true;
+					_button4Pressed = true;
+				}
+				else
+				{
+					_button4Pressed = false;
+				}
+			}
+			else
+			{
+				_button4Down = false;
+				_button4Pressed = false;
 			}
 		}
 
@@ -216,15 +275,31 @@ namespace HandbellManager
 				_motionController = value;
 			}
 		}
-
-		public int Index
+		public int Controller
 		{
 			get
 			{
-				return _index;
+				return _controller;
+			}
+			set
+			{
+				_controller = value;
+				_motionController = _manager.getDetector(_controller);
 			}
 		}
 
+		public bool Enabled
+		{
+			get
+			{
+				return _enabled;
+			}
+			set
+			{
+				_enabled = value;
+			}
+		}
+		
 		public bool Backstroke
 		{
 			get
@@ -294,27 +369,39 @@ namespace HandbellManager
 				_handstrokeStrikePending = value;
 			}
 		}
-		public int BackstrokeStrikeZ
+		public int BackstrokeStrikePoint
 		{
 			get
 			{
-				return _backstrokeStrikeZ;
+				return _backstrokeStrikePoint;
 			}
 			set
 			{
-				_backstrokeStrikeZ = value;
+				_backstrokeStrikePoint = value;
 			}
 		}
 
-		public int HandstrokeStrikeZ
+		public int HandstrokeStrikePoint
 		{
 			get
 			{
-				return _handstrokeStrikeZ;
+				return _handstrokeStrikePoint;
 			}
 			set
 			{
-				_handstrokeStrikeZ = value;
+				_handstrokeStrikePoint = value;
+			}
+		}
+		
+		public int SwingAxis
+		{
+			get
+			{
+				return _axis;
+			}
+			set
+			{
+				_axis = value;
 			}
 		}
 
@@ -322,55 +409,103 @@ namespace HandbellManager
 		{
 			get
 			{
-				return _currentZ;
+				return _currentSwingValue;
 			}
 		}
 
-		public bool ButtonADown
+		public bool Button1Down
 		{
 			get
 			{
-				return _buttonADown;
+				return _button1Down;
 			}
 			set
 			{
-				_buttonADown = value;
+				_button1Down = value;
 			}
 		}
 
-		public bool ButtonBDown
+		public bool Button2Down
 		{
 			get
 			{
-				return _buttonBDown;
+				return _button2Down;
 			}
 			set
 			{
-				_buttonBDown = value;
+				_button2Down = value;
 			}
 		}
 
-		public bool ButtonAPressed
+		public bool Button3Down
 		{
 			get
 			{
-				return _buttonAPressed;
+				return _button3Down;
 			}
 			set
 			{
-				_buttonAPressed = value;
+				_button3Down = value;
 			}
 		}
 
-		public bool ButtonBPressed
+		public bool Button4Down
 		{
 			get
 			{
-				return _buttonBPressed;
+				return _button4Down;
 			}
 			set
 			{
-				_buttonBPressed = value;
+				_button4Down = value;
+			}
+		}
+
+		public bool Button1Pressed
+		{
+			get
+			{
+				return _button1Pressed;
+			}
+			set
+			{
+				_button1Pressed = value;
+			}
+		}
+
+		public bool Button2Pressed
+		{
+			get
+			{
+				return _button2Pressed;
+			}
+			set
+			{
+				_button2Pressed = value;
+			}
+		}
+
+		public bool Button3Pressed
+		{
+			get
+			{
+				return _button3Pressed;
+			}
+			set
+			{
+				_button3Pressed = value;
+			}
+		}
+
+		public bool Button4Pressed
+		{
+			get
+			{
+				return _button4Pressed;
+			}
+			set
+			{
+				_button4Pressed = value;
 			}
 		}
 	}
