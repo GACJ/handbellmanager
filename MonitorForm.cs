@@ -94,12 +94,16 @@ namespace HandbellManager
 			if (_frozen)
 				return;
 
-			for (int i = 0; i < handbellCount; i++)
+			int hbCt = handbellCount;
+			if (hbCt > 4)
+				hbCt = 4;
+
+			for (int i = 0; i < hbCt; i++)
 			{
 				if (((ToolStripMenuItem)(calibrationLinesToolStripMenuItem.DropDownItems[i])).Checked)
 				{
-					c2dGraph1.Push(handbell[i].HandstrokeStrikeZ, i + 8);
-					c2dGraph1.Push(handbell[i].BackstrokeStrikeZ, i + 12);
+					c2dGraph1.Push(handbell[i].HandstrokeStrikePoint, i + 8);
+					c2dGraph1.Push(handbell[i].BackstrokeStrikePoint, i + 12);
 				}
 				if (((ToolStripMenuItem)(strikeSignalsToolStripMenuItem.DropDownItems[i])).Checked)
 				{

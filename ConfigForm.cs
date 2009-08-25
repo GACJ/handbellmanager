@@ -59,6 +59,7 @@ namespace HandbellManager
 		int _sumticks;
 		int _updates;
 		bool _functionkey;
+		public static int [] ControllerSequence = new int[20];
 		public static bool sendToAbelEnabled;
 		bool _suppressNoControllerMessage;
 
@@ -112,12 +113,25 @@ namespace HandbellManager
 				_mcm.initialize(true);
 				_mcm.initDetectors();
 				_mcm.update(0);
+				//Set initial controller sequence
 				for (int i = 0; i < _mcm.Count; i++)
 				{
+					ControllerSequence[i] = i;
+				}
+				//Assign to handbells
+				for (int i = 0; i < 4; i++)
+				{
 					_hb[i] = new Handbell(_mcm, i);
-					_hb[i].BackstrokeStrikeZ = Settings.zBSP[i];
-					_hb[i].HandstrokeStrikeZ = Settings.zHSP[i];
-					_hb[i].Update(0);
+						if (i >= _mcm.Count)
+						{
+							_hb[i].Enabled = false;
+						}
+						else
+						{
+							_hb[i].Enabled = true;
+							_hb[i].UpdateSettings();
+							_hb[i].Update(0);
+						}
 				}
 			}
 			catch (Exception ex)
@@ -273,44 +287,64 @@ namespace HandbellManager
 
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				_hb[i].Update(_lastTick);
-				if (_hb[i].HandstrokeStrike)
+				if (i < 4)
 				{
-					SendAbel(Settings.keyHS[i], false, true);
-					this.Controls["txtCountHS" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountHS" + i].Text) + 1);
+					_hb[i].Update(_lastTick);
+					if (_hb[i].HandstrokeStrike)
+					{
+						SendAbel(Settings.keyHS[i], false, true);
+						this.Controls["txtCountHS" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountHS" + i].Text) + 1);
+					}
+					if (_hb[i].BackstrokeStrike)
+					{
+						SendAbel(Settings.keyBS[i], true, false);
+						this.Controls["txtCountBS" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountBS" + i].Text) + 1);
+					}
+					if (_hb[i].Button1Pressed)
+					{
+						SendAbel(Settings.keyB1[i], false, false);
+						this.Controls["txtCountB1" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB1" + i].Text) + 1);
+					}
+					if (_hb[i].Button2Pressed)
+					{
+						SendAbel(Settings.keyB2[i], false, false);
+						this.Controls["txtCountB2" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB2" + i].Text) + 1);
+					}
+					if (_hb[i].Button3Pressed)
+					{
+						SendAbel(Settings.keyB3[i], false, false);
+						this.Controls["txtCountB3" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB3" + i].Text) + 1);
+					}
+					if (_hb[i].Button4Pressed)
+					{
+						SendAbel(Settings.keyB4[i], false, false);
+						this.Controls["txtCountB4" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB4" + i].Text) + 1);
+					}
+					if (_hb[i].Handstroke)
+						this.Controls["txtCountHS" + i].BackColor = Color.Orange;
+					else
+						this.Controls["txtCountHS" + i].BackColor = SystemColors.Window;
+					if (_hb[i].Backstroke)
+						this.Controls["txtCountBS" + i].BackColor = Color.Orange;
+					else
+						this.Controls["txtCountBS" + i].BackColor = SystemColors.Window;
+					if (_hb[i].Button1Down)
+						this.Controls["txtCountB1" + i].BackColor = Color.Orange;
+					else
+						this.Controls["txtCountB1" + i].BackColor = SystemColors.Window;
+					if (_hb[i].Button2Down)
+						this.Controls["txtCountB2" + i].BackColor = Color.Orange;
+					else
+						this.Controls["txtCountB2" + i].BackColor = SystemColors.Window;
+					if (_hb[i].Button3Down)
+						this.Controls["txtCountB3" + i].BackColor = Color.Orange;
+					else
+						this.Controls["txtCountB3" + i].BackColor = SystemColors.Window;
+					if (_hb[i].Button4Down)
+						this.Controls["txtCountB4" + i].BackColor = Color.Orange;
+					else
+						this.Controls["txtCountB4" + i].BackColor = SystemColors.Window;
 				}
-				if (_hb[i].BackstrokeStrike)
-				{
-					SendAbel(Settings.keyBS[i], true, false);
-					this.Controls["txtCountBS" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountBS" + i].Text) + 1);
-				}
-				if (_hb[i].ButtonAPressed)
-				{
-					SendAbel(Settings.keyB1[i], false, false);
-					this.Controls["txtCountB1" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB1" + i].Text) + 1);
-				}
-				if (_hb[i].ButtonBPressed)
-				{
-					SendAbel(Settings.keyB2[i], false, false);
-					this.Controls["txtCountB2" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB2" + i].Text) + 1);
-				}
-				if (_hb[i].Handstroke)
-					this.Controls["txtCountHS" + i].BackColor = Color.Orange;
-				else
-					this.Controls["txtCountHS" + i].BackColor = SystemColors.Window;
-				if (_hb[i].Backstroke)
-					this.Controls["txtCountBS" + i].BackColor = Color.Orange;
-				else
-					this.Controls["txtCountBS" + i].BackColor = SystemColors.Window;
-				if (_hb[i].ButtonADown)
-					this.Controls["txtCountB1" + i].BackColor = Color.Orange;
-				else
-					this.Controls["txtCountB1" + i].BackColor = SystemColors.Window;
-				if (_hb[i].ButtonBDown)
-					this.Controls["txtCountB2" + i].BackColor = Color.Orange;
-				else
-					this.Controls["txtCountB2" + i].BackColor = SystemColors.Window;
-
 			}
 
 			if (_monitorForm != null)
@@ -347,6 +381,10 @@ namespace HandbellManager
 				this.Controls["txtCountB1" + i].BackColor = SystemColors.Window;
 				this.Controls["txtCountB2" + i].Text = "0";
 				this.Controls["txtCountB2" + i].BackColor = SystemColors.Window;
+				this.Controls["txtCountB3" + i].Text = "0";
+				this.Controls["txtCountB3" + i].BackColor = SystemColors.Window;
+				this.Controls["txtCountB4" + i].Text = "0";
+				this.Controls["txtCountB4" + i].BackColor = SystemColors.Window;
 			}
 		}
 
@@ -356,7 +394,6 @@ namespace HandbellManager
 			InitDevices();
 			if (_mcm.Count == 0)
 				MessageBox.Show("No motion controllers found.", "Handbell Configuration", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -428,5 +465,17 @@ namespace HandbellManager
 			optionsToolStripMenuItem.Enabled = true;
 			Focus();
 		}
+
+		private void controllersToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (_mcm.Count == 0)
+				MessageBox.Show("No motion controllers found to assign.", "Controller Assignment", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			else
+			{
+				ControllerForm form = new ControllerForm(_mcm, _hb);
+				form.ShowDialog();
+			}
+		}
+
 	}
 }

@@ -44,8 +44,10 @@ namespace HandbellManager
 			//Handbell Calibration
 			for (int i = 0; i < 4; i++)
 			{
-				tabHandbellCalibration.Controls["txtZBSP" + i].Text = Settings.zBSP[i].ToString();
-				tabHandbellCalibration.Controls["txtZHSP" + i].Text = Settings.zHSP[i].ToString();
+				ComboBox cb = (ComboBox) tabHandbellCalibration.Controls["cmbAxis" + i];
+				cb.SelectedIndex = Settings.swingAxis[i];
+				tabHandbellCalibration.Controls["txtBSP" + i].Text = Settings.BSP[i].ToString();
+				tabHandbellCalibration.Controls["txtHSP" + i].Text = Settings.HSP[i].ToString();
 				//Enable calibration buttons
 				if (i < _mcm.Count)
 					tabHandbellCalibration.Controls["btnCalibrate" + i].Enabled = true;
@@ -65,6 +67,8 @@ namespace HandbellManager
 				tabAbelKeyStrokes.Controls["txtKeyHS" + i].Text = Settings.keyHS[i];
 				tabAbelKeyStrokes.Controls["txtKeyB1" + i].Text = Settings.keyB1[i];
 				tabAbelKeyStrokes.Controls["txtKeyB2" + i].Text = Settings.keyB2[i];
+				tabAbelKeyStrokes.Controls["txtKeyB3" + i].Text = Settings.keyB3[i];
+				tabAbelKeyStrokes.Controls["txtKeyB4" + i].Text = Settings.keyB4[i];
 			}
 			chkUseKeyUpDown.Checked = Settings.useKeyUpDown;
 			_initialisation = false;
@@ -115,7 +119,8 @@ namespace HandbellManager
 			//Update handbell settings
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				_hb[i].UpdateSettings();
+				if (i < 4)
+					_hb[i].UpdateSettings();
 			}
 			Close();
 		}
@@ -124,7 +129,8 @@ namespace HandbellManager
 		{
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				tabHandbellCalibration.Controls["txtZ" + i].Text = _hb[i].CurrentZ.ToString();
+				if (i < 4)
+					tabHandbellCalibration.Controls["txt" + i].Text = _hb[i].CurrentZ.ToString();
 			}
 		}
 
@@ -140,8 +146,8 @@ namespace HandbellManager
 			if (newHB != null)
 			{
 				_hb[i] = newHB;
-				tabHandbellCalibration.Controls["txtZBSP" + i].Text = Settings.zBSP[i].ToString();
-				tabHandbellCalibration.Controls["txtZHSP" + i].Text = Settings.zHSP[i].ToString();
+				tabHandbellCalibration.Controls["txtBSP" + i].Text = Settings.BSP[i].ToString();
+				tabHandbellCalibration.Controls["txtHSP" + i].Text = Settings.HSP[i].ToString();
 			}
 			ConfigForm.sendToAbelEnabled = true;
 		}
@@ -167,36 +173,38 @@ namespace HandbellManager
 			Settings.handstrokeStrikeDelay = Convert.ToInt32(spnDelayHS.Value);
 		}
 
-		private void txtZBSP_TextChanged(object sender, EventArgs e)
+		private void txtBSP_TextChanged(object sender, EventArgs e)
 		{
 			if (_initialisation)
 				return;
 			
 			for (int i = 0; i < 4; i++)
 			{
-				Settings.zBSP[i] = GetHandbellTextbox("txtZBSP", i).Value;
+				Settings.BSP[i] = GetHandbellTextbox("txtBSP", i).Value;
 			}
 			//Update handbell settings
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				_hb[i].UpdateSettings();
+				if (i < 4)
+					_hb[i].UpdateSettings();
 			}
 
 		}
 
-		private void txtZHSP_TextChanged(object sender, EventArgs e)
+		private void txtHSP_TextChanged(object sender, EventArgs e)
 		{
 			if (_initialisation)
 				return;
 
 			for (int i = 0; i < 4; i++)
 			{
-				Settings.zHSP[i] = GetHandbellTextbox("txtZHSP", i).Value;
+				Settings.HSP[i] = GetHandbellTextbox("txtHSP", i).Value;
 			}
 			//Update handbell settings
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				_hb[i].UpdateSettings();
+				if (i < 4)
+					_hb[i].UpdateSettings();
 			}
 
 		}
@@ -210,6 +218,25 @@ namespace HandbellManager
 				Settings.keyHS[i] = tabAbelKeyStrokes.Controls["txtKeyHS" + i].Text;
 				Settings.keyB1[i] = tabAbelKeyStrokes.Controls["txtKeyB1" + i].Text;
 				Settings.keyB2[i] = tabAbelKeyStrokes.Controls["txtKeyB2" + i].Text;
+				Settings.keyB3[i] = tabAbelKeyStrokes.Controls["txtKeyB3" + i].Text;
+				Settings.keyB4[i] = tabAbelKeyStrokes.Controls["txtKeyB4" + i].Text;
+			}
+		}
+
+		private void cmbAxis_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (_initialisation)
+				return;
+			for (int i = 0; i < 4; i++)
+			{
+				int z1, z2, z3, z4;
+				z1 = cmbAxis0.SelectedIndex;
+				z2 = cmbAxis1.SelectedIndex;
+				z3 = cmbAxis2.SelectedIndex;
+				z4 = cmbAxis3.SelectedIndex;
+				ComboBox cb = (ComboBox)tabHandbellCalibration.Controls["cmbAxis" + i];
+				Settings.swingAxis[i] = cb.SelectedIndex;
+				_hb[i].SwingAxis = cb.SelectedIndex;
 			}
 		}
 
@@ -232,7 +259,8 @@ namespace HandbellManager
 				//Update handbell settings
 				for (int i = 0; i < _mcm.Count; i++)
 				{
-					_hb[i].UpdateSettings();
+					if (i < 4)
+						_hb[i].UpdateSettings();
 				}
 				InitializeFields();
 			}

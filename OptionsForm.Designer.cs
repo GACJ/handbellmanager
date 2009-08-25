@@ -67,6 +67,11 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabHandbellCalibration = new System.Windows.Forms.TabPage();
+			this.label11 = new System.Windows.Forms.Label();
+			this.cmbAxis0 = new System.Windows.Forms.ComboBox();
+			this.cmbAxis1 = new System.Windows.Forms.ComboBox();
+			this.cmbAxis2 = new System.Windows.Forms.ComboBox();
+			this.cmbAxis3 = new System.Windows.Forms.ComboBox();
 			this.btnCalibrate3 = new System.Windows.Forms.Button();
 			this.btnCalibrate2 = new System.Windows.Forms.Button();
 			this.btnCalibrate1 = new System.Windows.Forms.Button();
@@ -76,23 +81,33 @@
 			this.spnDelayHS = new System.Windows.Forms.NumericUpDown();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.txtZ3 = new System.Windows.Forms.TextBox();
-			this.txtZ2 = new System.Windows.Forms.TextBox();
-			this.txtZ1 = new System.Windows.Forms.TextBox();
-			this.txtZ0 = new System.Windows.Forms.TextBox();
+			this.txt3 = new System.Windows.Forms.TextBox();
+			this.txt2 = new System.Windows.Forms.TextBox();
+			this.txt1 = new System.Windows.Forms.TextBox();
+			this.txt0 = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
+			this.txtBSP2 = new HandbellManager.NumericalTextBox();
+			this.txtBSP1 = new HandbellManager.NumericalTextBox();
+			this.txtBSP3 = new HandbellManager.NumericalTextBox();
+			this.txtBSP0 = new HandbellManager.NumericalTextBox();
+			this.txtHSP0 = new HandbellManager.NumericalTextBox();
+			this.txtHSP1 = new HandbellManager.NumericalTextBox();
+			this.txtHSP3 = new HandbellManager.NumericalTextBox();
+			this.txtHSP2 = new HandbellManager.NumericalTextBox();
 			this.tabAbelKeyStrokes = new System.Windows.Forms.TabPage();
+			this.txtKeyB43 = new System.Windows.Forms.TextBox();
+			this.txtKeyB42 = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.txtKeyB41 = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.txtKeyB40 = new System.Windows.Forms.TextBox();
+			this.txtKeyB33 = new System.Windows.Forms.TextBox();
+			this.txtKeyB32 = new System.Windows.Forms.TextBox();
+			this.txtKeyB31 = new System.Windows.Forms.TextBox();
+			this.txtKeyB30 = new System.Windows.Forms.TextBox();
 			this.chkUseKeyUpDown = new System.Windows.Forms.CheckBox();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnDefault = new System.Windows.Forms.Button();
-			this.txtZBSP2 = new HandbellManager.NumericalTextBox();
-			this.txtZBSP1 = new HandbellManager.NumericalTextBox();
-			this.txtZBSP3 = new HandbellManager.NumericalTextBox();
-			this.txtZBSP0 = new HandbellManager.NumericalTextBox();
-			this.txtZHSP0 = new HandbellManager.NumericalTextBox();
-			this.txtZHSP1 = new HandbellManager.NumericalTextBox();
-			this.txtZHSP3 = new HandbellManager.NumericalTextBox();
-			this.txtZHSP2 = new HandbellManager.NumericalTextBox();
 			this.tabControl1.SuspendLayout();
 			this.tabHandbellCalibration.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.spnDebounceDelay)).BeginInit();
@@ -103,7 +118,7 @@
 			// 
 			// txtProcessName
 			// 
-			this.txtProcessName.Location = new System.Drawing.Point(159, 160);
+			this.txtProcessName.Location = new System.Drawing.Point(159, 203);
 			this.txtProcessName.Name = "txtProcessName";
 			this.txtProcessName.Size = new System.Drawing.Size(263, 20);
 			this.txtProcessName.TabIndex = 26;
@@ -113,7 +128,7 @@
 			// label32
 			// 
 			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(6, 163);
+			this.label32.Location = new System.Drawing.Point(6, 206);
 			this.label32.Name = "label32";
 			this.label32.Size = new System.Drawing.Size(103, 13);
 			this.label32.TabIndex = 25;
@@ -121,7 +136,7 @@
 			// 
 			// txtKeyB23
 			// 
-			this.txtKeyB23.Location = new System.Drawing.Point(159, 97);
+			this.txtKeyB23.Location = new System.Drawing.Point(159, 96);
 			this.txtKeyB23.MaxLength = 3;
 			this.txtKeyB23.Name = "txtKeyB23";
 			this.txtKeyB23.Size = new System.Drawing.Size(60, 20);
@@ -132,7 +147,7 @@
 			// 
 			// txtKeyB22
 			// 
-			this.txtKeyB22.Location = new System.Drawing.Point(228, 97);
+			this.txtKeyB22.Location = new System.Drawing.Point(228, 96);
 			this.txtKeyB22.MaxLength = 3;
 			this.txtKeyB22.Name = "txtKeyB22";
 			this.txtKeyB22.Size = new System.Drawing.Size(60, 20);
@@ -143,7 +158,7 @@
 			// 
 			// txtKeyB21
 			// 
-			this.txtKeyB21.Location = new System.Drawing.Point(297, 97);
+			this.txtKeyB21.Location = new System.Drawing.Point(297, 96);
 			this.txtKeyB21.MaxLength = 3;
 			this.txtKeyB21.Name = "txtKeyB21";
 			this.txtKeyB21.Size = new System.Drawing.Size(60, 20);
@@ -154,7 +169,7 @@
 			// 
 			// txtKeyB20
 			// 
-			this.txtKeyB20.Location = new System.Drawing.Point(365, 97);
+			this.txtKeyB20.Location = new System.Drawing.Point(365, 96);
 			this.txtKeyB20.MaxLength = 3;
 			this.txtKeyB20.Name = "txtKeyB20";
 			this.txtKeyB20.Size = new System.Drawing.Size(60, 20);
@@ -334,20 +349,20 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(6, 100);
+			this.label4.Location = new System.Drawing.Point(6, 99);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(51, 13);
+			this.label4.Size = new System.Drawing.Size(50, 13);
 			this.label4.TabIndex = 19;
-			this.label4.Text = "Button B:";
+			this.label4.Text = "Button 2:";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(6, 77);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(51, 13);
+			this.label3.Size = new System.Drawing.Size(50, 13);
 			this.label3.TabIndex = 14;
-			this.label3.Text = "Button A:";
+			this.label3.Text = "Button 1:";
 			// 
 			// label2
 			// 
@@ -370,7 +385,7 @@
 			// btnOK
 			// 
 			this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnOK.Location = new System.Drawing.Point(376, 263);
+			this.btnOK.Location = new System.Drawing.Point(376, 279);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(75, 23);
 			this.btnOK.TabIndex = 3;
@@ -390,7 +405,7 @@
 			// label31
 			// 
 			this.label31.AutoSize = true;
-			this.label31.Location = new System.Drawing.Point(6, 187);
+			this.label31.Location = new System.Drawing.Point(6, 211);
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(110, 13);
 			this.label31.TabIndex = 27;
@@ -439,7 +454,7 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(6, 109);
+			this.label10.Location = new System.Drawing.Point(6, 133);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(131, 13);
 			this.label10.TabIndex = 18;
@@ -448,7 +463,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(6, 84);
+			this.label9.Location = new System.Drawing.Point(6, 108);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(132, 13);
 			this.label9.TabIndex = 13;
@@ -461,11 +476,16 @@
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(439, 245);
+			this.tabControl1.Size = new System.Drawing.Size(439, 260);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabHandbellCalibration
 			// 
+			this.tabHandbellCalibration.Controls.Add(this.label11);
+			this.tabHandbellCalibration.Controls.Add(this.cmbAxis0);
+			this.tabHandbellCalibration.Controls.Add(this.cmbAxis1);
+			this.tabHandbellCalibration.Controls.Add(this.cmbAxis2);
+			this.tabHandbellCalibration.Controls.Add(this.cmbAxis3);
 			this.tabHandbellCalibration.Controls.Add(this.btnCalibrate3);
 			this.tabHandbellCalibration.Controls.Add(this.btnCalibrate2);
 			this.tabHandbellCalibration.Controls.Add(this.btnCalibrate1);
@@ -475,37 +495,102 @@
 			this.tabHandbellCalibration.Controls.Add(this.spnDelayHS);
 			this.tabHandbellCalibration.Controls.Add(this.label6);
 			this.tabHandbellCalibration.Controls.Add(this.label5);
-			this.tabHandbellCalibration.Controls.Add(this.txtZ3);
-			this.tabHandbellCalibration.Controls.Add(this.txtZ2);
-			this.tabHandbellCalibration.Controls.Add(this.txtZ1);
-			this.tabHandbellCalibration.Controls.Add(this.txtZ0);
+			this.tabHandbellCalibration.Controls.Add(this.txt3);
+			this.tabHandbellCalibration.Controls.Add(this.txt2);
+			this.tabHandbellCalibration.Controls.Add(this.txt1);
+			this.tabHandbellCalibration.Controls.Add(this.txt0);
 			this.tabHandbellCalibration.Controls.Add(this.label12);
-			this.tabHandbellCalibration.Controls.Add(this.txtZBSP2);
+			this.tabHandbellCalibration.Controls.Add(this.txtBSP2);
 			this.tabHandbellCalibration.Controls.Add(this.label15);
-			this.tabHandbellCalibration.Controls.Add(this.txtZBSP1);
+			this.tabHandbellCalibration.Controls.Add(this.txtBSP1);
 			this.tabHandbellCalibration.Controls.Add(this.label31);
-			this.tabHandbellCalibration.Controls.Add(this.txtZBSP3);
+			this.tabHandbellCalibration.Controls.Add(this.txtBSP3);
 			this.tabHandbellCalibration.Controls.Add(this.label16);
-			this.tabHandbellCalibration.Controls.Add(this.txtZBSP0);
+			this.tabHandbellCalibration.Controls.Add(this.txtBSP0);
 			this.tabHandbellCalibration.Controls.Add(this.label14);
-			this.tabHandbellCalibration.Controls.Add(this.txtZHSP0);
+			this.tabHandbellCalibration.Controls.Add(this.txtHSP0);
 			this.tabHandbellCalibration.Controls.Add(this.label17);
-			this.tabHandbellCalibration.Controls.Add(this.txtZHSP1);
+			this.tabHandbellCalibration.Controls.Add(this.txtHSP1);
 			this.tabHandbellCalibration.Controls.Add(this.label9);
 			this.tabHandbellCalibration.Controls.Add(this.label10);
-			this.tabHandbellCalibration.Controls.Add(this.txtZHSP3);
-			this.tabHandbellCalibration.Controls.Add(this.txtZHSP2);
+			this.tabHandbellCalibration.Controls.Add(this.txtHSP3);
+			this.tabHandbellCalibration.Controls.Add(this.txtHSP2);
 			this.tabHandbellCalibration.Location = new System.Drawing.Point(4, 22);
 			this.tabHandbellCalibration.Name = "tabHandbellCalibration";
 			this.tabHandbellCalibration.Padding = new System.Windows.Forms.Padding(3);
-			this.tabHandbellCalibration.Size = new System.Drawing.Size(431, 219);
+			this.tabHandbellCalibration.Size = new System.Drawing.Size(431, 234);
 			this.tabHandbellCalibration.TabIndex = 0;
 			this.tabHandbellCalibration.Text = "Handbell Calibration";
 			this.tabHandbellCalibration.UseVisualStyleBackColor = true;
 			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(6, 27);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(103, 13);
+			this.label11.TabIndex = 33;
+			this.label11.Text = "Handbell swing axis:";
+			// 
+			// cmbAxis0
+			// 
+			this.cmbAxis0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbAxis0.FormattingEnabled = true;
+			this.cmbAxis0.Items.AddRange(new object[] {
+            "X",
+            "Y",
+            "Z"});
+			this.cmbAxis0.Location = new System.Drawing.Point(359, 24);
+			this.cmbAxis0.Name = "cmbAxis0";
+			this.cmbAxis0.Size = new System.Drawing.Size(60, 21);
+			this.cmbAxis0.TabIndex = 32;
+			this.cmbAxis0.SelectedIndexChanged += new System.EventHandler(this.cmbAxis_SelectedIndexChanged);
+			// 
+			// cmbAxis1
+			// 
+			this.cmbAxis1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbAxis1.FormattingEnabled = true;
+			this.cmbAxis1.Items.AddRange(new object[] {
+            "X",
+            "Y",
+            "Z"});
+			this.cmbAxis1.Location = new System.Drawing.Point(294, 24);
+			this.cmbAxis1.Name = "cmbAxis1";
+			this.cmbAxis1.Size = new System.Drawing.Size(60, 21);
+			this.cmbAxis1.TabIndex = 31;
+			this.cmbAxis1.SelectedIndexChanged += new System.EventHandler(this.cmbAxis_SelectedIndexChanged);
+			// 
+			// cmbAxis2
+			// 
+			this.cmbAxis2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbAxis2.FormattingEnabled = true;
+			this.cmbAxis2.Items.AddRange(new object[] {
+            "X",
+            "Y",
+            "Z"});
+			this.cmbAxis2.Location = new System.Drawing.Point(229, 24);
+			this.cmbAxis2.Name = "cmbAxis2";
+			this.cmbAxis2.Size = new System.Drawing.Size(60, 21);
+			this.cmbAxis2.TabIndex = 30;
+			this.cmbAxis2.SelectedIndexChanged += new System.EventHandler(this.cmbAxis_SelectedIndexChanged);
+			// 
+			// cmbAxis3
+			// 
+			this.cmbAxis3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbAxis3.FormattingEnabled = true;
+			this.cmbAxis3.Items.AddRange(new object[] {
+            "X",
+            "Y",
+            "Z"});
+			this.cmbAxis3.Location = new System.Drawing.Point(165, 24);
+			this.cmbAxis3.Name = "cmbAxis3";
+			this.cmbAxis3.Size = new System.Drawing.Size(60, 21);
+			this.cmbAxis3.TabIndex = 29;
+			this.cmbAxis3.SelectedIndexChanged += new System.EventHandler(this.cmbAxis_SelectedIndexChanged);
+			// 
 			// btnCalibrate3
 			// 
-			this.btnCalibrate3.Location = new System.Drawing.Point(165, 52);
+			this.btnCalibrate3.Location = new System.Drawing.Point(165, 76);
 			this.btnCalibrate3.Name = "btnCalibrate3";
 			this.btnCalibrate3.Size = new System.Drawing.Size(60, 23);
 			this.btnCalibrate3.TabIndex = 9;
@@ -515,7 +600,7 @@
 			// 
 			// btnCalibrate2
 			// 
-			this.btnCalibrate2.Location = new System.Drawing.Point(230, 52);
+			this.btnCalibrate2.Location = new System.Drawing.Point(230, 76);
 			this.btnCalibrate2.Name = "btnCalibrate2";
 			this.btnCalibrate2.Size = new System.Drawing.Size(60, 23);
 			this.btnCalibrate2.TabIndex = 10;
@@ -525,7 +610,7 @@
 			// 
 			// btnCalibrate1
 			// 
-			this.btnCalibrate1.Location = new System.Drawing.Point(296, 52);
+			this.btnCalibrate1.Location = new System.Drawing.Point(296, 76);
 			this.btnCalibrate1.Name = "btnCalibrate1";
 			this.btnCalibrate1.Size = new System.Drawing.Size(60, 23);
 			this.btnCalibrate1.TabIndex = 11;
@@ -535,7 +620,7 @@
 			// 
 			// btnCalibrate0
 			// 
-			this.btnCalibrate0.Location = new System.Drawing.Point(362, 52);
+			this.btnCalibrate0.Location = new System.Drawing.Point(362, 76);
 			this.btnCalibrate0.Name = "btnCalibrate0";
 			this.btnCalibrate0.Size = new System.Drawing.Size(57, 23);
 			this.btnCalibrate0.TabIndex = 12;
@@ -550,7 +635,7 @@
             0,
             0,
             0});
-			this.spnDebounceDelay.Location = new System.Drawing.Point(166, 185);
+			this.spnDebounceDelay.Location = new System.Drawing.Point(166, 209);
 			this.spnDebounceDelay.Maximum = new decimal(new int[] {
             999,
             0,
@@ -569,7 +654,7 @@
             0,
             0,
             0});
-			this.spnDelayBS.Location = new System.Drawing.Point(166, 159);
+			this.spnDelayBS.Location = new System.Drawing.Point(166, 183);
 			this.spnDelayBS.Maximum = new decimal(new int[] {
             999,
             0,
@@ -588,7 +673,7 @@
             0,
             0,
             0});
-			this.spnDelayHS.Location = new System.Drawing.Point(166, 133);
+			this.spnDelayHS.Location = new System.Drawing.Point(166, 157);
 			this.spnDelayHS.Maximum = new decimal(new int[] {
             999,
             0,
@@ -603,7 +688,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(6, 161);
+			this.label6.Location = new System.Drawing.Point(6, 185);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(142, 13);
 			this.label6.TabIndex = 25;
@@ -612,63 +697,153 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(6, 135);
+			this.label5.Location = new System.Drawing.Point(6, 159);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(143, 13);
 			this.label5.TabIndex = 23;
 			this.label5.Text = "Handstroke strike delay (ms):";
 			// 
-			// txtZ3
+			// txt3
 			// 
-			this.txtZ3.Enabled = false;
-			this.txtZ3.Location = new System.Drawing.Point(165, 26);
-			this.txtZ3.Name = "txtZ3";
-			this.txtZ3.Size = new System.Drawing.Size(60, 20);
-			this.txtZ3.TabIndex = 5;
-			this.txtZ3.Text = "0";
-			this.txtZ3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txt3.Enabled = false;
+			this.txt3.Location = new System.Drawing.Point(165, 50);
+			this.txt3.Name = "txt3";
+			this.txt3.Size = new System.Drawing.Size(60, 20);
+			this.txt3.TabIndex = 5;
+			this.txt3.Text = "0";
+			this.txt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// txtZ2
+			// txt2
 			// 
-			this.txtZ2.Enabled = false;
-			this.txtZ2.Location = new System.Drawing.Point(229, 26);
-			this.txtZ2.Name = "txtZ2";
-			this.txtZ2.Size = new System.Drawing.Size(60, 20);
-			this.txtZ2.TabIndex = 6;
-			this.txtZ2.Text = "0";
-			this.txtZ2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txt2.Enabled = false;
+			this.txt2.Location = new System.Drawing.Point(229, 50);
+			this.txt2.Name = "txt2";
+			this.txt2.Size = new System.Drawing.Size(60, 20);
+			this.txt2.TabIndex = 6;
+			this.txt2.Text = "0";
+			this.txt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// txtZ1
+			// txt1
 			// 
-			this.txtZ1.Enabled = false;
-			this.txtZ1.Location = new System.Drawing.Point(294, 26);
-			this.txtZ1.Name = "txtZ1";
-			this.txtZ1.Size = new System.Drawing.Size(60, 20);
-			this.txtZ1.TabIndex = 7;
-			this.txtZ1.Text = "0";
-			this.txtZ1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txt1.Enabled = false;
+			this.txt1.Location = new System.Drawing.Point(294, 50);
+			this.txt1.Name = "txt1";
+			this.txt1.Size = new System.Drawing.Size(60, 20);
+			this.txt1.TabIndex = 7;
+			this.txt1.Text = "0";
+			this.txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// txtZ0
+			// txt0
 			// 
-			this.txtZ0.Enabled = false;
-			this.txtZ0.Location = new System.Drawing.Point(359, 26);
-			this.txtZ0.Name = "txtZ0";
-			this.txtZ0.Size = new System.Drawing.Size(60, 20);
-			this.txtZ0.TabIndex = 8;
-			this.txtZ0.Text = "0";
-			this.txtZ0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txt0.Enabled = false;
+			this.txt0.Location = new System.Drawing.Point(359, 50);
+			this.txt0.Name = "txt0";
+			this.txt0.Size = new System.Drawing.Size(60, 20);
+			this.txt0.TabIndex = 8;
+			this.txt0.Text = "0";
+			this.txt0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(6, 29);
+			this.label12.Location = new System.Drawing.Point(6, 53);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(129, 13);
+			this.label12.Size = new System.Drawing.Size(121, 13);
 			this.label12.TabIndex = 4;
-			this.label12.Text = "Handbell position (Z-Axis):";
+			this.label12.Text = "Handbell swing position:";
+			// 
+			// txtBSP2
+			// 
+			this.txtBSP2.Location = new System.Drawing.Point(229, 131);
+			this.txtBSP2.MaxLength = 5;
+			this.txtBSP2.Name = "txtBSP2";
+			this.txtBSP2.Size = new System.Drawing.Size(60, 20);
+			this.txtBSP2.TabIndex = 20;
+			this.txtBSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtBSP2.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+			// 
+			// txtBSP1
+			// 
+			this.txtBSP1.Location = new System.Drawing.Point(294, 131);
+			this.txtBSP1.MaxLength = 5;
+			this.txtBSP1.Name = "txtBSP1";
+			this.txtBSP1.Size = new System.Drawing.Size(60, 20);
+			this.txtBSP1.TabIndex = 21;
+			this.txtBSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtBSP1.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+			// 
+			// txtBSP3
+			// 
+			this.txtBSP3.Location = new System.Drawing.Point(165, 131);
+			this.txtBSP3.MaxLength = 5;
+			this.txtBSP3.Name = "txtBSP3";
+			this.txtBSP3.Size = new System.Drawing.Size(60, 20);
+			this.txtBSP3.TabIndex = 19;
+			this.txtBSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtBSP3.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+			// 
+			// txtBSP0
+			// 
+			this.txtBSP0.Location = new System.Drawing.Point(359, 131);
+			this.txtBSP0.MaxLength = 5;
+			this.txtBSP0.Name = "txtBSP0";
+			this.txtBSP0.Size = new System.Drawing.Size(60, 20);
+			this.txtBSP0.TabIndex = 22;
+			this.txtBSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtBSP0.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+			// 
+			// txtHSP0
+			// 
+			this.txtHSP0.Location = new System.Drawing.Point(359, 105);
+			this.txtHSP0.MaxLength = 5;
+			this.txtHSP0.Name = "txtHSP0";
+			this.txtHSP0.Size = new System.Drawing.Size(60, 20);
+			this.txtHSP0.TabIndex = 17;
+			this.txtHSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtHSP0.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
+			// 
+			// txtHSP1
+			// 
+			this.txtHSP1.Location = new System.Drawing.Point(294, 105);
+			this.txtHSP1.MaxLength = 5;
+			this.txtHSP1.Name = "txtHSP1";
+			this.txtHSP1.Size = new System.Drawing.Size(60, 20);
+			this.txtHSP1.TabIndex = 16;
+			this.txtHSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtHSP1.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
+			// 
+			// txtHSP3
+			// 
+			this.txtHSP3.Location = new System.Drawing.Point(165, 105);
+			this.txtHSP3.MaxLength = 5;
+			this.txtHSP3.Name = "txtHSP3";
+			this.txtHSP3.Size = new System.Drawing.Size(60, 20);
+			this.txtHSP3.TabIndex = 14;
+			this.txtHSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtHSP3.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
+			// 
+			// txtHSP2
+			// 
+			this.txtHSP2.Location = new System.Drawing.Point(229, 105);
+			this.txtHSP2.MaxLength = 5;
+			this.txtHSP2.Name = "txtHSP2";
+			this.txtHSP2.Size = new System.Drawing.Size(60, 20);
+			this.txtHSP2.TabIndex = 15;
+			this.txtHSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtHSP2.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
 			// 
 			// tabAbelKeyStrokes
 			// 
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB43);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB42);
+			this.tabAbelKeyStrokes.Controls.Add(this.label7);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB41);
+			this.tabAbelKeyStrokes.Controls.Add(this.label8);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB40);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB33);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB32);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB31);
+			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB30);
 			this.tabAbelKeyStrokes.Controls.Add(this.chkUseKeyUpDown);
 			this.tabAbelKeyStrokes.Controls.Add(this.txtProcessName);
 			this.tabAbelKeyStrokes.Controls.Add(this.label32);
@@ -699,16 +874,122 @@
 			this.tabAbelKeyStrokes.Location = new System.Drawing.Point(4, 22);
 			this.tabAbelKeyStrokes.Name = "tabAbelKeyStrokes";
 			this.tabAbelKeyStrokes.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAbelKeyStrokes.Size = new System.Drawing.Size(431, 219);
+			this.tabAbelKeyStrokes.Size = new System.Drawing.Size(431, 234);
 			this.tabAbelKeyStrokes.TabIndex = 1;
 			this.tabAbelKeyStrokes.Text = "Abel Settings";
 			this.tabAbelKeyStrokes.UseVisualStyleBackColor = true;
 			this.tabAbelKeyStrokes.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
 			// 
+			// txtKeyB43
+			// 
+			this.txtKeyB43.Location = new System.Drawing.Point(159, 140);
+			this.txtKeyB43.MaxLength = 3;
+			this.txtKeyB43.Name = "txtKeyB43";
+			this.txtKeyB43.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB43.TabIndex = 33;
+			this.txtKeyB43.Text = ";";
+			this.txtKeyB43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB43.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// txtKeyB42
+			// 
+			this.txtKeyB42.Location = new System.Drawing.Point(228, 140);
+			this.txtKeyB42.MaxLength = 3;
+			this.txtKeyB42.Name = "txtKeyB42";
+			this.txtKeyB42.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB42.TabIndex = 34;
+			this.txtKeyB42.Text = "W";
+			this.txtKeyB42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB42.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(6, 121);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(50, 13);
+			this.label7.TabIndex = 27;
+			this.label7.Text = "Button 3:";
+			// 
+			// txtKeyB41
+			// 
+			this.txtKeyB41.Location = new System.Drawing.Point(297, 140);
+			this.txtKeyB41.MaxLength = 3;
+			this.txtKeyB41.Name = "txtKeyB41";
+			this.txtKeyB41.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB41.TabIndex = 35;
+			this.txtKeyB41.Text = ";";
+			this.txtKeyB41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB41.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(6, 143);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(50, 13);
+			this.label8.TabIndex = 32;
+			this.label8.Text = "Button 4:";
+			// 
+			// txtKeyB40
+			// 
+			this.txtKeyB40.Location = new System.Drawing.Point(365, 140);
+			this.txtKeyB40.MaxLength = 3;
+			this.txtKeyB40.Name = "txtKeyB40";
+			this.txtKeyB40.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB40.TabIndex = 36;
+			this.txtKeyB40.Text = "W";
+			this.txtKeyB40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB40.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// txtKeyB33
+			// 
+			this.txtKeyB33.Location = new System.Drawing.Point(159, 118);
+			this.txtKeyB33.MaxLength = 3;
+			this.txtKeyB33.Name = "txtKeyB33";
+			this.txtKeyB33.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB33.TabIndex = 28;
+			this.txtKeyB33.Text = "A";
+			this.txtKeyB33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB33.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// txtKeyB32
+			// 
+			this.txtKeyB32.Location = new System.Drawing.Point(228, 118);
+			this.txtKeyB32.MaxLength = 3;
+			this.txtKeyB32.Name = "txtKeyB32";
+			this.txtKeyB32.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB32.TabIndex = 29;
+			this.txtKeyB32.Text = "G";
+			this.txtKeyB32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB32.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// txtKeyB31
+			// 
+			this.txtKeyB31.Location = new System.Drawing.Point(297, 118);
+			this.txtKeyB31.MaxLength = 3;
+			this.txtKeyB31.Name = "txtKeyB31";
+			this.txtKeyB31.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB31.TabIndex = 30;
+			this.txtKeyB31.Text = "A";
+			this.txtKeyB31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB31.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
+			// txtKeyB30
+			// 
+			this.txtKeyB30.Location = new System.Drawing.Point(365, 118);
+			this.txtKeyB30.MaxLength = 3;
+			this.txtKeyB30.Name = "txtKeyB30";
+			this.txtKeyB30.Size = new System.Drawing.Size(60, 20);
+			this.txtKeyB30.TabIndex = 31;
+			this.txtKeyB30.Text = "G";
+			this.txtKeyB30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtKeyB30.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			// 
 			// chkUseKeyUpDown
 			// 
 			this.chkUseKeyUpDown.AutoSize = true;
-			this.chkUseKeyUpDown.Location = new System.Drawing.Point(9, 128);
+			this.chkUseKeyUpDown.Location = new System.Drawing.Point(9, 179);
 			this.chkUseKeyUpDown.Name = "chkUseKeyUpDown";
 			this.chkUseKeyUpDown.Size = new System.Drawing.Size(299, 17);
 			this.chkUseKeyUpDown.TabIndex = 24;
@@ -720,7 +1001,7 @@
 			// 
 			this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(295, 263);
+			this.btnCancel.Location = new System.Drawing.Point(295, 279);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 2;
@@ -731,7 +1012,7 @@
 			// btnDefault
 			// 
 			this.btnDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnDefault.Location = new System.Drawing.Point(12, 263);
+			this.btnDefault.Location = new System.Drawing.Point(12, 279);
 			this.btnDefault.Name = "btnDefault";
 			this.btnDefault.Size = new System.Drawing.Size(119, 23);
 			this.btnDefault.TabIndex = 1;
@@ -739,93 +1020,13 @@
 			this.btnDefault.UseVisualStyleBackColor = true;
 			this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
 			// 
-			// txtZBSP2
-			// 
-			this.txtZBSP2.Location = new System.Drawing.Point(229, 107);
-			this.txtZBSP2.MaxLength = 5;
-			this.txtZBSP2.Name = "txtZBSP2";
-			this.txtZBSP2.Size = new System.Drawing.Size(60, 20);
-			this.txtZBSP2.TabIndex = 20;
-			this.txtZBSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZBSP2.TextChanged += new System.EventHandler(this.txtZBSP_TextChanged);
-			// 
-			// txtZBSP1
-			// 
-			this.txtZBSP1.Location = new System.Drawing.Point(294, 107);
-			this.txtZBSP1.MaxLength = 5;
-			this.txtZBSP1.Name = "txtZBSP1";
-			this.txtZBSP1.Size = new System.Drawing.Size(60, 20);
-			this.txtZBSP1.TabIndex = 21;
-			this.txtZBSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZBSP1.TextChanged += new System.EventHandler(this.txtZBSP_TextChanged);
-			// 
-			// txtZBSP3
-			// 
-			this.txtZBSP3.Location = new System.Drawing.Point(165, 107);
-			this.txtZBSP3.MaxLength = 5;
-			this.txtZBSP3.Name = "txtZBSP3";
-			this.txtZBSP3.Size = new System.Drawing.Size(60, 20);
-			this.txtZBSP3.TabIndex = 19;
-			this.txtZBSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZBSP3.TextChanged += new System.EventHandler(this.txtZBSP_TextChanged);
-			// 
-			// txtZBSP0
-			// 
-			this.txtZBSP0.Location = new System.Drawing.Point(359, 107);
-			this.txtZBSP0.MaxLength = 5;
-			this.txtZBSP0.Name = "txtZBSP0";
-			this.txtZBSP0.Size = new System.Drawing.Size(60, 20);
-			this.txtZBSP0.TabIndex = 22;
-			this.txtZBSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZBSP0.TextChanged += new System.EventHandler(this.txtZBSP_TextChanged);
-			// 
-			// txtZHSP0
-			// 
-			this.txtZHSP0.Location = new System.Drawing.Point(359, 81);
-			this.txtZHSP0.MaxLength = 5;
-			this.txtZHSP0.Name = "txtZHSP0";
-			this.txtZHSP0.Size = new System.Drawing.Size(60, 20);
-			this.txtZHSP0.TabIndex = 17;
-			this.txtZHSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZHSP0.TextChanged += new System.EventHandler(this.txtZHSP_TextChanged);
-			// 
-			// txtZHSP1
-			// 
-			this.txtZHSP1.Location = new System.Drawing.Point(294, 81);
-			this.txtZHSP1.MaxLength = 5;
-			this.txtZHSP1.Name = "txtZHSP1";
-			this.txtZHSP1.Size = new System.Drawing.Size(60, 20);
-			this.txtZHSP1.TabIndex = 16;
-			this.txtZHSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZHSP1.TextChanged += new System.EventHandler(this.txtZHSP_TextChanged);
-			// 
-			// txtZHSP3
-			// 
-			this.txtZHSP3.Location = new System.Drawing.Point(165, 81);
-			this.txtZHSP3.MaxLength = 5;
-			this.txtZHSP3.Name = "txtZHSP3";
-			this.txtZHSP3.Size = new System.Drawing.Size(60, 20);
-			this.txtZHSP3.TabIndex = 14;
-			this.txtZHSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZHSP3.TextChanged += new System.EventHandler(this.txtZHSP_TextChanged);
-			// 
-			// txtZHSP2
-			// 
-			this.txtZHSP2.Location = new System.Drawing.Point(229, 81);
-			this.txtZHSP2.MaxLength = 5;
-			this.txtZHSP2.Name = "txtZHSP2";
-			this.txtZHSP2.Size = new System.Drawing.Size(60, 20);
-			this.txtZHSP2.TabIndex = 15;
-			this.txtZHSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtZHSP2.TextChanged += new System.EventHandler(this.txtZHSP_TextChanged);
-			// 
 			// OptionsForm
 			// 
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(464, 292);
+			this.ClientSize = new System.Drawing.Size(464, 308);
 			this.ControlBox = false;
 			this.Controls.Add(this.btnDefault);
 			this.Controls.Add(this.btnCancel);
@@ -880,14 +1081,14 @@
 		private System.Windows.Forms.Button btnOK;
 		private System.Windows.Forms.ToolTip warningTip;
 		private System.Windows.Forms.Label label31;
-		private HandbellManager.NumericalTextBox txtZHSP3;
-		private HandbellManager.NumericalTextBox txtZHSP2;
-		private HandbellManager.NumericalTextBox txtZHSP1;
-		private HandbellManager.NumericalTextBox txtZHSP0;
-		private HandbellManager.NumericalTextBox txtZBSP3;
-		private HandbellManager.NumericalTextBox txtZBSP2;
-		private HandbellManager.NumericalTextBox txtZBSP1;
-		private HandbellManager.NumericalTextBox txtZBSP0;
+		private HandbellManager.NumericalTextBox txtHSP3;
+		private HandbellManager.NumericalTextBox txtHSP2;
+		private HandbellManager.NumericalTextBox txtHSP1;
+		private HandbellManager.NumericalTextBox txtHSP0;
+		private HandbellManager.NumericalTextBox txtBSP3;
+		private HandbellManager.NumericalTextBox txtBSP2;
+		private HandbellManager.NumericalTextBox txtBSP1;
+		private HandbellManager.NumericalTextBox txtBSP0;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label15;
@@ -898,10 +1099,10 @@
 		private System.Windows.Forms.TabPage tabHandbellCalibration;
 		private System.Windows.Forms.TabPage tabAbelKeyStrokes;
 		private System.Windows.Forms.Button btnCancel;
-		private System.Windows.Forms.TextBox txtZ3;
-		private System.Windows.Forms.TextBox txtZ2;
-		private System.Windows.Forms.TextBox txtZ1;
-		private System.Windows.Forms.TextBox txtZ0;
+		private System.Windows.Forms.TextBox txt3;
+		private System.Windows.Forms.TextBox txt2;
+		private System.Windows.Forms.TextBox txt1;
+		private System.Windows.Forms.TextBox txt0;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.NumericUpDown spnDelayHS;
 		private System.Windows.Forms.Label label6;
@@ -914,5 +1115,20 @@
 		private System.Windows.Forms.Button btnCalibrate1;
 		private System.Windows.Forms.Button btnCalibrate0;
 		private System.Windows.Forms.Button btnDefault;
+		private System.Windows.Forms.TextBox txtKeyB43;
+		private System.Windows.Forms.TextBox txtKeyB42;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.TextBox txtKeyB41;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.TextBox txtKeyB40;
+		private System.Windows.Forms.TextBox txtKeyB33;
+		private System.Windows.Forms.TextBox txtKeyB32;
+		private System.Windows.Forms.TextBox txtKeyB31;
+		private System.Windows.Forms.TextBox txtKeyB30;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.ComboBox cmbAxis0;
+		private System.Windows.Forms.ComboBox cmbAxis1;
+		private System.Windows.Forms.ComboBox cmbAxis2;
+		private System.Windows.Forms.ComboBox cmbAxis3;
 	}
 }
