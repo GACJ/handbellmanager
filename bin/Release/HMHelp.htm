@@ -22,16 +22,16 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Graham</o:Author>
   <o:LastAuthor>Graham</o:LastAuthor>
-  <o:Revision>38</o:Revision>
-  <o:TotalTime>1009</o:TotalTime>
+  <o:Revision>56</o:Revision>
+  <o:TotalTime>1339</o:TotalTime>
   <o:Created>2009-07-24T17:51:00Z</o:Created>
-  <o:LastSaved>2009-08-25T21:10:00Z</o:LastSaved>
+  <o:LastSaved>2009-11-17T22:43:00Z</o:LastSaved>
   <o:Pages>5</o:Pages>
-  <o:Words>3344</o:Words>
-  <o:Characters>19061</o:Characters>
-  <o:Lines>158</o:Lines>
-  <o:Paragraphs>44</o:Paragraphs>
-  <o:CharactersWithSpaces>22361</o:CharactersWithSpaces>
+  <o:Words>3654</o:Words>
+  <o:Characters>20834</o:Characters>
+  <o:Lines>173</o:Lines>
+  <o:Paragraphs>48</o:Paragraphs>
+  <o:CharactersWithSpaces>24440</o:CharactersWithSpaces>
   <o:Version>12.00</o:Version>
  </o:DocumentProperties>
 </xml><![endif]-->
@@ -718,6 +718,9 @@ span.BalloonTextChar
 	mso-ascii-font-family:Tahoma;
 	mso-hansi-font-family:Tahoma;
 	mso-bidi-font-family:Tahoma;}
+span.unicode
+	{mso-style-name:unicode;
+	mso-style-unhide:no;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
@@ -1089,19 +1092,25 @@ div.Section1
 @list l8
 	{mso-list-id:1987738114;
 	mso-list-type:hybrid;
-	mso-list-template-ids:-913303040 134807567 134807577 134807579 134807567 134807577 134807579 134807567 134807577 134807579;}
+	mso-list-template-ids:1694417312 134807567 134807553 134807555 134807567 134807577 134807579 134807567 134807577 134807579;}
 @list l8:level1
 	{mso-level-tab-stop:none;
 	mso-level-number-position:left;
 	text-indent:-18.0pt;}
 @list l8:level2
-	{mso-level-tab-stop:72.0pt;
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
 	mso-level-number-position:left;
-	text-indent:-18.0pt;}
+	text-indent:-18.0pt;
+	font-family:Symbol;}
 @list l8:level3
-	{mso-level-tab-stop:108.0pt;
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:108.0pt;
 	mso-level-number-position:left;
-	text-indent:-18.0pt;}
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
 @list l8:level4
 	{mso-level-tab-stop:144.0pt;
 	mso-level-number-position:left;
@@ -1199,9 +1208,36 @@ ul
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:minor-bidi;
 	mso-fareast-language:EN-US;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid black 1.0pt;
+	mso-border-themecolor:text1;
+	mso-border-alt:solid black .5pt;
+	mso-border-themecolor:text1;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid black;
+	mso-border-insideh-themecolor:text1;
+	mso-border-insidev:.5pt solid black;
+	mso-border-insidev-themecolor:text1;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
 </style>
 <![endif]--><!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="26626"/>
+ <o:shapedefaults v:ext="edit" spidmax="33794"/>
 </xml><![endif]--><!--[if gte mso 9]><xml>
  <o:shapelayout v:ext="edit">
   <o:idmap v:ext="edit" data="1"/>
@@ -1212,15 +1248,17 @@ ul
 
 <div class=Section1>
 
-<h1>Handbell Manager (Version 1.1)</h1>
+<h1>Handbell Manager (Version 1.2)</h1>
 
 <p class=MsoNormal><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
 minor-latin'>Copyright © Graham A C John 2009<br>
 <a href="mailto:graham@changeringing.co.uk?subject=Handbell%20Manager">graham@changeringing.co.uk</a><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
-minor-latin'>Handbell Manager enables up to four USB motion controllers to be
-used as dummy handbells with Abel simulator for Windows. <o:p></o:p></span></p>
+minor-latin'>Handbell Manager enables up to four USB motion controllers to be used
+as dummy handbells with change ringing simulators for Windows i.e. Abel and
+Beltower currently. Other simulators may be added in future versions of
+Handbell Manager with the cooperation of their authors.<o:p></o:p></span></p>
 
 <h2>Licensing <span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
 minor-latin;mso-fareast-language:EN-GB;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
@@ -1247,7 +1285,7 @@ minor-latin;mso-fareast-language:EN-GB;mso-no-proof:yes'><!--[if gte vml 1]><v:s
  style='width:71.25pt;height:28.5pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="HMHelp_files/image001.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=95 height=38
-src="HMHelp_files/image011.jpg" v:shapes="Picture_x0020_1"><![endif]></span></h2>
+src="HMHelp_files/image002.jpg" v:shapes="Picture_x0020_1"><![endif]></span></h2>
 
 <p class=MsoNormal><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
 minor-latin'>Handbell Manager is free software: you can redistribute it and/or
@@ -1257,10 +1295,10 @@ any later version.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
 minor-latin'>Handbell Manager is distributed in the hope that it will be
-useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-or FITNESS FOR A PARTICULAR PURPOSE.<span style='mso-spacerun:yes'>  </span>See
-the GNU General Public License for more details at <a
-href="http://www.gnu.org/licenses/">www.gnu.org/licenses</a>.<o:p></o:p></span></p>
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<span
+style='mso-spacerun:yes'>  </span>See the GNU General Public License for more
+details at <a href="http://www.gnu.org/licenses/">www.gnu.org/licenses</a>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
 minor-latin'>For developers who may be interested, the C# source code for this
@@ -1279,7 +1317,8 @@ style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin'>Abel version 3 (from <a
-href="http://www.abelsim.co.uk/">www.abelsim.co.uk</a>)<o:p></o:p></span></p>
+href="http://www.abelsim.co.uk/">www.abelsim.co.uk</a>) or Beltower version 10
+(from <a href="http://www.beltower.co.uk/">www.beltower.co.uk</a>)<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l5 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1302,12 +1341,10 @@ Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"
 mso-bidi-theme-font:minor-latin'>One to four USB motion controllers. Handbell
 Manager has been tested with the wired and wireless (“FriiHand”) motion
 controllers manufactured by ActionXL (available from <a
-href="http://www.actionxl.com">www.actionxl.com</a> at $19.95 each for the
-wired model and $39.95 each for the wireless model. The wired model is also
-available from <a href="http://www.amazon.co.uk">www.amazon.co.uk</a> at only
-£4.95 each. Prices are as quoted by the respective websites on 1 August 2009).
-Other joystick devices that generate a movement signal in an X, Y or Z axis are
-also supported.<o:p></o:p></span></p>
+href="http://www.actionxl.com">www.actionxl.com</a> or <a
+href="http://www.changeringing.co.uk/handbellmanager">www.changeringing.co.uk</a>.
+Other joystick devices that generate a movement signal in an X, Y or Z axis
+will also work with Handbell Manager.<o:p></o:p></span></p>
 
 <h2>Getting started</h2>
 
@@ -1343,39 +1380,129 @@ show the stroke, and which buttons are being pressed.<o:p></o:p></span></p>
 style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin'>Run Abel. Check that the bells sound if you
-press the “J” and “F” buttons on the keyboard.<o:p></o:p></span></p>
+mso-bidi-theme-font:minor-latin'>In Handbell Manager’s menu, click on <b
+style='mso-bidi-font-weight:normal'>Run – Choose Simulator</b> and click on
+your simulator software (either <b style='mso-bidi-font-weight:normal'>Abel</b>
+or <b style='mso-bidi-font-weight:normal'>Beltower</b>).<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l8 level1 lfo4'><![if !supportLists]><span
 style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>Either<b style='mso-bidi-font-weight:normal'>
+Run – Abel</b> and<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin'>In Abel’s menu select <b style='mso-bidi-font-weight:
 normal'>Options – Ringing Options</b> and check the option <b style='mso-bidi-font-weight:
-normal'>Bell Keys: up/down action</b>. If you have Abel version 3.6.2 or later,
-also uncheck the option <b style='mso-bidi-font-weight:normal'>Bell Keys: with
-Start</b>.<o:p></o:p></span></p>
+normal'>Bell Keys: up/down action</b>. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>If you have Abel version 3.6.2 or later,
+uncheck the option <b style='mso-bidi-font-weight:normal'>Bell Keys: with Start</b>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>Check that the bells sound if you press the
+“J” and “F” buttons on the keyboard.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l8 level1 lfo4'><![if !supportLists]><span
 style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Hold the ActionXL wired controllers like the
-handles of handbells with the buttons facing upwards underneath your thumbs and
-the wires pointing towards your wrist, or turn on the ActionXL wireless controllers
-and hold them in the palm of your hand with red light horizontal and pointing
-forwards. Swing the controllers like handbells. <span style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'><o:p></o:p></span></p>
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>Or <b style='mso-bidi-font-weight:normal'>Run
+– Beltower</b>. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>Set the following options in Beltower’s <b
+style='mso-bidi-font-weight:normal'>Options – Ring Options</b>: <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level3 lfo4;tab-stops:list 108.0pt'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Multi keys</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'> to “JF”
+for two bells or “JFRU” for four bells and <b style='mso-bidi-font-weight:normal'>Ringers’
+Bells</b> to the bell numbers corresponding to those keys.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level3 lfo4;tab-stops:list 108.0pt'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Timing Options</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'> to <b
+style='mso-bidi-font-weight:normal'>Hand Bell Sensor(s) with Animation<o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>If you have an earlier version of Beltower
+than 10.27, in Handbell Manager’s <b style='mso-bidi-font-weight:normal'>Options
+– Beltower Settings,</b> change <b style='mso-bidi-font-weight:normal'>Buttons
+1</b> and <b style='mso-bidi-font-weight:normal'>3</b> from “¬” to “F5”
+(Start).<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>Check that the bells sound if you press F5 then
+“J” and “F” buttons on the keyboard.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo4;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>An option worth trying is<b style='mso-bidi-font-weight:
+normal'> Co-operative Timing</b>, as following bells will hold up for you to
+ring. To use it, you will also need to untick <b style='mso-bidi-font-weight:
+normal'>Auto-strike + Animate</b>, tick <b style='mso-bidi-font-weight:normal'>Animate
+on Input</b>, <b style='mso-bidi-font-weight:normal'>Hand/Back Alternate</b>,
+and tick <b style='mso-bidi-font-weight:normal'>Flip Handbells</b> in <b
+style='mso-bidi-font-weight:normal'>Animation Settings</b>.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l8 level1 lfo4'><![if !supportLists]><span
 style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Hold the ActionXL wired controllers like the
+handles of handbells, with the buttons facing upwards underneath your thumbs
+and the wires pointing towards your wrist, or turn on the ActionXL wireless
+controllers and hold them in the palm of your hand with red light horizontal
+and pointing forwards. Swing the controllers like handbells. <span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l8 level1 lfo4'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
+style='mso-list:Ignore'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin'>If your controllers aren’t recognised or the
 bells don’t ring, check out the troubleshooting section.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l8 level1 lfo4'><![if !supportLists]><span
 style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin'>If your bells ring, but not when you want them
 to, check out the calibration section.<o:p></o:p></span></p>
@@ -1387,15 +1514,15 @@ Handbell Manager, you should see a panel appear as shown above. If you plug in
 or remove your controllers <i style='mso-bidi-font-style:normal'>after</i> you
 started Handbell Manager, you will need to press the <b style='mso-bidi-font-weight:
 normal'>Check for Controllers</b> button to find them. The handbells are shown
-right to left, to match the clockwise arrangement of the bells on Abel’s
-display.</p>
+right to left, to match the clockwise arrangement of the bells on your
+simulator’s display.</p>
 
 <p class=MsoNormal><span style='mso-fareast-language:EN-GB;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
- id="Picture_x0020_6" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:264pt;
- height:203.25pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="HMHelp_files/image012.png" o:title=""/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=352 height=271
-src="HMHelp_files/image013.jpg" v:shapes="Picture_x0020_6"><![endif]></span></p>
+ id="Picture_x0020_8" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:267.75pt;
+ height:204pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="HMHelp_files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=357 height=272
+src="HMHelp_files/image004.jpg" v:shapes="Picture_x0020_8"><![endif]></span></p>
 
 <p class=MsoNormal>Handbell Manager counts each handstroke and backstroke and
 press of a controller button, and highlights in orange which stroke the bell is
@@ -1407,11 +1534,9 @@ alternately, you should expect the counts to be equal to the number of strokes
 you rang. </p>
 
 <p class=MsoNormal>If they appear to be functioning as expected, then it is
-worth trying them out with Abel before changing any options<span
-style='mso-bidi-font-weight:bold'>. To start Abel, you can click <b>Abel </b></span><b><span
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>–</span>
-Run</b><span style='mso-bidi-font-weight:bold'> on Handbell Manager’s menu, or
-start it in the usual way.</span></p>
+worth trying them out with the simulator before changing any options<span
+style='mso-bidi-font-weight:bold'>. To start your simulator, you can click <b>Run</b>
+on Handbell Manager’s menu, or start it in the usual way.</span></p>
 
 <p class=MsoNormal>This dialog window needs to remain open while you are using
 the dummy handbells, but you can move it or minimize it to hide it.</p>
@@ -1442,7 +1567,7 @@ vertical line is drawn on the monitor showing the timing of the clapper strike.<
  height:214.5pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="HMHelp_files/image005.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=537 height=286
-src="HMHelp_files/image014.jpg" v:shapes="Picture_x0020_7"><![endif]></span></p>
+src="HMHelp_files/image006.jpg" v:shapes="Picture_x0020_7"><![endif]></span></p>
 
 <p class=MsoNormal>The monitor can be frozen and unfrozen by pressing the F3
 Key, or by right clicking and selecting Freeze from the context menu. Options
@@ -1451,10 +1576,10 @@ are also available on this menu to turn any of the monitor lines on or off.</p>
 <h2>Calibration</h2>
 
 <p class=MsoNormal>Most users should find the default calibration satisfactory
-for ActionXL controllers, since it has been chosen to reflect the dynamics of
-the clappers of real handbells, and normal handbell usage. Try Abel with the
-default settings for a while before attempting any changes to reflect your own
-ringing style.</p>
+for ActionXL wired controllers, since it has been chosen to reflect the
+dynamics of the clappers of real handbells, and normal handbell usage. Try the
+controllers with the default settings for a while before attempting any changes
+to reflect your own ringing style.</p>
 
 <p class=MsoPlainText><span style='font-size:11.0pt;font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
@@ -1486,23 +1611,23 @@ mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-
 style='mso-bidi-font-weight:normal'>OK</b> to permanently save them, or <b
 style='mso-bidi-font-weight:normal'>Cancel </b>to revert to earlier settings.
 If you wish to revert to Handbell Manager defaults for <i style='mso-bidi-font-style:
-normal'>all</i> options (Handbell Calibration and Abel Settings), press the <b
-style='mso-bidi-font-weight:normal'>Default Settings</b> button. </p>
+normal'>all</i> options (Handbell Calibration and Abel/Beltower Settings),
+press the <b style='mso-bidi-font-weight:normal'>Default Settings</b> button. </p>
 
 <h2><span style='mso-fareast-language:EN-GB;font-weight:normal;mso-bidi-font-weight:
 bold;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_9" o:spid="_x0000_i1028"
  type="#_x0000_t75" style='width:261.75pt;height:191.25pt;visibility:visible;
  mso-wrap-style:square'>
- <v:imagedata src="HMHelp_files/image015.png" o:title=""/>
+ <v:imagedata src="HMHelp_files/image007.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=349 height=255
-src="HMHelp_files/image016.jpg" v:shapes="Picture_x0020_9"><![endif]></span></h2>
+src="HMHelp_files/image008.jpg" v:shapes="Picture_x0020_9"><![endif]></span></h2>
 
 <h2>More on Calibration and Fine Tuning</h2>
 
 <p class=MsoNormal>If you wish to calibrate your controllers, select <b
-style='mso-bidi-font-weight:normal'>Tools – Options</b> from the menu to show
-the settings dialog. The first tab contains the handbell calibration options.
-The screen shows the current axis (tilt position) of each controller as values
+style='mso-bidi-font-weight:normal'>Tools – Options</b> from the menu to show the
+settings dialog. The first tab contains the handbell calibration options. The
+screen shows the current axis (tilt position) of each controller as values
 between -2048 and 2047. Negative values occur when the buttons are on the upper
 side of the controller and positive ones when the buttons are on the lower
 side, and are zero when the controller points either upwards or downwards. </p>
@@ -1582,72 +1707,314 @@ controller signal bounces after a sudden stop. Experience has shown that 350ms
 is a good value to cure this problem, while still allowing you to ring the bell
 twice in a second.</p>
 
-<h2>Abel Settings</h2>
+<h2>Simulator Settings</h2>
 
-<p class=MsoNormal>The settings for controlling Abel can be configured using
-the <b style='mso-bidi-font-weight:normal'>Tools – Options – Abel Settings</b>
-tab. Handbell Manager works by sending messages to Abel as though you had
-pressed the keys on the keyboard. The keys to be pressed by Handbell Manager
-can be changed here. </p>
+<p class=MsoNormal>The settings for controlling your simulator software can be
+configured using the <b style='mso-bidi-font-weight:normal'>Tools – Options –
+Abel Settings</b> or <b style='mso-bidi-font-weight:normal'>Beltower Settings</b>
+tab. Note, the current simulator being used is selected from the <b
+style='mso-bidi-font-weight:normal'>Run</b> menu. Handbell Manager works by
+sending messages to the simulator as though you had pressed the keys on the
+keyboard. The keys to be pressed by Handbell Manager can be changed here. </p>
 
 <p class=MsoNormal><span style='mso-fareast-language:EN-GB;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
  id="Picture_x0020_15" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:301.5pt;
  height:221.25pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="HMHelp_files/image017.png" o:title=""/>
+ <v:imagedata src="HMHelp_files/image009.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=402 height=295
-src="HMHelp_files/image018.jpg" v:shapes="Picture_x0020_15"><![endif]></span></p>
+src="HMHelp_files/image010.jpg" v:shapes="Picture_x0020_15"><![endif]></span></p>
 
 <p class=MsoNormal>The key for ringing each of four bells is initially set to
-the default used in Abel (J, F, R &amp; U). However, if the keyboard mappings
-have been changed in Abel, they have to be changed in Handbell Manager to
-match.</p>
+the default used in Abel (J, F, R &amp; U). Beltower can be configured to use
+the same keys. However, if the keyboard mappings have been changed in your
+simulator, they have to be changed in Handbell Manager to match.</p>
 
-<p class=MsoNormal>The buttons on each controller can also be configured to
-trigger Abel functions, such as Start, Go, Rounds, Stand, Pause, Bob, Single
-etc. As well as individual keys, you can also type “F1” to “F12” or “Esc” to
+<p class=MsoNormal>The buttons on each controller can also be configured to trigger
+simulator functions, such as Start, Go, Rounds, Stand, Pause, Bob, Single etc.
+As well as individual keys, you can also type “F1” to “F12”, “Esc” or “End” to
 operate the function keys.</p>
 
-<p class=MsoNormal>ActionXL wired controllers have a Left (1) and Right (2)
+<p class=MsoNormal>ActionXL wired controller has a Left (1) and Right (2)
 Button. The ActionXL “FriiHand” wireless controller additionally has an Upper
 (3) and Lower (4) button on the nose of the controller. Handbell Manager button
 defaults are:</p>
 
-<p class=MsoNormal><span class=MsoIntenseEmphasis>Handbell 1 &amp; 3 (Right
-hand)</span><b><i><span style='color:#4F81BD;mso-themecolor:accent1'><br>
-</span></i></b>Left button (1): <span
-style='mso-spacerun:yes'>  </span>Start/Immediate Stop (F9) <br>
-Right button (2):<span style='mso-spacerun:yes'>  </span>Go (G)<br>
-Upper button (3):<span style='mso-spacerun:yes'>   </span>Start/Immediate Stop
-(F9) <br>
-Lower button (4):<span style='mso-spacerun:yes'>  </span>Go (G)</p>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid black .5pt;
+ mso-border-themecolor:text1;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:14.2pt;mso-height-rule:
+  exactly'>
+  <td width=122 valign=top style='width:91.75pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+  class=MsoIntenseEmphasis>Simulator</span></p>
+  </td>
+  <td width=274 colspan=2 valign=top style='width:205.55pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-left:none;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'><span class=MsoIntenseEmphasis>Abel<o:p></o:p></span></p>
+  </td>
+  <td width=274 colspan=2 valign=top style='width:205.55pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-left:none;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'><span class=MsoIntenseEmphasis>Beltower<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:14.2pt;mso-height-rule:exactly'>
+  <td width=122 valign=top style='width:91.75pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
+  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+  class=MsoIntenseEmphasis>Handbell</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'><span class=MsoIntenseEmphasis>1 &amp; 3 (Right hand)<o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'><span class=MsoIntenseEmphasis>2 &amp; 4 (Left hand)<o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'><span class=MsoIntenseEmphasis>1 &amp; 3 (Right hand)<o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'><span class=MsoIntenseEmphasis>2 &amp; 4 (Left hand)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:14.2pt;mso-height-rule:exactly'>
+  <td width=122 valign=top style='width:91.75pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
+  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>Left
+  button (1):<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Start/Stop (F9)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Bob (A)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Start/Stop (¬)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Bob (B)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:14.2pt;mso-height-rule:exactly'>
+  <td width=122 valign=top style='width:91.75pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
+  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>Right
+  button (2):<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Go (G)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Single (;)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Go (G)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Single (S)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:14.2pt;mso-height-rule:exactly'>
+  <td width=122 valign=top style='width:91.75pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
+  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>Upper
+  button (3):<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Start/Stop (F9)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Bob (A)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Start/Stop (¬)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Bob (B)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes;height:14.2pt;mso-height-rule:
+  exactly'>
+  <td width=122 valign=top style='width:91.75pt;border:solid black 1.0pt;
+  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
+  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>Lower
+  button (4):<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Go (G)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Single (;)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Go (G)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
+  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
+  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
+  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
+  text1;padding:0cm 5.4pt 0cm 5.4pt;height:14.2pt;mso-height-rule:exactly'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center'>Single (S)<span class=MsoIntenseEmphasis><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
 
-<p class=MsoNormal><span class=MsoIntenseEmphasis>Handbell 2 &amp; 4 (Left
-hand)</span><b><i><span style='color:#4F81BD;mso-themecolor:accent1'><br>
-</span></i></b>Left button (1):<span style='mso-spacerun:yes'>   </span>Bob (A)
-<br>
-Right button (2):<span style='mso-spacerun:yes'>  </span>Single (;)<br>
-Upper button (3):<span style='mso-spacerun:yes'>   </span>Bob (A) <br>
-Lower button (4):<span style='mso-spacerun:yes'>  </span>Single (;)</p>
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><o:p>&nbsp;</o:p></p>
 
-<p class=MsoNormal>To prevent your dummy handbells and Abel getting out of sync
-(e.g. you bell is at handstroke and Abel is displaying the bell at backstroke),
-you can use the up/down keyboard action in Abel. With this option, Abel and
-Handbell Manager cannot get out of sync as a keyup is used for a handstroke and
-a keydown for a backstroke. The <b style='mso-bidi-font-weight:normal'>Use bell
-keys up/down action</b> must be ticked both in Handbell Manager and in Abel
-(under <b style='mso-bidi-font-weight:normal'>Abel’s Options – Ringing Options</b>)
-for this to work. Conversely, both should be unchecked to use normal
-keystrokes.</p>
+<p class=MsoNormal>To prevent your dummy handbells and simulator getting out of
+sync (e.g. you bell is at handstroke and the simulator is displaying the bell at
+backstroke), you can use the up/down keyboard action in Abel. With this option,
+Abel and Handbell Manager cannot get out of sync as a keyup is used for a
+handstroke and a keydown for a backstroke. The <b style='mso-bidi-font-weight:
+normal'>Use bell keys up/down action</b> must be ticked both in Handbell
+Manager and in Abel (under <b style='mso-bidi-font-weight:normal'>Abel’s
+Options – Ringing Options</b>) for this to work. Conversely, both should be
+unchecked to use normal keystrokes.</p>
 
-<p class=MsoNormal>The Abel Process Name is the executable name for the version
-of Abel you are using e.g. Abel3. It is the name of the executable file without
-“.exe”. This is also the name of the shortcut to Abel you should place in Handbell
-Manager’s <em><span style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:
-minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+<p class=MsoNormal>The <b style='mso-bidi-font-weight:normal'>Process Name</b>
+is the executable name for the version of Abel or Beltower you are using e.g.
+Abel3 or Beltow95. It is the name of the executable file without “.exe”. This
+is also the name of the shortcut to Abel you should place in Handbell Manager’s
+<em><span style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
 mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:italic'>installation
 folder (“C:\Program Files\Handbell Manager” is the default location)</span></em>
 to allow it to be started from Handbell Manager’s menu. You may need to be
-logged on as an administrator to access Program Files.</p>
+logged on as an administrator to access Program Files folders.</p>
 
 <h2>Reassigning Controllers</h2>
 
@@ -1662,14 +2029,14 @@ handbell. To overcome this problem, choose <b style='mso-bidi-font-weight:normal
 bold;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_18"
  o:spid="_x0000_i1026" type="#_x0000_t75" style='width:204.75pt;height:114pt;
  visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="HMHelp_files/image008.png" o:title=""/>
+ <v:imagedata src="HMHelp_files/image011.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=273 height=152
-src="HMHelp_files/image020.jpg" v:shapes="Picture_x0020_18"><![endif]><!--[if gte vml 1]><v:shape
+src="HMHelp_files/image012.jpg" v:shapes="Picture_x0020_18"><![endif]><!--[if gte vml 1]><v:shape
  id="Picture_x0020_21" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:201.75pt;
  height:112.5pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="HMHelp_files/image010.png" o:title=""/>
+ <v:imagedata src="HMHelp_files/image013.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=269 height=150
-src="HMHelp_files/image021.jpg" v:shapes="Picture_x0020_21"><![endif]></span></h2>
+src="HMHelp_files/image014.jpg" v:shapes="Picture_x0020_21"><![endif]></span></h2>
 
 <p class=MsoNormal>In the example above, another joystick is connected and was
 automatically assigned to Handbell 1. By clicking on this controller to
@@ -1686,8 +2053,8 @@ with troubleshooting.</p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
-"Times New Roman";mso-bidi-theme-font:minor-bidi'>Cannot run Abel from Handbell
-Manager<o:p></o:p></span></em></p>
+"Times New Roman";mso-bidi-theme-font:minor-bidi'>Cannot run Abel or Beltower
+from Handbell Manager<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l2 level1 lfo6'><![if !supportLists]><em><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1696,10 +2063,10 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>Shortcut not present or its name doesn’t match the process name in Abel
-Settings. Create a new shortcut to the Abel executable and copy it into
-Handbell Manager’s installation folder. Rename it to the Abel Process Name
-(e.g. “Abel3” in place of “shortcut to Abel3.exe”).<o:p></o:p></span></em></p>
+italic'>Shortcut not present or its name doesn’t match the process name in
+Abel/Beltower Settings. Create a new shortcut to the Abel/Beltower executable
+and copy it into Handbell Manager’s installation folder. Rename it to the
+Abel/Beltower Process Name (e.g. “Abel3” in place of “shortcut to Abel3.exe”).<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l2 level1 lfo6'><![if !supportLists]><em><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1708,8 +2075,8 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>Shortcut not setup correctly to run Abel. Confirm that it works if you
-double-click it.<o:p></o:p></span></em></p>
+italic'>Shortcut not setup correctly to run Abel/Beltower. Confirm that it
+works if you double-click it.<o:p></o:p></span></em></p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
@@ -1741,8 +2108,8 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>Abel is not running. Check that the bells ring when Abel is used with
-the keyboard.<o:p></o:p></span></em></p>
+italic'>Abel/Beltower is not running. Check that the bells ring when the
+simulator is used with the keyboard.<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo8'><![if !supportLists]><em><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1751,7 +2118,7 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>More than one copy of Abel is running. Close all but one instance.<o:p></o:p></span></em></p>
+italic'>More than one copy of the simulator is running. Close all but one instance.<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo8'><![if !supportLists]><em><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1769,9 +2136,8 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>The Process Name in Handbell Manager <b style='mso-bidi-font-weight:
-normal'>Tools - Options - Abel Settings </b>is not the same as the instance of
-Abel that is running.<o:p></o:p></span></em></p>
+italic'>The wrong simulator is chosen in Handbell Manager. Reselect using <b
+style='mso-bidi-font-weight:normal'>Run – Choose Simulator</b>.<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo8'><![if !supportLists]><em><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1780,8 +2146,19 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>The keyboard mappings for the bells in Handbell Manager don’t match
-Abel’s keyboard mappings.<o:p></o:p></span></em></p>
+italic'>The Process Name in Handbell Manager <b style='mso-bidi-font-weight:
+normal'>Tools - Options - Abel Settings or Beltower Settings </b>is not the
+same as the instance of Abel/Beltower that is running.<o:p></o:p></span></em></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo8'><![if !supportLists]><em><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;font-style:normal;mso-bidi-font-style:italic'><span style='mso-list:
+Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
+italic'>The keyboard mappings for the bells in Handbell Manager don’t match the
+simulator’s keyboard mappings.<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo8'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1791,7 +2168,7 @@ mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
 italic'>The option </span></em><b style='mso-bidi-font-weight:normal'>Use bell
 keys up/down action</b> setting is not the same in both Handbell Manager and
-Abel. </p>
+the simulator. </p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo8'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1829,8 +2206,9 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>Wireless controllers are not switched on, is not communicating with the
-correct dongle, or the batteries are flat. Remove a battery to fully reset.<o:p></o:p></span></em></p>
+italic'>Wireless controllers are not switched on, are not communicating with
+the correct dongles, or the batteries are flat. Remove a battery to fully
+reset.<o:p></o:p></span></em></p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
@@ -1844,7 +2222,7 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
 italic'>The keyboard mappings for the buttons in Handbell Manager don’t match
-Abel’s keyboard mappings or Function Keys.<o:p></o:p></span></em></p>
+the simulator’s keyboard mappings or Function Keys.<o:p></o:p></span></em></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo10'><![if !supportLists]><em><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
@@ -1853,8 +2231,9 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>A wireless controller is not switched on, is not communicating with its
-dongle, or the batteries are flat. <o:p></o:p></span></em></p>
+italic'>Wireless controllers are not switched on, are not communicating with
+the correct dongles, or the batteries are flat. Remove a battery to fully
+reset. <o:p></o:p></span></em></p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
@@ -1915,8 +2294,8 @@ mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
 italic'>Incorrect calibration. If using the Calibrate button, hold the
 controller absolutely horizontal for the backstroke strike and absolutely
-vertical for the handstroke strike, then make fine adjustments manually to the
-strike values. If the bells still strike too early, use the backstroke and/or
+vertical for the handstroke strike, then make fine adjustments manually to the strike
+values. If the bells still strike too early, use the backstroke and/or
 handstroke strike delay.<o:p></o:p></span></em></p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
@@ -1977,18 +2356,19 @@ Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'>More than one copy of Abel is running. Close all but one instance.<o:p></o:p></span></em></p>
+italic'>More than one copy of Abel or Beltower is running. Close all but one
+instance.<o:p></o:p></span></em></p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
-"Times New Roman";mso-bidi-theme-font:minor-bidi'>Abel pictures are at the
-opposite stroke to the handbell<o:p></o:p></span></em></p>
+"Times New Roman";mso-bidi-theme-font:minor-bidi'>Simulator pictures are at the
+opposite stroke to the controller<o:p></o:p></span></em></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l7 level1 lfo14'><![if !supportLists]><em><span
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l7 level1 lfo14'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;font-style:normal;mso-bidi-font-style:italic'><span style='mso-list:
-Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
 "Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
 italic'>Hold the handbells at handstroke and press F4 to reset Abel bells. This
@@ -1997,10 +2377,18 @@ normal'>Use bell keys up/down action </b>is checked both in Abel and Handbell
 Manager. <span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Warning:
 Although you can get the handstrokes and backstrokes back in phase by turning
 the dummy handbells over, this disrupts the calibration and the striking points
-will be incorrect.</span><em><span style='font-family:"Calibri","sans-serif";
-mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
-"Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
-italic'><o:p></o:p></span></em></p>
+will be incorrect.</span><span style='mso-bidi-font-style:italic'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l7 level1 lfo14'><![if !supportLists]><em><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;font-style:normal;mso-bidi-font-style:italic'><span style='mso-list:
+Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></em><![endif]><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin'>For Abel or Beltower, type “J” or “F” on the keyboard
+to switch the stroke of the bell independently of the controller.</span><em><span
+style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:italic'><o:p></o:p></span></em></p>
 
 <p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
@@ -2396,6 +2784,45 @@ style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
 mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
 mso-bidi-theme-font:minor-bidi'><o:p></o:p></span></em></p>
 
+<p class=MsoNormal><em><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi'>Version 1.2<o:p></o:p></span></em></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l6 level1 lfo20'><![if !supportLists]><em><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;font-style:normal;mso-bidi-font-style:italic'><span style='mso-list:
+Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
+italic'>Support for Beltower added, and the option to choose which simulator to
+use. Each simulator has its own set of configurable options. <o:p></o:p></span></em></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l6 level1 lfo20'><![if !supportLists]><em><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;font-style:normal;mso-bidi-font-style:italic'><span style='mso-list:
+Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
+italic'>Process Name is now case insensitive.</span></em><em><span
+style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi'><o:p></o:p></span></em></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l6 level1 lfo20'><![if !supportLists]><em><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;font-style:normal;mso-bidi-font-style:italic'><span style='mso-list:
+Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></em><![endif]><em><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;font-style:normal;mso-bidi-font-style:
+italic'>A new settings file is created when its format is changed by a new
+version of Handbell Manager. Previously set options are carried forward. </span></em><em><span
+style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi'><o:p></o:p></span></em></p>
+
 <h2>Acknowledgements</h2>
 
 <p class=MsoNormal style='margin-left:18.0pt'><em><span style='font-family:
@@ -2403,9 +2830,10 @@ mso-bidi-theme-font:minor-bidi'><o:p></o:p></span></em></p>
 minor-latin;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
 font-style:normal;mso-bidi-font-style:italic'>I would like to thank Chris
 Hughes, Simon Humphrey and Richard Johnston for their assistance in design,
-testing and documentation for Handbell Manager. I would also like to thank Jay
-O’Leary of ActionXL for his interest and support in the Handbell Manager
-project.</span></em><span style='mso-bidi-font-style:italic'><o:p></o:p></span></p>
+testing and documentation for Handbell Manager and Derek Ballard for his
+assistance with Beltower. I would also like to thank Jay O’Leary of ActionXL
+for his interest in and support for the Handbell Manager project.</span></em><span
+style='mso-bidi-font-style:italic'><o:p></o:p></span></p>
 
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 

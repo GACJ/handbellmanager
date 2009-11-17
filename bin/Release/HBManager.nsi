@@ -4,7 +4,7 @@
 !include "DotNetMacro.nsh"
 
 ; The name of the installer
-Name "Handbell Manager v1.1"
+Name "Handbell Manager v1.2"
 
 ; The name of the installer icon
 
@@ -72,6 +72,8 @@ Section "Handbell Manager"
   File "C2DPushGraph.dll"
   File "HMHelp.htm"
   File "Abel3.lnk"
+  File "Beltow95.lnk"
+  File "RingingMaster.lnk"
   File "Copying.txt"
   File /r "HMHelp_files"
   
@@ -121,6 +123,8 @@ Section "Uninstall"
   Delete $INSTDIR\Microsoft.DirectX.dll
   Delete $INSTDIR\C2DPushGraph.dll
   Delete $INSTDIR\Abel3.lnk
+  Delete $INSTDIR\Beltow95.lnk
+  Delete $INSTDIR\RingingMaster.lnk
   Delete $INSTDIR\HMHelp.htm
   Delete $INSTDIR\HMHelp_files\*.*
   Delete $INSTDIR\Copying.txt

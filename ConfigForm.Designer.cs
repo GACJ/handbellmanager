@@ -59,6 +59,10 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.abelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.changeSimulatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.abelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.beltowerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.ringingMasterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.monitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -369,18 +373,58 @@
 			// abelToolStripMenuItem
 			// 
 			this.abelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runToolStripMenuItem});
+            this.runToolStripMenuItem,
+            this.changeSimulatorToolStripMenuItem});
 			this.abelToolStripMenuItem.Name = "abelToolStripMenuItem";
-			this.abelToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-			this.abelToolStripMenuItem.Text = "Abel";
+			this.abelToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+			this.abelToolStripMenuItem.Text = "Run";
 			// 
 			// runToolStripMenuItem
 			// 
+			this.runToolStripMenuItem.Checked = true;
+			this.runToolStripMenuItem.CheckOnClick = true;
+			this.runToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.runToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("runToolStripMenuItem.Image")));
 			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-			this.runToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-			this.runToolStripMenuItem.Text = "Run";
+			this.runToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+			this.runToolStripMenuItem.Text = "Abel";
 			this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
+			// 
+			// changeSimulatorToolStripMenuItem
+			// 
+			this.changeSimulatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abelToolStripMenuItem1,
+            this.beltowerToolStripMenuItem1,
+            this.ringingMasterToolStripMenuItem1});
+			this.changeSimulatorToolStripMenuItem.Name = "changeSimulatorToolStripMenuItem";
+			this.changeSimulatorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+			this.changeSimulatorToolStripMenuItem.Text = "Choose Simulator";
+			// 
+			// abelToolStripMenuItem1
+			// 
+			this.abelToolStripMenuItem1.Checked = true;
+			this.abelToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.abelToolStripMenuItem1.Name = "abelToolStripMenuItem1";
+			this.abelToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.abelToolStripMenuItem1.Text = "Abel";
+			this.abelToolStripMenuItem1.Click += new System.EventHandler(this.abelToolStripMenuItem1_Click);
+			// 
+			// beltowerToolStripMenuItem1
+			// 
+			this.beltowerToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("beltowerToolStripMenuItem1.Image")));
+			this.beltowerToolStripMenuItem1.Name = "beltowerToolStripMenuItem1";
+			this.beltowerToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.beltowerToolStripMenuItem1.Text = "Beltower";
+			this.beltowerToolStripMenuItem1.Click += new System.EventHandler(this.beltowerToolStripMenuItem1_Click);
+			// 
+			// ringingMasterToolStripMenuItem1
+			// 
+			this.ringingMasterToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ringingMasterToolStripMenuItem1.Image")));
+			this.ringingMasterToolStripMenuItem1.Name = "ringingMasterToolStripMenuItem1";
+			this.ringingMasterToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.ringingMasterToolStripMenuItem1.Text = "RingingMaster";
+			this.ringingMasterToolStripMenuItem1.Visible = false;
+			this.ringingMasterToolStripMenuItem1.Click += new System.EventHandler(this.ringingMasterToolStripMenuItem1_Click);
 			// 
 			// toolsToolStripMenuItem
 			// 
@@ -666,6 +710,10 @@
 		private System.Windows.Forms.TextBox txtCountB40;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ToolStripMenuItem controllersToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem changeSimulatorToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem abelToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem beltowerToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem ringingMasterToolStripMenuItem1;
 	}
 }
 

@@ -4,7 +4,7 @@
   <description asmv2:iconFile="handbell.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="HandbellManager" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="HandbellManager" version="1.2.0.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="HandbellManager.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HandbellManager.exe" size="116224">
-      <assemblyIdentity name="HandbellManager" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HandbellManager.exe" size="125440">
+      <assemblyIdentity name="HandbellManager" version="1.2.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>jxho8/EBnKyT5RO0gY+V82mQXPo=</dsig:DigestValue>
+        <dsig:DigestValue>zthh9DhHuJCEIwF5Pt9D9t0+LSw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
