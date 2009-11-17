@@ -31,7 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
 			this.txtProcessName = new System.Windows.Forms.TextBox();
-			this.label32 = new System.Windows.Forms.Label();
+			this.lblSimulatorProcessName = new System.Windows.Forms.Label();
 			this.txtKeyB23 = new System.Windows.Forms.TextBox();
 			this.txtKeyB22 = new System.Windows.Forms.TextBox();
 			this.txtKeyB21 = new System.Windows.Forms.TextBox();
@@ -94,7 +94,7 @@
 			this.txtHSP1 = new HandbellManager.NumericalTextBox();
 			this.txtHSP3 = new HandbellManager.NumericalTextBox();
 			this.txtHSP2 = new HandbellManager.NumericalTextBox();
-			this.tabAbelKeyStrokes = new System.Windows.Forms.TabPage();
+			this.tabSimulatorKeyStrokes = new System.Windows.Forms.TabPage();
 			this.txtKeyB43 = new System.Windows.Forms.TextBox();
 			this.txtKeyB42 = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.spnDebounceDelay)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.spnDelayBS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.spnDelayHS)).BeginInit();
-			this.tabAbelKeyStrokes.SuspendLayout();
+			this.tabSimulatorKeyStrokes.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtProcessName
@@ -125,14 +125,14 @@
 			this.txtProcessName.Text = "Abel3";
 			this.txtProcessName.TextChanged += new System.EventHandler(this.txtProcessName_TextChanged);
 			// 
-			// label32
+			// lblSimulatorProcessName
 			// 
-			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(6, 206);
-			this.label32.Name = "label32";
-			this.label32.Size = new System.Drawing.Size(103, 13);
-			this.label32.TabIndex = 25;
-			this.label32.Text = "Abel Process Name:";
+			this.lblSimulatorProcessName.AutoSize = true;
+			this.lblSimulatorProcessName.Location = new System.Drawing.Point(6, 206);
+			this.lblSimulatorProcessName.Name = "lblSimulatorProcessName";
+			this.lblSimulatorProcessName.Size = new System.Drawing.Size(103, 13);
+			this.lblSimulatorProcessName.TabIndex = 25;
+			this.lblSimulatorProcessName.Text = "Abel Process Name:";
 			// 
 			// txtKeyB23
 			// 
@@ -472,7 +472,7 @@
 			// tabControl1
 			// 
 			this.tabControl1.Controls.Add(this.tabHandbellCalibration);
-			this.tabControl1.Controls.Add(this.tabAbelKeyStrokes);
+			this.tabControl1.Controls.Add(this.tabSimulatorKeyStrokes);
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -832,53 +832,53 @@
 			this.txtHSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtHSP2.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
 			// 
-			// tabAbelKeyStrokes
+			// tabSimulatorKeyStrokes
 			// 
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB43);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB42);
-			this.tabAbelKeyStrokes.Controls.Add(this.label7);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB41);
-			this.tabAbelKeyStrokes.Controls.Add(this.label8);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB40);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB33);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB32);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB31);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB30);
-			this.tabAbelKeyStrokes.Controls.Add(this.chkUseKeyUpDown);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtProcessName);
-			this.tabAbelKeyStrokes.Controls.Add(this.label32);
-			this.tabAbelKeyStrokes.Controls.Add(this.label2);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB23);
-			this.tabAbelKeyStrokes.Controls.Add(this.label1);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB22);
-			this.tabAbelKeyStrokes.Controls.Add(this.label3);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB21);
-			this.tabAbelKeyStrokes.Controls.Add(this.label4);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB20);
-			this.tabAbelKeyStrokes.Controls.Add(this.label21);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB13);
-			this.tabAbelKeyStrokes.Controls.Add(this.label20);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB12);
-			this.tabAbelKeyStrokes.Controls.Add(this.label19);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB11);
-			this.tabAbelKeyStrokes.Controls.Add(this.label18);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyB10);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyHS0);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyBS3);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyHS1);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyBS2);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyHS2);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyBS1);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyHS3);
-			this.tabAbelKeyStrokes.Controls.Add(this.txtKeyBS0);
-			this.tabAbelKeyStrokes.Location = new System.Drawing.Point(4, 22);
-			this.tabAbelKeyStrokes.Name = "tabAbelKeyStrokes";
-			this.tabAbelKeyStrokes.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAbelKeyStrokes.Size = new System.Drawing.Size(431, 234);
-			this.tabAbelKeyStrokes.TabIndex = 1;
-			this.tabAbelKeyStrokes.Text = "Abel Settings";
-			this.tabAbelKeyStrokes.UseVisualStyleBackColor = true;
-			this.tabAbelKeyStrokes.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB43);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB42);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label7);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB41);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label8);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB40);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB33);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB32);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB31);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB30);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.chkUseKeyUpDown);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtProcessName);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.lblSimulatorProcessName);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label2);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB23);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label1);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB22);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label3);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB21);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label4);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB20);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label21);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB13);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label20);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB12);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label19);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB11);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.label18);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB10);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyHS0);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyBS3);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyHS1);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyBS2);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyHS2);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyBS1);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyHS3);
+			this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyBS0);
+			this.tabSimulatorKeyStrokes.Location = new System.Drawing.Point(4, 22);
+			this.tabSimulatorKeyStrokes.Name = "tabSimulatorKeyStrokes";
+			this.tabSimulatorKeyStrokes.Padding = new System.Windows.Forms.Padding(3);
+			this.tabSimulatorKeyStrokes.Size = new System.Drawing.Size(431, 234);
+			this.tabSimulatorKeyStrokes.TabIndex = 1;
+			this.tabSimulatorKeyStrokes.Text = "Abel Settings";
+			this.tabSimulatorKeyStrokes.UseVisualStyleBackColor = true;
+			this.tabSimulatorKeyStrokes.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
 			// 
 			// txtKeyB43
 			// 
@@ -991,9 +991,9 @@
 			this.chkUseKeyUpDown.AutoSize = true;
 			this.chkUseKeyUpDown.Location = new System.Drawing.Point(9, 179);
 			this.chkUseKeyUpDown.Name = "chkUseKeyUpDown";
-			this.chkUseKeyUpDown.Size = new System.Drawing.Size(299, 17);
+			this.chkUseKeyUpDown.Size = new System.Drawing.Size(313, 17);
 			this.chkUseKeyUpDown.TabIndex = 24;
-			this.chkUseKeyUpDown.Text = "Use bell keys up/down action (must match setting in Abel)";
+			this.chkUseKeyUpDown.Text = "Use bell keys up/down action (must match simulator settings)";
 			this.chkUseKeyUpDown.UseVisualStyleBackColor = true;
 			this.chkUseKeyUpDown.CheckedChanged += new System.EventHandler(this.chkUseKeyUpDown_CheckedChanged);
 			// 
@@ -1044,8 +1044,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.spnDebounceDelay)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.spnDelayBS)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.spnDelayHS)).EndInit();
-			this.tabAbelKeyStrokes.ResumeLayout(false);
-			this.tabAbelKeyStrokes.PerformLayout();
+			this.tabSimulatorKeyStrokes.ResumeLayout(false);
+			this.tabSimulatorKeyStrokes.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -1053,7 +1053,7 @@
 		#endregion
 
 		private System.Windows.Forms.TextBox txtProcessName;
-		private System.Windows.Forms.Label label32;
+		private System.Windows.Forms.Label lblSimulatorProcessName;
 		private System.Windows.Forms.TextBox txtKeyB23;
 		private System.Windows.Forms.TextBox txtKeyB22;
 		private System.Windows.Forms.TextBox txtKeyB21;
@@ -1097,7 +1097,7 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabHandbellCalibration;
-		private System.Windows.Forms.TabPage tabAbelKeyStrokes;
+		private System.Windows.Forms.TabPage tabSimulatorKeyStrokes;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.TextBox txt3;
 		private System.Windows.Forms.TextBox txt2;

@@ -30,6 +30,7 @@ namespace HandbellManager
 		private MotionControllerManager.MotionControllerManager _mcm;
 		private Handbell[] _hb;
 		bool _initialisation;
+		Simulator _sim;
 
 		public OptionsForm(Handbell[] handbells, MotionControllerManager.MotionControllerManager mcm)
 		{
@@ -41,6 +42,7 @@ namespace HandbellManager
 		private void InitializeFields()
 		{
 			_initialisation = true;
+			_sim = Settings.simulator[Settings.currentSimulator];
 			//Handbell Calibration
 			for (int i = 0; i < 4; i++)
 			{
@@ -59,18 +61,20 @@ namespace HandbellManager
 			spnDelayHS.Value = Settings.handstrokeStrikeDelay;
 			spnDelayBS.Value = Settings.backstrokeStrikeDelay;
 
-			//Abel keystrokes
-			txtProcessName.Text = Settings.abelProcessName;
+			//Simulator keystrokes
+			tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
+			lblSimulatorProcessName.Text = _sim.Name + " Process Name:";
+			txtProcessName.Text = _sim.ProcessName;
 			for (int i = 0; i < 4; i++)
 			{
-				tabAbelKeyStrokes.Controls["txtKeyBS" + i].Text = Settings.keyBS[i];
-				tabAbelKeyStrokes.Controls["txtKeyHS" + i].Text = Settings.keyHS[i];
-				tabAbelKeyStrokes.Controls["txtKeyB1" + i].Text = Settings.keyB1[i];
-				tabAbelKeyStrokes.Controls["txtKeyB2" + i].Text = Settings.keyB2[i];
-				tabAbelKeyStrokes.Controls["txtKeyB3" + i].Text = Settings.keyB3[i];
-				tabAbelKeyStrokes.Controls["txtKeyB4" + i].Text = Settings.keyB4[i];
+				tabSimulatorKeyStrokes.Controls["txtKeyBS" + i].Text = _sim.KeyBS[i];
+				tabSimulatorKeyStrokes.Controls["txtKeyHS" + i].Text = _sim.KeyHS[i];
+				tabSimulatorKeyStrokes.Controls["txtKeyB1" + i].Text = _sim.KeyB1[i];
+				tabSimulatorKeyStrokes.Controls["txtKeyB2" + i].Text = _sim.KeyB2[i];
+				tabSimulatorKeyStrokes.Controls["txtKeyB3" + i].Text = _sim.KeyB3[i];
+				tabSimulatorKeyStrokes.Controls["txtKeyB4" + i].Text = _sim.KeyB4[i];
 			}
-			chkUseKeyUpDown.Checked = Settings.useKeyUpDown;
+			chkUseKeyUpDown.Checked = _sim.UseKeyUpDown;
 			_initialisation = false;
 		}
 
@@ -99,7 +103,7 @@ namespace HandbellManager
 				warningTip.RemoveAll();
 			}
 
-			Settings.abelProcessName = txtProcessName.Text;
+			_sim.ProcessName = txtProcessName.Text;
 		}
 
 		private void btnOK_Click(object sender, EventArgs e)
@@ -136,7 +140,7 @@ namespace HandbellManager
 
 		private void btnCalibrate_Click(object sender, EventArgs e)
 		{
-			ConfigForm.sendToAbelEnabled = false;
+			ConfigForm.sendKeystrokesEnabled = false;
 			Button btn = (Button)sender;
 			int i = Convert.ToInt32(btn.Name.Substring(btn.Name.Length - 1, 1));
 
@@ -149,7 +153,7 @@ namespace HandbellManager
 				tabHandbellCalibration.Controls["txtBSP" + i].Text = Settings.BSP[i].ToString();
 				tabHandbellCalibration.Controls["txtHSP" + i].Text = Settings.HSP[i].ToString();
 			}
-			ConfigForm.sendToAbelEnabled = true;
+			ConfigForm.sendKeystrokesEnabled = true;
 		}
 
 		private void spnDebounceDelay_ValueChanged(object sender, EventArgs e)
@@ -214,12 +218,12 @@ namespace HandbellManager
 				return;
 			for (int i = 0; i < 4; i++)
 			{
-				Settings.keyBS[i] = tabAbelKeyStrokes.Controls["txtKeyBS" + i].Text;
-				Settings.keyHS[i] = tabAbelKeyStrokes.Controls["txtKeyHS" + i].Text;
-				Settings.keyB1[i] = tabAbelKeyStrokes.Controls["txtKeyB1" + i].Text;
-				Settings.keyB2[i] = tabAbelKeyStrokes.Controls["txtKeyB2" + i].Text;
-				Settings.keyB3[i] = tabAbelKeyStrokes.Controls["txtKeyB3" + i].Text;
-				Settings.keyB4[i] = tabAbelKeyStrokes.Controls["txtKeyB4" + i].Text;
+				_sim.KeyBS[i] = tabSimulatorKeyStrokes.Controls["txtKeyBS" + i].Text;
+				_sim.KeyHS[i] = tabSimulatorKeyStrokes.Controls["txtKeyHS" + i].Text;
+				_sim.KeyB1[i] = tabSimulatorKeyStrokes.Controls["txtKeyB1" + i].Text;
+				_sim.KeyB2[i] = tabSimulatorKeyStrokes.Controls["txtKeyB2" + i].Text;
+				_sim.KeyB3[i] = tabSimulatorKeyStrokes.Controls["txtKeyB3" + i].Text;
+				_sim.KeyB4[i] = tabSimulatorKeyStrokes.Controls["txtKeyB4" + i].Text;
 			}
 		}
 
@@ -244,14 +248,14 @@ namespace HandbellManager
 		{
 			if (_initialisation)
 				return;
-			Settings.useKeyUpDown = chkUseKeyUpDown.Checked;
+			_sim.UseKeyUpDown = chkUseKeyUpDown.Checked;
 		}
 
 		private void btnDefault_Click(object sender, EventArgs e)
 		{
 			//Confirm reset
-			System.Windows.Forms.DialogResult response = 
-				MessageBox.Show("Revert all Handbell Calibration and Abel Settings to their default values?", "Default Settings Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			System.Windows.Forms.DialogResult response =
+				MessageBox.Show(String.Format("Revert all Handbell Calibration and {0} Settings to their default values?", _sim.Name), "Default Settings Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (response == DialogResult.Yes)
 			{
 				//Set back to defaults
