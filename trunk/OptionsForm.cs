@@ -75,7 +75,13 @@ namespace HandbellManager
 				tabSimulatorKeyStrokes.Controls["txtKeyB4" + i].Text = _sim.KeyB4[i];
 			}
 			chkUseKeyUpDown.Checked = _sim.UseKeyUpDown;
-			_initialisation = false;
+            //Bring previously selected tab to the front
+            if (ConfigForm.optionsTabKeystrokesSelected)
+                tabControl1.SelectedIndex = 1;
+            else
+                tabControl1.SelectedIndex = 0;
+
+            _initialisation = false;
 		}
 
 		private NumericalTextBox GetHandbellTextbox(string name, int index)
@@ -274,6 +280,16 @@ namespace HandbellManager
 		{
 			Program.ConfigForm.OptionsClosed();
 		}
+
+        private void tabSimulatorKeyStrokes_Enter(object sender, EventArgs e)
+        {
+            ConfigForm.optionsTabKeystrokesSelected = true;
+        }
+
+        private void tabHandbellCalibration_Enter(object sender, EventArgs e)
+        {
+            ConfigForm.optionsTabKeystrokesSelected = false;
+        }
 
 	}
 }

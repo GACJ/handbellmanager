@@ -74,6 +74,7 @@ namespace HandbellManager
 		bool _functionkey;
 		public static int [] ControllerSequence = new int[20];
 		public static bool sendKeystrokesEnabled;
+        public static bool optionsTabKeystrokesSelected;
 		bool _suppressNoControllerMessage;
 		Simulator _sim;
 		MotionControllerManager.MotionControllerManager _mcm;
@@ -506,7 +507,9 @@ namespace HandbellManager
 			_optionsForm.Dispose();
 			_optionsForm = null;
 
-			//Enabling Config Form functions
+            //Reset simulator object as Cancel will have created a new instance 
+            _sim = Settings.simulator[Settings.currentSimulator];
+            //Enabling Config Form functions
 			btnFindControllers.Enabled = true;
 			optionsToolStripMenuItem.Enabled = true;
 			changeSimulatorToolStripMenuItem.Enabled = true;
