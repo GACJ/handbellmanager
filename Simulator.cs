@@ -36,7 +36,7 @@ namespace HandbellManager
 		string _simChildWindowName = "";
 		string _simGrandchildWindowClassName = "";
 		string _simGrandchildWindowName = "";
-
+      
 		public bool UseKeyUpDown
 		{
 			get

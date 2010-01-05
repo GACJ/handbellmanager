@@ -34,7 +34,7 @@ namespace HandbellManager
 
 			Text = String.Format("About {0}", Application.ProductName);
 			lblName.Text = String.Format("{0} Version {1}", Application.ProductName, Application.ProductVersion);
-			lblCopyright.Text = "Copyright © Graham A C John 2009";
+			lblCopyright.Text = "Copyright © Graham A C John 2009-2010";
 		}
 
 		private void btnOK_Click(object sender, EventArgs e)
