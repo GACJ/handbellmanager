@@ -15,18 +15,12 @@
 // along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using MotionControllerManager;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.IO;
-using CustomUIControls.Graphing;
 
 namespace HandbellManager
 {
