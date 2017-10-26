@@ -1,5 +1,5 @@
 ﻿// This file is part of Handbell Manager.
-// Copyright Graham John 2009. graham@changeringing.co.uk
+// Copyright Graham John 2009-2017. graham@changeringing.co.uk
 //
 // Handbell Manager is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+// along with Handbell Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.ComponentModel;

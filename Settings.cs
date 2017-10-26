@@ -1,5 +1,5 @@
 ﻿// This file is part of Handbell Manager.
-// Copyright Graham John 2009. graham@changeringing.co.uk
+// Copyright Graham John 2009-2017. graham@changeringing.co.uk
 //
 // Handbell Manager is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+// along with Handbell Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Collections.Generic;
@@ -44,9 +44,9 @@ namespace HandbellManager
 				case 0:
 					simulator[0].Name = "Abel";
 					simulator[0].ProcessName = "Abel3";
-					simulator[0].ChildWindowClassName = "AfxMDIFrame80s";
+					simulator[0].ChildWindowClassName = "AfxMDIFrame140s";
 					simulator[0].ChildWindowName = "";
-					simulator[0].GrandchildWindowClassName = "AfxFrameOrView80s";
+					simulator[0].GrandchildWindowClassName = "AfxFrameOrView140s";
 					simulator[0].GrandchildWindowName = "";
 					simulator[0].UseKeyUpDown = true;
 					simulator[0].KeyBS = new string[] { "J", "F", "R", "U" };

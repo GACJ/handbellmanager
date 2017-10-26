@@ -1,5 +1,5 @@
 ﻿// This file is part of Handbell Manager.
-// Copyright Graham John 2009. graham@changeringing.co.uk
+// Copyright Graham John 2009-2017. graham@changeringing.co.uk
 //
 // Handbell Manager is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+// along with Handbell Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Windows.Forms;
@@ -28,7 +28,7 @@ namespace HandbellManager
 
 			Text = String.Format("About {0}", Application.ProductName);
 			lblName.Text = String.Format("{0} Version {1}", Application.ProductName, Application.ProductVersion);
-			lblCopyright.Text = "Copyright © Graham A C John 2009-2010";
+			lblCopyright.Text = "Copyright © Graham A C John 2009-2017";
 		}
 
 		private void btnOK_Click(object sender, EventArgs e)

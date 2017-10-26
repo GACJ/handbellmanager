@@ -108,6 +108,10 @@
             this.chkUseKeyUpDown = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
+            this.txtChildWindowClassName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtGrandchildWindowClassName = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabHandbellCalibration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnDebounceDelay)).BeginInit();
@@ -130,9 +134,9 @@
             this.lblSimulatorProcessName.AutoSize = true;
             this.lblSimulatorProcessName.Location = new System.Drawing.Point(6, 206);
             this.lblSimulatorProcessName.Name = "lblSimulatorProcessName";
-            this.lblSimulatorProcessName.Size = new System.Drawing.Size(103, 13);
+            this.lblSimulatorProcessName.Size = new System.Drawing.Size(79, 13);
             this.lblSimulatorProcessName.TabIndex = 25;
-            this.lblSimulatorProcessName.Text = "Abel Process Name:";
+            this.lblSimulatorProcessName.Text = "Process Name:";
             // 
             // txtKeyB23
             // 
@@ -268,7 +272,7 @@
             // 
             // txtKeyHS3
             // 
-            this.txtKeyHS3.Location = new System.Drawing.Point(160, 52);
+            this.txtKeyHS3.Location = new System.Drawing.Point(159, 52);
             this.txtKeyHS3.MaxLength = 1;
             this.txtKeyHS3.Name = "txtKeyHS3";
             this.txtKeyHS3.Size = new System.Drawing.Size(60, 20);
@@ -279,7 +283,7 @@
             // 
             // txtKeyHS2
             // 
-            this.txtKeyHS2.Location = new System.Drawing.Point(229, 52);
+            this.txtKeyHS2.Location = new System.Drawing.Point(228, 52);
             this.txtKeyHS2.MaxLength = 1;
             this.txtKeyHS2.Name = "txtKeyHS2";
             this.txtKeyHS2.Size = new System.Drawing.Size(60, 20);
@@ -290,7 +294,7 @@
             // 
             // txtKeyHS1
             // 
-            this.txtKeyHS1.Location = new System.Drawing.Point(298, 52);
+            this.txtKeyHS1.Location = new System.Drawing.Point(297, 52);
             this.txtKeyHS1.MaxLength = 1;
             this.txtKeyHS1.Name = "txtKeyHS1";
             this.txtKeyHS1.Size = new System.Drawing.Size(60, 20);
@@ -301,7 +305,7 @@
             // 
             // txtKeyHS0
             // 
-            this.txtKeyHS0.Location = new System.Drawing.Point(366, 52);
+            this.txtKeyHS0.Location = new System.Drawing.Point(365, 52);
             this.txtKeyHS0.MaxLength = 1;
             this.txtKeyHS0.Name = "txtKeyHS0";
             this.txtKeyHS0.Size = new System.Drawing.Size(60, 20);
@@ -385,7 +389,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(376, 279);
+            this.btnOK.Location = new System.Drawing.Point(376, 321);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 3;
@@ -476,7 +480,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(439, 260);
+            this.tabControl1.Size = new System.Drawing.Size(439, 303);
             this.tabControl1.TabIndex = 0;
             // 
             // tabHandbellCalibration
@@ -518,7 +522,7 @@
             this.tabHandbellCalibration.Location = new System.Drawing.Point(4, 22);
             this.tabHandbellCalibration.Name = "tabHandbellCalibration";
             this.tabHandbellCalibration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHandbellCalibration.Size = new System.Drawing.Size(431, 234);
+            this.tabHandbellCalibration.Size = new System.Drawing.Size(431, 277);
             this.tabHandbellCalibration.TabIndex = 0;
             this.tabHandbellCalibration.Text = "Handbell Calibration";
             this.tabHandbellCalibration.UseVisualStyleBackColor = true;
@@ -835,6 +839,10 @@
             // 
             // tabSimulatorKeyStrokes
             // 
+            this.tabSimulatorKeyStrokes.Controls.Add(this.txtGrandchildWindowClassName);
+            this.tabSimulatorKeyStrokes.Controls.Add(this.label22);
+            this.tabSimulatorKeyStrokes.Controls.Add(this.txtChildWindowClassName);
+            this.tabSimulatorKeyStrokes.Controls.Add(this.label13);
             this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB43);
             this.tabSimulatorKeyStrokes.Controls.Add(this.txtKeyB42);
             this.tabSimulatorKeyStrokes.Controls.Add(this.label7);
@@ -875,7 +883,7 @@
             this.tabSimulatorKeyStrokes.Location = new System.Drawing.Point(4, 22);
             this.tabSimulatorKeyStrokes.Name = "tabSimulatorKeyStrokes";
             this.tabSimulatorKeyStrokes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSimulatorKeyStrokes.Size = new System.Drawing.Size(431, 234);
+            this.tabSimulatorKeyStrokes.Size = new System.Drawing.Size(431, 277);
             this.tabSimulatorKeyStrokes.TabIndex = 1;
             this.tabSimulatorKeyStrokes.Text = "Abel Settings";
             this.tabSimulatorKeyStrokes.UseVisualStyleBackColor = true;
@@ -991,7 +999,7 @@
             // chkUseKeyUpDown
             // 
             this.chkUseKeyUpDown.AutoSize = true;
-            this.chkUseKeyUpDown.Location = new System.Drawing.Point(9, 179);
+            this.chkUseKeyUpDown.Location = new System.Drawing.Point(9, 176);
             this.chkUseKeyUpDown.Name = "chkUseKeyUpDown";
             this.chkUseKeyUpDown.Size = new System.Drawing.Size(313, 17);
             this.chkUseKeyUpDown.TabIndex = 24;
@@ -1003,7 +1011,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(295, 279);
+            this.btnCancel.Location = new System.Drawing.Point(295, 321);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -1014,7 +1022,7 @@
             // btnDefault
             // 
             this.btnDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDefault.Location = new System.Drawing.Point(12, 279);
+            this.btnDefault.Location = new System.Drawing.Point(12, 321);
             this.btnDefault.Name = "btnDefault";
             this.btnDefault.Size = new System.Drawing.Size(119, 23);
             this.btnDefault.TabIndex = 1;
@@ -1022,13 +1030,47 @@
             this.btnDefault.UseVisualStyleBackColor = true;
             this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
+            // txtChildWindowClassName
+            // 
+            this.txtChildWindowClassName.Location = new System.Drawing.Point(160, 227);
+            this.txtChildWindowClassName.Name = "txtChildWindowClassName";
+            this.txtChildWindowClassName.Size = new System.Drawing.Size(263, 20);
+            this.txtChildWindowClassName.TabIndex = 38;
+            this.txtChildWindowClassName.Text = "AfxMDIFrame140s";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 230);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "ChildWindowClassName:";
+            // 
+            // txtGrandchildWindowClassName
+            // 
+            this.txtGrandchildWindowClassName.Location = new System.Drawing.Point(160, 251);
+            this.txtGrandchildWindowClassName.Name = "txtGrandchildWindowClassName";
+            this.txtGrandchildWindowClassName.Size = new System.Drawing.Size(263, 20);
+            this.txtGrandchildWindowClassName.TabIndex = 40;
+            this.txtGrandchildWindowClassName.Text = "AfxFrameOrView140s";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 254);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(153, 13);
+            this.label22.TabIndex = 39;
+            this.label22.Text = "GrandchildWindowClassName:";
+            // 
             // OptionsForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(464, 308);
+            this.ClientSize = new System.Drawing.Size(464, 350);
             this.ControlBox = false;
             this.Controls.Add(this.btnDefault);
             this.Controls.Add(this.btnCancel);
@@ -1132,5 +1174,9 @@
 		private System.Windows.Forms.ComboBox cmbAxis1;
 		private System.Windows.Forms.ComboBox cmbAxis2;
 		private System.Windows.Forms.ComboBox cmbAxis3;
-	}
+        private System.Windows.Forms.TextBox txtGrandchildWindowClassName;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtChildWindowClassName;
+        private System.Windows.Forms.Label label13;
+    }
 }

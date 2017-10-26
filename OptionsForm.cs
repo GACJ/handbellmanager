@@ -1,5 +1,5 @@
 ﻿// This file is part of Handbell Manager.
-// Copyright Graham John 2009. graham@changeringing.co.uk
+// Copyright Graham John 2009-2017. graham@changeringing.co.uk
 //
 // Handbell Manager is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+// along with Handbell Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Drawing;
@@ -60,7 +60,9 @@ namespace HandbellManager
 			tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
 			lblSimulatorProcessName.Text = _sim.Name + " Process Name:";
 			txtProcessName.Text = _sim.ProcessName;
-			for (int i = 0; i < 4; i++)
+            txtChildWindowClassName.Text = _sim.ChildWindowClassName;
+            txtGrandchildWindowClassName.Text = _sim.GrandchildWindowClassName;
+            for (int i = 0; i < 4; i++)
 			{
 				tabSimulatorKeyStrokes.Controls["txtKeyBS" + i].Text = _sim.KeyBS[i];
 				tabSimulatorKeyStrokes.Controls["txtKeyHS" + i].Text = _sim.KeyHS[i];
@@ -107,7 +109,23 @@ namespace HandbellManager
 			_sim.ProcessName = txtProcessName.Text;
 		}
 
-		private void btnOK_Click(object sender, EventArgs e)
+        private void txtChildWindowClassName_TextChanged(object sender, EventArgs e)
+        {
+            if (_initialisation)
+                return;
+
+            _sim.ChildWindowClassName = txtChildWindowClassName.Text;
+        }
+
+        private void txtGrandchildWindowClassName_TextChanged(object sender, EventArgs e)
+        {
+            if (_initialisation)
+                return;
+
+            _sim.GrandchildWindowClassName = txtGrandchildWindowClassName.Text;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
 		{
 			//Save settings and close
 			Settings.Save();
