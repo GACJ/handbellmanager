@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="A dummy handbell interface to Abel change ringing simulator" />
+    <meta name="keywords" content="changeringing ringing dummy handbell manager handbellmanager motion controller sensor ActionXL Abel simulator" />
+    <meta name="author" content="Graham John" />
+    <link rel="stylesheet" type="text/css" href="complib.css" media="screen,projection" />
+    <title>Handbell Manager - {{ title }}</title>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24299194-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <h1><a href="index.php">Handbell Manager</a></h1>
+        <p>The dummy handbell interface for Abel. <a href="print.html"></a></p>
+    </div>
+    <img id="frontphoto" src="img/banner.png" width="760" height="239" alt="" />
+    <div id="leftside">
+        <h2 class="hide">Menu:</h2>
+        <ul class="avmenu">
+            {% if title == 'Introduction' %}
+            <li><a class="current" href="index.html">Introduction</a></li>
+            {% else %}
+            <li><a href="index.php">Introduction</a></li>
+            {% endif %}
+
+            {% if title == 'Background' %}
+            <li><a class="current" href="background.html">Background</a></li>
+            {% else %}
+            <li><a href="background.php">Background</a></li>
+            {% endif %}
+
+            <li><a href="HMHelp.htm">Documentation</a></li>
+
+            {% if title == 'Wired or Wireless?' %}
+            <li><a class="current" href="comparison.html">Wired or Wireless?</a></li>
+            {% else %}
+            <li><a href="comparison.html">Wired or Wireless?</a></li>
+            {% endif %}
+
+            {% if title == 'Buy Controllers' %}
+            <li><a class="current" href="motioncontrollers.html">Buy Controllers</a></li>
+            {% else %}
+            <li><a href="motioncontrollers.html">Buy Controllers</a></li>
+            {% endif %}
+
+            {% if title == 'Improving the Experience' %}
+            <li><a class="current" href="improvements.html">Improvements</a></li>
+            {% else %}
+            <li><a href="improvements.html">Improvements</a></li>
+            {% endif %}
+        </ul>
+        <div class="announce">
+            <h2><u>Updates:</u></h2>
+            <p><strong>Nov 17, 2009:</strong><br />Beltower support added.</p>
+            <p><strong>Jan 1, 2010:</strong><br />Controllers now available at lower prices.</p>
+            <p><strong>Jan 4, 2010:</strong><br />Beltower Version 11 released.</p>
+            <p><strong>Jan 5, 2010:</strong><br />Handbell Manager Version 1.2.1 released.</p>
+            <p>
+                <a href="http://www.abelsim.co.uk">Abel Simulator &raquo;</a><br />
+                <a href="http://www.beltower.co.uk">Beltower Simulator &raquo;</a><br />
+                <a href="http://www.actionxl.com">ActionXL &raquo;</a><br />
+                <a href="http://sourceforge.net/projects/handbellmanager">Sourceforge &raquo;</a>
+            </p>
+            <p><font color=green><i>&ldquo;This is easily, by far, the best development to happen to handbell learning. Whilst a good tutor is invaluable in guiding one's learning experience, this gives every 'would be' learner and developer of handbell skills the ability to expand their skills at any time, anywhere, and in an accelerated timescale. It could easily lead to an explosion in change ringing on handbells, and I think will.&rdquo;</i><br /><br />Richard Grimmett</font></p>
+        </div>
+    </div>
+    <div id="contentwide">
