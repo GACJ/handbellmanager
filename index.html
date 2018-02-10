@@ -3,55 +3,74 @@ layout: default
 title: "Introduction"
 ---
 <h2>Introduction</h2>
-<p>Many handbell ringers have been looking for a better way to practice ringing two handbells with change
-ringing simulators than pressing keys on the keyboard. Here, at last, is a cheap and easy way to obtain and use dummy handbells.</p>
+<p>
+    Many handbell ringers have been looking for a better way to practice ringing two handbells with change
+    ringing simulators than pressing keys on the keyboard. Here, at last, is a cheap and easy way to obtain and use dummy handbells.
+</p>
 <p>Handbell Manager is free software (under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</a>) that enables USB motion controllers to be used as dummy handbells with Abel or Beltower.</p>
-<p>Click on play below to see a demonstration video of three leads of Bristol using Abel, Handbell Manager and ActionXL wired motion controllers.</p> 
-<div align="center">
-    <object width="425" height="344">
-        <param name="movie" value="http://www.youtube-nocookie.com/v/Ik8fSZILYCk&hl=en&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b&border=1" />
-        <param name="allowFullScreen" value="true" />
-        <param name="allowscriptaccess" value="always" />
-        <embed src="http://www.youtube-nocookie.com/v/Ik8fSZILYCk&hl=en&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b&border=1"
-               type="application/x-shockwave-flash"
-               allowscriptaccess="always"
-               allowfullscreen="true"
-               width="425"
-               height="344" />
-    </object>
-</div>
+<p>Click on play below to see a demonstration video of three leads of Bristol using Abel, Handbell Manager and ActionXL wired motion controllers.</p>
+<div id="ytplayer" align="center"></div>
 <br>
 <p>There is no computer keyboard or mouse interaction during the video - the controllers are swung to ring two bells, and buttons on the controllers are used to start the others ringing, initiate "Go Bristol" and call the three bobs.</p>
 
 <h3>What do you need?</h3>
 <ul>
-<li>Two ActionXL USB motion controllers, available from:-</li> 
-<ul>
-<li><a target="_top" href="motioncontrollers.php">www.changeringing.co.uk</a> at £10.99 each for the wired model and £22.99 each for the wireless model 
-(EU delivery only).</li>
-<li><a target="_top"
-href="http://actionxl.com/products.html">www.actionxl.com/products.html</a>
-at $19.95 each for the wired model and $39.95 each for the wireless model.</li>
-</ul>
-<li>Either: Abel version 3.7 (from <a target="_top"
-href="http://www.abelsim.co.uk">www.abelsim.co.uk</a>)<br>
-Or: Beltower 10.27 (from <a target="_top"
-href="http://www.beltower.co.uk">www.beltower.co.uk</a>)</li>
-<li>Handbell Manager (from <a href="http://sourceforge.net/projects/handbellmanager">Sourceforge</a>)</li>
-<li>A PC with two spare USB ports, Microsoft Windows and .Net Framework (from <a target="_top"
-href="http://www.microsoft.com">www.microsoft.com</a>)</li>
+    <li>
+        Two ActionXL USB motion controllers, available from:-
+        <ul>
+            <li>
+                <a target="_top" href="motioncontrollers.html">www.changeringing.co.uk</a> at £10.99 each</li>
+            <li>
+                <a target="_top"
+                   href="http://actionxl.com/products.html">www.actionxl.com/products.html</a>
+                at $19.95 each.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Either: Abel version 3.7 or later (from <a target="_top"
+        href="http://www.abelsim.co.uk">www.abelsim.co.uk</a>)<br>
+        Or: Beltower 10.27 or later (from <a target="_top"
+        href="http://www.beltower.co.uk">www.beltower.co.uk</a>)
+    </li>
+    <li>Handbell Manager (from <a href="https://github.com/GACJ/handbellmanager/releases">GitHub</a>)</li>
+    <li>
+        A PC with two spare USB ports, Microsoft Windows and .Net Framework (from <a target="_top"
+        href="http://www.microsoft.com">www.microsoft.com</a>)
+    </li>
 </ul>
 
 <h3>Handbell Manager Software</h3>
 <p>Once you have obtained your motion controllers then click on the link below to download and run Handbell Manager's installer.</p>
 
-<p><a href="http://sourceforge.net/projects/handbellmanager">Download Handbell Manager</a></p>
+<p><a href="https://github.com/GACJ/handbellmanager/releases">Download Handbell Manager</a></p>
 
 <h3>Further Information</h3>
 
-<p>For background on this project, visit the <a href="background.php">Background</a> page, or for features of the software see the <a href="HMHelp.htm">Documentation</a> page. 
-If you are a software developer, the source code for Handbell Manager is available from <a href="http://sourceforge.net/projects/handbellmanager">Sourceforge</a>. If you already have controllers and are
-interested in seeking more realism then check out the ideas on the <a href="improvements.php">Improvements</a> page. To buy motion controllers go to the <a href="motioncontrollers.php">Buy Controllers</a> page.</p>
+<p>
+    For background on this project, visit the <a href="background.html">Background</a> page, or for features of the software see the <a href="HMHelp.htm">Documentation</a> page.
+    If you are a software developer, the source code for Handbell Manager is available from <a href="https://github.com/GACJ/handbellmanager">Github</a>. If you already have controllers and are
+    interested in seeking more realism then check out the ideas on the <a href="improvements.html">Improvements</a> page. 
+    To buy motion controllers go to the <a href="motioncontrollers.html">Buy Controllers</a> page.
+</p>
 
 <h3>Enquiries</h3>
-<p>If you have any queries that are not answered in these pages, you can email the author via the email link in the footer. 
+<p>If you have any queries that are not answered in these pages, you can email the author via the email link in the footer.</p>
+    <script>
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Replace the 'ytplayer' element with an <iframe> and
+        // YouTube player after the API code downloads.
+        var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+                height: '344',
+                width: '425',
+                videoId: 'Ik8fSZILYCk'
+            });
+        }
+    </script>

@@ -31,8 +31,8 @@ title: "Background"
 <h3>Ringing Handbells Using the Keyboard is Hard!</h3>
 
 <p>
-    Some ringers seem to manage to ring a simulator such as Abel using the keyboard quite successfully, but it
-    is generally acknowledged that this is much harder than practising
+    Some ringers seem to manage to ring a simulator such as Abel using the keyboard quite successfully,
+    but it is generally acknowledged that this is much harder than practising
     with real ringers. There are a number of reasons for this, including:
 </p>
 <ol>
@@ -76,10 +76,7 @@ title: "Background"
     controllers to simulate rackets etc. Some of these Wii games
     use controllers in a shaking action to simulate ringing handbells
     to tunes, as shown by this Japanese video demonstrating tune ringing.
-
-    <div align="center">
-        <object width="500" height="405<object width="500" height="405"><param name="movie" value="http://www.youtube-nocookie.com/v/jAAr0fh6WDQ&hl=en&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/jAAr0fh6WDQ&hl=en&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="500" height="405"></embed></object>
-    </div>
+    <div id="ytplayer" align="center"></div>
     <br>
     It therefore seemed feasible that motion controllers could solve the dummy handbell problem for change ringers
     too. The questions then raised were &ldquo;Are there USB motion controllers
@@ -102,7 +99,9 @@ title: "Background"
 </div>
 
 <h3>Enhancements to Handbell Manager</h3>
-<p>After successfully releasing Handbell Manager for use with Abel, it has been enhanced to work equally well with Beltower. Beltower has a feature called Co-operative Timing that means that the simulator bells will hold up if you strike your bells late, just like other ringers will in practice. This can help the learning process as you are improving your familiarity with a method and your accuracy of striking.</p>
+<p>After successfully releasing Handbell Manager for use with Abel, it has been enhanced to work equally well with Beltower. 
+    Beltower has a feature called Co-operative Timing that means that the simulator bells will hold up if you strike your bells late,
+    just like other ringers will in practice. This can help the learning process as you are improving your familiarity with a method and your accuracy of striking.</p>
 <p>Handbell Manager may be enhanced to support other simulators in due course.</p>
 
 <h3>Enhancements to Abel</h3>
@@ -114,13 +113,31 @@ title: "Background"
     ringing handbells with Abel a big step closer to the real thing.
 </p>
 <p>
-    Version 3.7 of Abel includes these enhancements and is now available from <a target="_top"
-                                                                                 href="http://www.abelsim.co.uk">www.abelsim.co.uk</a>.
+    Version 3.7 and later of Abel includes these enhancements and is available from <a target="_top"
+    href="http://www.abelsim.co.uk">www.abelsim.co.uk</a>.
 </p>
 
 <h3>Enhancements to Beltower</h3>
 <p>Derek Ballard, author of Beltower, has made some enhancements to make the use of motion controllers with Beltower easier.</p>
 <p>
-    Version 10.27 of Beltower includes these enhancements and is now available from <a target="_top"
-                                                                                       href="http://www.beltower.co.uk">www.beltower.co.uk</a>.
+    Version 10.27 and later of Beltower includes these enhancements and is available from <a target="_top"
+    href="http://www.beltower.co.uk">www.beltower.co.uk</a>.
 </p>
+<script>
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Replace the 'ytplayer' element with an <iframe> and
+    // YouTube player after the API code downloads.
+    var player;
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer', {
+            height: '405',
+            width: '500',
+            videoId: 'jAAr0fh6WDQ'
+        });
+    }
+</script>
