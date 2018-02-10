@@ -73,6 +73,7 @@ p {margin:0 0 1.4em;}
 .postinfo {background-color:#f4f4f4; border-left:4px solid #ccc; color:#606060; font-size:0.9em; line-height:1.4em; margin:1px 0 20px; padding:8px 5px 8px 8px;}
 .clearing {clear:left; margin:0; padding:0; visibility:hidden;}
 .hide {display:none;}
+.video {margin: 0 auto; display: block; }
 
 .googleads {
 
