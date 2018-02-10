@@ -1,8 +1,9 @@
-{% assign title = 'Documentation' %}
-{% include header.html %}
-
+---
+layout: default
+title: "Documentation"
+---
 <h2>Handbell Manager Version 1.1 Documentation</h2>
-<p>Copyright © Graham A C John 2009</p>
+<p>Copyright ¬© Graham A C John 2009</p>
 <p>Handbell Manager enables up to four USB motion controllers to be used as dummy handbells with Abel simulator for Windows.</p>
 <h3>Licensing</h3>
 <p>
@@ -17,7 +18,7 @@
     <li>Microsoft Windows XP, Vista, 7 (other versions of Windows will also work if USB support and .Net Framework are available)</li>
     <li>Microsoft .Net Framework (from <a target="_top" href="www.microsoft.com">)www.microsoft.com</a>)</li>
     <li>
-        One to four USB motion controllers. Handbell Manager has been tested with the wired and wireless (ìFriiHandî) motion controllers manufactured
+        One to four USB motion controllers. Handbell Manager has been tested with the wired and wireless (‚ÄúFriiHand‚Äù) motion controllers manufactured
         by ActionXL (available from <a target="_top" href="http://actionxl.com/products.html">www.actionxl.com/products.html</a> at $19.95 each for the wired model and $39.95 each for the wireless model). Other joystick devices that generate a movement signal in an X, Y or Z axis are also supported.
     </li>
 </ul>
@@ -27,34 +28,34 @@
     <li>Plug in your motion controllers.</li>
     <li>Run Handbell Manager.</li>
     <li>Press the buttons on the controllers. If working correctly, the on-screen counts will update with an orange highlight to show the stroke, and which buttons are being pressed.</li>
-    <li>Run Abel. Check that the bells sound if you press the ìJî and ìFî buttons on the keyboard.</li>
-    <li>In Abelís menu select Options ñ Ringing Options and check the option Bell Keys: up/down action. If you have Abel version 3.6.2 or later, also uncheck the option Bell Keys: with Start.</li>
+    <li>Run Abel. Check that the bells sound if you press the ‚ÄúJ‚Äù and ‚ÄúF‚Äù buttons on the keyboard.</li>
+    <li>In Abel‚Äôs menu select Options ‚Äì Ringing Options and check the option Bell Keys: up/down action. If you have Abel version 3.6.2 or later, also uncheck the option Bell Keys: with Start.</li>
     <li>Hold the ActionXL wired controllers like the handles of handbells with the buttons facing upwards underneath your thumbs and the wires pointing towards your wrist, or turn on the ActionXL wireless controllers and hold them in the palm of your hand with red light horizontal and pointing forwards. Swing the controllers like handbells.</li>
-    <li>If your controllers arenít recognised or the bells donít ring, check out the troubleshooting section.</li>
+    <li>If your controllers aren‚Äôt recognised or the bells don‚Äôt ring, check out the troubleshooting section.</li>
     <li>If your bells ring, but not when you want them to, check out the calibration section.</li>
 </ol>
 <h3>Using Handbell Manager</h3>
-<p>If you plugged in your controllers prior to starting Handbell Manager, you should see a panel appear as shown above. If you plug in or remove your controllers after you started Handbell Manager, you will need to press the Check for Controllers button to find them. The handbells are shown right to left, to match the clockwise arrangement of the bells on Abelís display.
+<p>If you plugged in your controllers prior to starting Handbell Manager, you should see a panel appear as shown above. If you plug in or remove your controllers after you started Handbell Manager, you will need to press the Check for Controllers button to find them. The handbells are shown right to left, to match the clockwise arrangement of the bells on Abel‚Äôs display.
 
 <p>
     Handbell Manager counts each handstroke and backstroke and press of a controller button, and highlights in orange which stroke the bell is currently at. The button counts will also show in orange when they are pressed. These counts can help you determine whether the bells are configured properly. If you press the Reset Counts button to zero the counts, then swing a few handstrokes and backstrokes with each bell alternately, you should expect the counts to be equal to the number of strokes you rang.
-    If they appear to be functioning as expected, then it is worth trying them out with Abel before changing any options. To start Abel, you can click Abel ñ Run on Handbell Managerís menu, or start it in the usual way.
+    If they appear to be functioning as expected, then it is worth trying them out with Abel before changing any options. To start Abel, you can click Abel ‚Äì Run on Handbell Manager‚Äôs menu, or start it in the usual way.
     This dialog window needs to remain open while you are using the dummy handbells, but you can move it or minimize it to hide it.
     Handbell Manager has a number of tools to help you configure your dummy handbells for the best possible operation. These are described in the following sections.
     Monitor
-    To help fine calibration of the controllers, Handbell Manager provides a Monitor (Tools ñ Monitor) which shows a graph of the handbell movement in real time. Each handbell is shown in a different colour. Two horizontal lines are drawn in the same colour as the respective handbell to show the point in the swing where the clapper strike is triggered. When the handbellís position crosses these lines, Handbell Manager determines whether and when the bell will strike. For example, it will only strike a backstroke after a handstroke and visa versa. Also, it will not initiate another stroke within the debounce delay period. This prevents unwanted strokes being triggered while the controllers stabilise after a sudden stop, such as if you hit your hand on your knee. In addition, there is an option to introduce a strike delay for fine tuning of the handbell. When Handbell Manager actually issues the keystroke to Abel to strike the bell, a vertical line is drawn on the monitor showing the timing of the clapper strike.
+    To help fine calibration of the controllers, Handbell Manager provides a Monitor (Tools ‚Äì Monitor) which shows a graph of the handbell movement in real time. Each handbell is shown in a different colour. Two horizontal lines are drawn in the same colour as the respective handbell to show the point in the swing where the clapper strike is triggered. When the handbell‚Äôs position crosses these lines, Handbell Manager determines whether and when the bell will strike. For example, it will only strike a backstroke after a handstroke and visa versa. Also, it will not initiate another stroke within the debounce delay period. This prevents unwanted strokes being triggered while the controllers stabilise after a sudden stop, such as if you hit your hand on your knee. In addition, there is an option to introduce a strike delay for fine tuning of the handbell. When Handbell Manager actually issues the keystroke to Abel to strike the bell, a vertical line is drawn on the monitor showing the timing of the clapper strike.
 
     The monitor can be frozen and unfrozen by pressing the F3 Key, or by right clicking and selecting Freeze from the context menu. Options are also available on this menu to turn any of the monitor lines on or off.
     Calibration
     Most users should find the default calibration satisfactory for ActionXL controllers, since it has been chosen to reflect the dynamics of the clappers of real handbells, and normal handbell usage. Try Abel with the default settings for a while before attempting any changes to reflect your own ringing style.
-    If changes are required because the bells don't sound at the right times for your style, select Tools ñ Options from the menu to show the settings dialog. The first tab contains the handbell calibration options.
+    If changes are required because the bells don't sound at the right times for your style, select Tools ‚Äì Options from the menu to show the settings dialog. The first tab contains the handbell calibration options.
 
     If the backstroke sounds too early/late then make the backstroke calibration value more/less negative, by manually typing in the Backstroke strike position box below each bell.  If the handstroke sounds too early/late then increase/reduce the Handstroke strike position in the same way.  Any changes made to values will be effective immediately so you can try the bells and continue fine tuning.
 
     Once you are happy with the settings, click on OK to permanently save them, or Cancel to revert to earlier settings. If you wish to revert to Handbell Manager defaults for all options (Handbell Calibration and Abel Settings), press the Default Settings button.
 
     More on Calibration and Fine Tuning
-    If you wish to calibrate your controllers, select Tools ñ Options from the menu to show the settings dialog. The first tab contains the handbell calibration options. The screen shows the current axis (tilt position) of each controller as values between -2048 and 2047. Negative values occur when the buttons are on the upper side of the controller and positive ones when the buttons are on the lower side, and are zero when the controller points either upwards or downwards.
+    If you wish to calibrate your controllers, select Tools ‚Äì Options from the menu to show the settings dialog. The first tab contains the handbell calibration options. The screen shows the current axis (tilt position) of each controller as values between -2048 and 2047. Negative values occur when the buttons are on the upper side of the controller and positive ones when the buttons are on the lower side, and are zero when the controller points either upwards or downwards.
     The ActionXL motion controllers use tri-axis accelerometers to determine their position and are factory calibrated to 2g. Handbell Manager is only using one axis to determine the up down swing of a handbell. When you tilt the controller to its upper or lower extreme, it has only moved half as far as it can (because the Earth's gravitational pull is 1g, half of the maximum). In motion higher Z-values will be recorded, particularly on the downswing where the acceleration is in addition to the pull of gravity.
     An option to change the Handbell swing axis has been included for experimentation with different controllers, or more unusual handbell swing actions. In the case of the ActionXL controllers, the Z-axis is up/down, the X-axis is left/right, and the Y-axis is back/forward. The remainder of this section assumes that you are using the default i.e. the Z-axis.
     For dummy handbells to function reliably, the strike positions need to be set close enough together to ensure that the controller will trigger them even if they are swung very gently i.e. they must be within the range of the resting positions at handstroke and backstroke. The strike positions can be close together towards the middle of the swing, but the backstroke Z-axis position must be a lower value than the handstroke position, unless you wish to use the controllers upside down, in which case the handstroke will be the lower value. Handbell Manager uses this difference to distinguish handstroke from backstroke.
@@ -65,11 +66,11 @@
     If the bells are striking too early then there are two options. First try adjusting the strike value. If the bells are still striking too early, you can then introduce a Handstroke strike delay or Backstroke strike delay by setting an appropriate value in milliseconds. Note that the same delay will be applied to all bells.
     Handbell Manager will not strike the same bell twice before the Debounce delay period has passed. This prevents multiple strokes occurring in quick succession when the controller signal bounces after a sudden stop. Experience has shown that 350ms is a good value to cure this problem, while still allowing you to ring the bell twice in a second.
     Abel Settings
-    The settings for controlling Abel can be configured using the Tools ñ Options ñ Abel Settings tab. Handbell Manager works by sending messages to Abel as though you had pressed the keys on the keyboard. The keys to be pressed by Handbell Manager can be changed here.
+    The settings for controlling Abel can be configured using the Tools ‚Äì Options ‚Äì Abel Settings tab. Handbell Manager works by sending messages to Abel as though you had pressed the keys on the keyboard. The keys to be pressed by Handbell Manager can be changed here.
 
     The key for ringing each of four bells is initially set to the default used in Abel (J, F, R & U). However, if the keyboard mappings have been changed in Abel, they have to be changed in Handbell Manager to match.
-    The buttons on each controller can also be configured to trigger Abel functions, such as Start, Go, Rounds, Stand, Pause, Bob, Single etc. As well as individual keys, you can also type ìF1î to ìF12î or ìEscî to operate the function keys.
-    ActionXL wired controllers have a Left (1) and Right (2) Button. The ActionXL ìFriiHandî wireless controller additionally has an Upper (3) and Lower (4) button on the nose of the controller. Handbell Manager button defaults are:
+    The buttons on each controller can also be configured to trigger Abel functions, such as Start, Go, Rounds, Stand, Pause, Bob, Single etc. As well as individual keys, you can also type ‚ÄúF1‚Äù to ‚ÄúF12‚Äù or ‚ÄúEsc‚Äù to operate the function keys.
+    ActionXL wired controllers have a Left (1) and Right (2) Button. The ActionXL ‚ÄúFriiHand‚Äù wireless controller additionally has an Upper (3) and Lower (4) button on the nose of the controller. Handbell Manager button defaults are:
     Handbell 1 & 3 (Right hand)
     Left button (1):   Start/Immediate Stop (F9)
     Right button (2):  Go (G)
@@ -80,107 +81,107 @@
     Right button (2):  Single (;)
     Upper button (3):   Bob (A)
     Lower button (4):  Single (;)
-    To prevent your dummy handbells and Abel getting out of sync (e.g. you bell is at handstroke and Abel is displaying the bell at backstroke), you can use the up/down keyboard action in Abel. With this option, Abel and Handbell Manager cannot get out of sync as a keyup is used for a handstroke and a keydown for a backstroke. The Use bell keys up/down action must be ticked both in Handbell Manager and in Abel (under Abelís Options ñ Ringing Options) for this to work. Conversely, both should be unchecked to use normal keystrokes.
-    The Abel Process Name is the executable name for the version of Abel you are using e.g. Abel3. It is the name of the executable file without ì.exeî. This is also the name of the shortcut to Abel you should place in Handbell Managerís installation folder (ìC:\Program Files\Handbell Managerî is the default location) to allow it to be started from Handbell Managerís menu. You may need to be logged on as an administrator to access Program Files.
+    To prevent your dummy handbells and Abel getting out of sync (e.g. you bell is at handstroke and Abel is displaying the bell at backstroke), you can use the up/down keyboard action in Abel. With this option, Abel and Handbell Manager cannot get out of sync as a keyup is used for a handstroke and a keydown for a backstroke. The Use bell keys up/down action must be ticked both in Handbell Manager and in Abel (under Abel‚Äôs Options ‚Äì Ringing Options) for this to work. Conversely, both should be unchecked to use normal keystrokes.
+    The Abel Process Name is the executable name for the version of Abel you are using e.g. Abel3. It is the name of the executable file without ‚Äú.exe‚Äù. This is also the name of the shortcut to Abel you should place in Handbell Manager‚Äôs installation folder (‚ÄúC:\Program Files\Handbell Manager‚Äù is the default location) to allow it to be started from Handbell Manager‚Äôs menu. You may need to be logged on as an administrator to access Program Files.
     Reassigning Controllers
-    Handbell Manager cannot identify controllers uniquely and stores the configuration settings by handbell number. If on subsequent use, controllers with different configuration characteristics are identified in a different order by Windows, the controllers may not be assigned to the same handbell. To overcome this problem, choose Options ñ Assign Controllers from the menu.
+    Handbell Manager cannot identify controllers uniquely and stores the configuration settings by handbell number. If on subsequent use, controllers with different configuration characteristics are identified in a different order by Windows, the controllers may not be assigned to the same handbell. To overcome this problem, choose Options ‚Äì Assign Controllers from the menu.
 
     In the example above, another joystick is connected and was automatically assigned to Handbell 1. By clicking on this controller to highlight it, and clicking the green down arrow twice, it can be reassigned to handbell 3, or not to a handbell at all had four other controllers had been active. The two motion controllers appear identical, but could have different calibration settings. These could be swapped by clicking on the second one and clicking on the green up arrow to move it up the list.
     Troubleshooting
     Some possible reasons for problems are listed below to help with troubleshooting.
     Cannot run Abel from Handbell Manager
-    ï	Shortcut not present or its name doesnít match the process name in Abel Settings. Create a new shortcut to the Abel executable and copy it into Handbell Managerís installation folder. Rename it to the Abel Process Name (e.g. ìAbel3î in place of ìshortcut to Abel3.exeî).
-    ï	Shortcut not setup correctly to run Abel. Confirm that it works if you double-click it.
+    ‚Ä¢	Shortcut not present or its name doesn‚Äôt match the process name in Abel Settings. Create a new shortcut to the Abel executable and copy it into Handbell Manager‚Äôs installation folder. Rename it to the Abel Process Name (e.g. ‚ÄúAbel3‚Äù in place of ‚Äúshortcut to Abel3.exe‚Äù).
+    ‚Ä¢	Shortcut not setup correctly to run Abel. Confirm that it works if you double-click it.
     No Motion Controllers Found
-    ï	Only ActionXL motion controllers are fully supported.
-    ï	The ActionXL are plug and play devices, so installation is automatic. Windows should recognise them as a game controller with specific description of Motion Controller. If they are being recognised as a generic joystick or are not being recognised at all, then there is a configuration problem in Windows.
+    ‚Ä¢	Only ActionXL motion controllers are fully supported.
+    ‚Ä¢	The ActionXL are plug and play devices, so installation is automatic. Windows should recognise them as a game controller with specific description of Motion Controller. If they are being recognised as a generic joystick or are not being recognised at all, then there is a configuration problem in Windows.
     Bells do not ring
-    ï	Abel is not running. Check that the bells ring when Abel is used with the keyboard.
-    ï	More than one copy of Abel is running. Close all but one instance.
-    ï	Handbell Manager is not running.
-    ï	The Process Name in Handbell Manager Tools - Options - Abel Settings is not the same as the instance of Abel that is running.
-    ï	The keyboard mappings for the bells in Handbell Manager donít match Abelís keyboard mappings.
-    ï	The option Use bell keys up/down action setting is not the same in both Handbell Manager and Abel.
-    ï	The backstroke and handstroke strike positions are set too high or too low.
-    ï	The wrong Handbell swing axis is being used (should be ìZî for ActionXL controllers).
-    ï	The controllers are not assigned to the correct handbell. Use Tools - Options ñ Assign Controllers to change.
-    ï	Wireless controllers are not switched on, is not communicating with the correct dongle, or the batteries are flat. Remove a battery to fully reset.
+    ‚Ä¢	Abel is not running. Check that the bells ring when Abel is used with the keyboard.
+    ‚Ä¢	More than one copy of Abel is running. Close all but one instance.
+    ‚Ä¢	Handbell Manager is not running.
+    ‚Ä¢	The Process Name in Handbell Manager Tools - Options - Abel Settings is not the same as the instance of Abel that is running.
+    ‚Ä¢	The keyboard mappings for the bells in Handbell Manager don‚Äôt match Abel‚Äôs keyboard mappings.
+    ‚Ä¢	The option Use bell keys up/down action setting is not the same in both Handbell Manager and Abel.
+    ‚Ä¢	The backstroke and handstroke strike positions are set too high or too low.
+    ‚Ä¢	The wrong Handbell swing axis is being used (should be ‚ÄúZ‚Äù for ActionXL controllers).
+    ‚Ä¢	The controllers are not assigned to the correct handbell. Use Tools - Options ‚Äì Assign Controllers to change.
+    ‚Ä¢	Wireless controllers are not switched on, is not communicating with the correct dongle, or the batteries are flat. Remove a battery to fully reset.
     Buttons do not work
-    ï	The keyboard mappings for the buttons in Handbell Manager donít match Abelís keyboard mappings or Function Keys.
-    ï	A wireless controller is not switched on, is not communicating with its dongle, or the batteries are flat.
+    ‚Ä¢	The keyboard mappings for the buttons in Handbell Manager don‚Äôt match Abel‚Äôs keyboard mappings or Function Keys.
+    ‚Ä¢	A wireless controller is not switched on, is not communicating with its dongle, or the batteries are flat.
     Bells strike too late
-    ï	Backstroke and/or handstroke strike delay are not set to a low enough value. Set to zero.
-    ï	Strike position is set too late in the swing. Fine tune by making small adjustments to the strike values.
-    ï	Incorrect calibration. If using the Calibrate button, hold the controller absolutely horizontal for the backstroke strike and absolutely vertical for the handstroke strike, then make fine adjustments manually to the strike values.
+    ‚Ä¢	Backstroke and/or handstroke strike delay are not set to a low enough value. Set to zero.
+    ‚Ä¢	Strike position is set too late in the swing. Fine tune by making small adjustments to the strike values.
+    ‚Ä¢	Incorrect calibration. If using the Calibrate button, hold the controller absolutely horizontal for the backstroke strike and absolutely vertical for the handstroke strike, then make fine adjustments manually to the strike values.
     Bells strike too early
-    ï	Strike position is set too early in the swing. Fine tune by making small adjustments to the strike values.
-    ï	Incorrect calibration. If using the Calibrate button, hold the controller absolutely horizontal for the backstroke strike and absolutely vertical for the handstroke strike, then make fine adjustments manually to the strike values. If the bells still strike too early, use the backstroke and/or handstroke strike delay.
+    ‚Ä¢	Strike position is set too early in the swing. Fine tune by making small adjustments to the strike values.
+    ‚Ä¢	Incorrect calibration. If using the Calibrate button, hold the controller absolutely horizontal for the backstroke strike and absolutely vertical for the handstroke strike, then make fine adjustments manually to the strike values. If the bells still strike too early, use the backstroke and/or handstroke strike delay.
     Bells strike erratically or multiple times
-    ï	Debounce delay too small. Set the debounce delay to a value that eliminates multiple strikes (e.g. 350ms).
-    ï	Backstroke and handstroke strike positions are too close to one another. Recalibrate.
-    ï	Controllers are upside down, and have not been calibrated for upside down use.
-    ï	Inconsistent handbell swing. Swing the controller so that the arc it makes is in the vertical plane that is in line with the wire, and the upper flat side (with the buttons) is always approximately perpendicular to the vertical plane.  Although other motions of the controllers can make the bell sound, the calibration may not be correct.
-    ï	More than one copy of Abel is running. Close all but one instance.
+    ‚Ä¢	Debounce delay too small. Set the debounce delay to a value that eliminates multiple strikes (e.g. 350ms).
+    ‚Ä¢	Backstroke and handstroke strike positions are too close to one another. Recalibrate.
+    ‚Ä¢	Controllers are upside down, and have not been calibrated for upside down use.
+    ‚Ä¢	Inconsistent handbell swing. Swing the controller so that the arc it makes is in the vertical plane that is in line with the wire, and the upper flat side (with the buttons) is always approximately perpendicular to the vertical plane.  Although other motions of the controllers can make the bell sound, the calibration may not be correct.
+    ‚Ä¢	More than one copy of Abel is running. Close all but one instance.
     Abel pictures are at the opposite stroke to the handbell
-    ï	Hold the handbells at handstroke and press F4 to reset Abel bells. This problem can be eliminated if the Use bell keys up/down action is checked both in Abel and Handbell Manager. Warning: Although you can get the handstrokes and backstrokes back in phase by turning the dummy handbells over, this disrupts the calibration and the striking points will be incorrect.
+    ‚Ä¢	Hold the handbells at handstroke and press F4 to reset Abel bells. This problem can be eliminated if the Use bell keys up/down action is checked both in Abel and Handbell Manager. Warning: Although you can get the handstrokes and backstrokes back in phase by turning the dummy handbells over, this disrupts the calibration and the striking points will be incorrect.
     Bell is ringing but Abel images are not rotating
-    ï	Hold the handbells at handstroke and press F4 to reset Abel bells.
+    ‚Ä¢	Hold the handbells at handstroke and press F4 to reset Abel bells.
     Error message displayed when Handbell Manager opens or saves settings
-    ï	Settings file corrupt, or an incorrect version. Delete it and it will be automatically recreated with the default settings.
-    ï	Incorrect file access permissions. Handbell Manager is designed to work under Vista and Windows 7 with standard user access permissions. Check that you have read access to the installation folder and write access to the userís application data folder.
-    Motion controllers donít feel like handbells
-    ï	The motion controllers are too small and light. Try attaching the controllers to pieces of wood, or to the handles of handbells with the clappers removed.
-    ï	The ActionXL wireless controllers are larger and heavier than the wired controllers.
+    ‚Ä¢	Settings file corrupt, or an incorrect version. Delete it and it will be automatically recreated with the default settings.
+    ‚Ä¢	Incorrect file access permissions. Handbell Manager is designed to work under Vista and Windows 7 with standard user access permissions. Check that you have read access to the installation folder and write access to the user‚Äôs application data folder.
+    Motion controllers don‚Äôt feel like handbells
+    ‚Ä¢	The motion controllers are too small and light. Try attaching the controllers to pieces of wood, or to the handles of handbells with the clappers removed.
+    ‚Ä¢	The ActionXL wireless controllers are larger and heavier than the wired controllers.
     Handbell Manager crashes with an error message
-    ï	If it occurs more than once, report it to the author.
+    ‚Ä¢	If it occurs more than once, report it to the author.
     Handbell Manager Version History
     Version 0.1
-    ï	First test release.
+    ‚Ä¢	First test release.
     Version 0.2
-    ï	Abel can be run from the menu.
-    ï	Menu Help loads this readme file.
-    ï	Menu icons added.
-    ï	Email link added in About box.
-    ï	Consistent background colour for Count textboxes.
+    ‚Ä¢	Abel can be run from the menu.
+    ‚Ä¢	Menu Help loads this readme file.
+    ‚Ä¢	Menu icons added.
+    ‚Ä¢	Email link added in About box.
+    ‚Ä¢	Consistent background colour for Count textboxes.
     Version 0.2.1
-    ï	Extra information in help file
+    ‚Ä¢	Extra information in help file
     Version 0.2.2
-    ï	Calibration defaults improved
+    ‚Ä¢	Calibration defaults improved
     Version 0.3
-    ï	Dialogs reorganised.
-    ï	Handbells reversed in Handbell Manager windows to correspond to your left and right hand and the clockwise arrangement in Abel.
-    ï	Calibration method changed to set strike points directly, removing references to resting position.
-    ï	Strike values can be adjusted manually.
-    ï	Handstroke and Backstroke delay period added.
-    ï	Monitor added to display handbell motion in real time.
-    ï	Abel interface changed, and will work even if Abel is not the foreground window.
-    ï	Abelís Up/Down Key interface support added.
-    ï	Buttons can be configured for Esc and F1-12 keys.
-    ï	Button added to reset options to default values.
+    ‚Ä¢	Dialogs reorganised.
+    ‚Ä¢	Handbells reversed in Handbell Manager windows to correspond to your left and right hand and the clockwise arrangement in Abel.
+    ‚Ä¢	Calibration method changed to set strike points directly, removing references to resting position.
+    ‚Ä¢	Strike values can be adjusted manually.
+    ‚Ä¢	Handstroke and Backstroke delay period added.
+    ‚Ä¢	Monitor added to display handbell motion in real time.
+    ‚Ä¢	Abel interface changed, and will work even if Abel is not the foreground window.
+    ‚Ä¢	Abel‚Äôs Up/Down Key interface support added.
+    ‚Ä¢	Buttons can be configured for Esc and F1-12 keys.
+    ‚Ä¢	Button added to reset options to default values.
     Version 0.3.1
-    ï	Problem running on 64-bit windows operating systems resolved.
+    ‚Ä¢	Problem running on 64-bit windows operating systems resolved.
     Version 0.4
-    ï	Can check or uncheck handbell lines, striking points or calibration lines for all bells simultaneously.
-    ï	Handstroke strike positions moved above backstroke strike positions in the Options dialog.
-    ï	Number editing improved in the Options dialog.
-    ï	Strike position defaults changed to -600/100.
-    ï	Use Abel bell keys up/down option default changed to Checked.
-    ï	Confirmation message box is shown if Default Settings button is pressed.
-    ï	Bells no longer sound immediately after controller initialisation.
-    ï	Another Abel process instance is automatically discovered after the first one is closed.
-    ï	Installer/uninstaller provided.
+    ‚Ä¢	Can check or uncheck handbell lines, striking points or calibration lines for all bells simultaneously.
+    ‚Ä¢	Handstroke strike positions moved above backstroke strike positions in the Options dialog.
+    ‚Ä¢	Number editing improved in the Options dialog.
+    ‚Ä¢	Strike position defaults changed to -600/100.
+    ‚Ä¢	Use Abel bell keys up/down option default changed to Checked.
+    ‚Ä¢	Confirmation message box is shown if Default Settings button is pressed.
+    ‚Ä¢	Bells no longer sound immediately after controller initialisation.
+    ‚Ä¢	Another Abel process instance is automatically discovered after the first one is closed.
+    ‚Ä¢	Installer/uninstaller provided.
     Version 1.0
-    ï	First official release.
-    ï	Installer optionally creates startup shortcuts for all users.
-    ï	Installer optionally creates desktop shortcuts for all users.
-    ï	The settings file is now user specific and is located in the userís application data folder.
+    ‚Ä¢	First official release.
+    ‚Ä¢	Installer optionally creates startup shortcuts for all users.
+    ‚Ä¢	Installer optionally creates desktop shortcuts for all users.
+    ‚Ä¢	The settings file is now user specific and is located in the user‚Äôs application data folder.
     Version 1.1
-    ï	Any joystick will be identified by Handbell Manager, not just those labelled Motion Controllers.
-    ï	An Assign Controllers option has been added to allow controllers to be reassigned to different handbells.
-    ï	The controller Swing Axis can now be specified and saved for each handbell.
-    ï	Support has been added for four button controllers (such as the wireless ActionXL ìFriiHandî controller).
+    ‚Ä¢	Any joystick will be identified by Handbell Manager, not just those labelled Motion Controllers.
+    ‚Ä¢	An Assign Controllers option has been added to allow controllers to be reassigned to different handbells.
+    ‚Ä¢	The controller Swing Axis can now be specified and saved for each handbell.
+    ‚Ä¢	Support has been added for four button controllers (such as the wireless ActionXL ‚ÄúFriiHand‚Äù controller).
     Acknowledgements
-    I would like to thank Chris Hughes, Simon Humphrey and Richard Johnston for their assistance in design, testing and documentation for Handbell Manager. I would also like to thank Jay OíLeary of ActionXL for his interest and support in the Handbell Manager project.
+    I would like to thank Chris Hughes, Simon Humphrey and Richard Johnston for their assistance in design, testing and documentation for Handbell Manager. I would also like to thank Jay O‚ÄôLeary of ActionXL for his interest and support in the Handbell Manager project.
 
 
 
@@ -193,5 +194,3 @@
        href="http://actionxl.com/products.html">Action XL Wired and Wireless Motion Controllers</a>
 </p>
 </div>
-
-{% include footer.html %}
