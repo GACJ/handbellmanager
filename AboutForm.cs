@@ -1,5 +1,5 @@
 ﻿// This file is part of Handbell Manager.
-// Copyright Graham John 2009-2017. graham@changeringing.co.uk
+// Copyright Graham John 2009-2018. graham@changeringing.co.uk
 //
 // Handbell Manager is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ namespace HandbellManager
 
 			Text = String.Format("About {0}", Application.ProductName);
 			lblName.Text = String.Format("{0} Version {1}", Application.ProductName, Application.ProductVersion);
-			lblCopyright.Text = "Copyright © Graham A C John 2009-2017";
+			lblCopyright.Text = "Copyright © Graham A C John 2009-2018";
 		}
 
 		private void btnOK_Click(object sender, EventArgs e)

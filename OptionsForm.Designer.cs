@@ -95,6 +95,10 @@
             this.txtHSP3 = new HandbellManager.NumericalTextBox();
             this.txtHSP2 = new HandbellManager.NumericalTextBox();
             this.tabSimulatorKeyStrokes = new System.Windows.Forms.TabPage();
+            this.txtGrandchildWindowClassName = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtChildWindowClassName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtKeyB43 = new System.Windows.Forms.TextBox();
             this.txtKeyB42 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -108,10 +112,6 @@
             this.chkUseKeyUpDown = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
-            this.txtChildWindowClassName = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtGrandchildWindowClassName = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabHandbellCalibration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnDebounceDelay)).BeginInit();
@@ -890,6 +890,42 @@
             this.tabSimulatorKeyStrokes.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
             this.tabSimulatorKeyStrokes.Enter += new System.EventHandler(this.tabSimulatorKeyStrokes_Enter);
             // 
+            // txtGrandchildWindowClassName
+            // 
+            this.txtGrandchildWindowClassName.Location = new System.Drawing.Point(160, 251);
+            this.txtGrandchildWindowClassName.Name = "txtGrandchildWindowClassName";
+            this.txtGrandchildWindowClassName.Size = new System.Drawing.Size(263, 20);
+            this.txtGrandchildWindowClassName.TabIndex = 40;
+            this.txtGrandchildWindowClassName.Text = "AfxFrameOrView140s";
+            this.txtGrandchildWindowClassName.TextChanged += new System.EventHandler(this.txtGrandchildWindowClassName_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 254);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(153, 13);
+            this.label22.TabIndex = 39;
+            this.label22.Text = "GrandchildWindowClassName:";
+            // 
+            // txtChildWindowClassName
+            // 
+            this.txtChildWindowClassName.Location = new System.Drawing.Point(160, 227);
+            this.txtChildWindowClassName.Name = "txtChildWindowClassName";
+            this.txtChildWindowClassName.Size = new System.Drawing.Size(263, 20);
+            this.txtChildWindowClassName.TabIndex = 38;
+            this.txtChildWindowClassName.Text = "AfxMDIFrame140s";
+            this.txtChildWindowClassName.TextChanged += new System.EventHandler(this.txtChildWindowClassName_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 230);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "ChildWindowClassName:";
+            // 
             // txtKeyB43
             // 
             this.txtKeyB43.Location = new System.Drawing.Point(159, 140);
@@ -1029,40 +1065,6 @@
             this.btnDefault.Text = "Default Settings";
             this.btnDefault.UseVisualStyleBackColor = true;
             this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
-            // 
-            // txtChildWindowClassName
-            // 
-            this.txtChildWindowClassName.Location = new System.Drawing.Point(160, 227);
-            this.txtChildWindowClassName.Name = "txtChildWindowClassName";
-            this.txtChildWindowClassName.Size = new System.Drawing.Size(263, 20);
-            this.txtChildWindowClassName.TabIndex = 38;
-            this.txtChildWindowClassName.Text = "AfxMDIFrame140s";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 230);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 13);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "ChildWindowClassName:";
-            // 
-            // txtGrandchildWindowClassName
-            // 
-            this.txtGrandchildWindowClassName.Location = new System.Drawing.Point(160, 251);
-            this.txtGrandchildWindowClassName.Name = "txtGrandchildWindowClassName";
-            this.txtGrandchildWindowClassName.Size = new System.Drawing.Size(263, 20);
-            this.txtGrandchildWindowClassName.TabIndex = 40;
-            this.txtGrandchildWindowClassName.Text = "AfxFrameOrView140s";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(7, 254);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(153, 13);
-            this.label22.TabIndex = 39;
-            this.label22.Text = "GrandchildWindowClassName:";
             // 
             // OptionsForm
             // 
