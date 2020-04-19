@@ -5,3 +5,4 @@ Handbell Manager enables up to four USB motion controllers to be used as dummy h
 
 * Abel - http://www.abelsim.co.uk/
 * Beltower - http://www.beltower.co.uk/
+* RingingRoom - https://www.ringingroom.com/
