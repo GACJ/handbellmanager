@@ -88,7 +88,7 @@
             // 
             // btnFindControllers
             // 
-            this.btnFindControllers.Location = new System.Drawing.Point(67, 196);
+            this.btnFindControllers.Location = new System.Drawing.Point(83, 196);
             this.btnFindControllers.Name = "btnFindControllers";
             this.btnFindControllers.Size = new System.Drawing.Size(127, 23);
             this.btnFindControllers.TabIndex = 25;
@@ -100,7 +100,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(71, 33);
+            this.label17.Location = new System.Drawing.Point(87, 33);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 13);
             this.label17.TabIndex = 1;
@@ -110,7 +110,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(136, 33);
+            this.label16.Location = new System.Drawing.Point(152, 33);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 2;
@@ -120,7 +120,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(202, 33);
+            this.label15.Location = new System.Drawing.Point(218, 33);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 13);
             this.label15.TabIndex = 3;
@@ -130,7 +130,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(269, 33);
+            this.label14.Location = new System.Drawing.Point(285, 33);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 4;
@@ -139,7 +139,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(199, 196);
+            this.btnReset.Location = new System.Drawing.Point(215, 196);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(123, 23);
             this.btnReset.TabIndex = 26;
@@ -150,7 +150,7 @@
             // txtCountB23
             // 
             this.txtCountB23.Enabled = false;
-            this.txtCountB23.Location = new System.Drawing.Point(73, 121);
+            this.txtCountB23.Location = new System.Drawing.Point(89, 121);
             this.txtCountB23.MaxLength = 1;
             this.txtCountB23.Name = "txtCountB23";
             this.txtCountB23.Size = new System.Drawing.Size(50, 20);
@@ -161,7 +161,7 @@
             // txtCountB22
             // 
             this.txtCountB22.Enabled = false;
-            this.txtCountB22.Location = new System.Drawing.Point(139, 121);
+            this.txtCountB22.Location = new System.Drawing.Point(155, 121);
             this.txtCountB22.MaxLength = 1;
             this.txtCountB22.Name = "txtCountB22";
             this.txtCountB22.Size = new System.Drawing.Size(50, 20);
@@ -172,7 +172,7 @@
             // txtCountB21
             // 
             this.txtCountB21.Enabled = false;
-            this.txtCountB21.Location = new System.Drawing.Point(205, 121);
+            this.txtCountB21.Location = new System.Drawing.Point(221, 121);
             this.txtCountB21.MaxLength = 1;
             this.txtCountB21.Name = "txtCountB21";
             this.txtCountB21.Size = new System.Drawing.Size(50, 20);
@@ -183,7 +183,7 @@
             // txtCountB20
             // 
             this.txtCountB20.Enabled = false;
-            this.txtCountB20.Location = new System.Drawing.Point(271, 121);
+            this.txtCountB20.Location = new System.Drawing.Point(287, 121);
             this.txtCountB20.MaxLength = 1;
             this.txtCountB20.Name = "txtCountB20";
             this.txtCountB20.Size = new System.Drawing.Size(50, 20);
@@ -194,7 +194,7 @@
             // txtCountB13
             // 
             this.txtCountB13.Enabled = false;
-            this.txtCountB13.Location = new System.Drawing.Point(73, 98);
+            this.txtCountB13.Location = new System.Drawing.Point(89, 98);
             this.txtCountB13.MaxLength = 1;
             this.txtCountB13.Name = "txtCountB13";
             this.txtCountB13.Size = new System.Drawing.Size(50, 20);
@@ -205,7 +205,7 @@
             // txtCountB12
             // 
             this.txtCountB12.Enabled = false;
-            this.txtCountB12.Location = new System.Drawing.Point(139, 98);
+            this.txtCountB12.Location = new System.Drawing.Point(155, 98);
             this.txtCountB12.MaxLength = 1;
             this.txtCountB12.Name = "txtCountB12";
             this.txtCountB12.Size = new System.Drawing.Size(50, 20);
@@ -216,7 +216,7 @@
             // txtCountB11
             // 
             this.txtCountB11.Enabled = false;
-            this.txtCountB11.Location = new System.Drawing.Point(205, 98);
+            this.txtCountB11.Location = new System.Drawing.Point(221, 98);
             this.txtCountB11.MaxLength = 1;
             this.txtCountB11.Name = "txtCountB11";
             this.txtCountB11.Size = new System.Drawing.Size(50, 20);
@@ -227,7 +227,7 @@
             // txtCountB10
             // 
             this.txtCountB10.Enabled = false;
-            this.txtCountB10.Location = new System.Drawing.Point(271, 98);
+            this.txtCountB10.Location = new System.Drawing.Point(287, 98);
             this.txtCountB10.MaxLength = 1;
             this.txtCountB10.Name = "txtCountB10";
             this.txtCountB10.Size = new System.Drawing.Size(50, 20);
@@ -238,7 +238,7 @@
             // txtCountBS3
             // 
             this.txtCountBS3.Enabled = false;
-            this.txtCountBS3.Location = new System.Drawing.Point(73, 52);
+            this.txtCountBS3.Location = new System.Drawing.Point(89, 52);
             this.txtCountBS3.MaxLength = 1;
             this.txtCountBS3.Name = "txtCountBS3";
             this.txtCountBS3.Size = new System.Drawing.Size(50, 20);
@@ -249,7 +249,7 @@
             // txtCountBS2
             // 
             this.txtCountBS2.Enabled = false;
-            this.txtCountBS2.Location = new System.Drawing.Point(139, 52);
+            this.txtCountBS2.Location = new System.Drawing.Point(155, 52);
             this.txtCountBS2.MaxLength = 1;
             this.txtCountBS2.Name = "txtCountBS2";
             this.txtCountBS2.Size = new System.Drawing.Size(50, 20);
@@ -260,7 +260,7 @@
             // txtCountBS1
             // 
             this.txtCountBS1.Enabled = false;
-            this.txtCountBS1.Location = new System.Drawing.Point(205, 52);
+            this.txtCountBS1.Location = new System.Drawing.Point(221, 52);
             this.txtCountBS1.MaxLength = 1;
             this.txtCountBS1.Name = "txtCountBS1";
             this.txtCountBS1.Size = new System.Drawing.Size(50, 20);
@@ -271,7 +271,7 @@
             // txtCountBS0
             // 
             this.txtCountBS0.Enabled = false;
-            this.txtCountBS0.Location = new System.Drawing.Point(271, 52);
+            this.txtCountBS0.Location = new System.Drawing.Point(287, 52);
             this.txtCountBS0.MaxLength = 1;
             this.txtCountBS0.Name = "txtCountBS0";
             this.txtCountBS0.Size = new System.Drawing.Size(50, 20);
@@ -282,7 +282,7 @@
             // txtCountHS3
             // 
             this.txtCountHS3.Enabled = false;
-            this.txtCountHS3.Location = new System.Drawing.Point(73, 75);
+            this.txtCountHS3.Location = new System.Drawing.Point(89, 75);
             this.txtCountHS3.MaxLength = 1;
             this.txtCountHS3.Name = "txtCountHS3";
             this.txtCountHS3.Size = new System.Drawing.Size(50, 20);
@@ -293,7 +293,7 @@
             // txtCountHS2
             // 
             this.txtCountHS2.Enabled = false;
-            this.txtCountHS2.Location = new System.Drawing.Point(139, 75);
+            this.txtCountHS2.Location = new System.Drawing.Point(155, 75);
             this.txtCountHS2.MaxLength = 1;
             this.txtCountHS2.Name = "txtCountHS2";
             this.txtCountHS2.Size = new System.Drawing.Size(50, 20);
@@ -304,7 +304,7 @@
             // txtCountHS1
             // 
             this.txtCountHS1.Enabled = false;
-            this.txtCountHS1.Location = new System.Drawing.Point(205, 75);
+            this.txtCountHS1.Location = new System.Drawing.Point(221, 75);
             this.txtCountHS1.MaxLength = 1;
             this.txtCountHS1.Name = "txtCountHS1";
             this.txtCountHS1.Size = new System.Drawing.Size(50, 20);
@@ -315,7 +315,7 @@
             // txtCountHS0
             // 
             this.txtCountHS0.Enabled = false;
-            this.txtCountHS0.Location = new System.Drawing.Point(271, 75);
+            this.txtCountHS0.Location = new System.Drawing.Point(287, 75);
             this.txtCountHS0.MaxLength = 1;
             this.txtCountHS0.Name = "txtCountHS0";
             this.txtCountHS0.Size = new System.Drawing.Size(50, 20);
@@ -326,7 +326,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(5, 125);
+            this.label27.Location = new System.Drawing.Point(21, 125);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(50, 13);
             this.label27.TabIndex = 20;
@@ -335,7 +335,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(5, 102);
+            this.label28.Location = new System.Drawing.Point(21, 102);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(50, 13);
             this.label28.TabIndex = 15;
@@ -344,7 +344,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(5, 56);
+            this.label29.Location = new System.Drawing.Point(21, 56);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(64, 13);
             this.label29.TabIndex = 5;
@@ -353,7 +353,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(5, 79);
+            this.label30.Location = new System.Drawing.Point(21, 79);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(65, 13);
             this.label30.TabIndex = 10;
@@ -367,7 +367,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(330, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(378, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "mainMenuStrip";
             // 
@@ -451,20 +451,20 @@
             // 
             this.monitorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("monitorToolStripMenuItem.Image")));
             this.monitorToolStripMenuItem.Name = "monitorToolStripMenuItem";
-            this.monitorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.monitorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.monitorToolStripMenuItem.Text = "Monitor";
             this.monitorToolStripMenuItem.Click += new System.EventHandler(this.monitorToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // controllersToolStripMenuItem
             // 
             this.controllersToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controllersToolStripMenuItem.Image")));
             this.controllersToolStripMenuItem.Name = "controllersToolStripMenuItem";
-            this.controllersToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.controllersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.controllersToolStripMenuItem.Text = "Assign Controllers";
             this.controllersToolStripMenuItem.Click += new System.EventHandler(this.controllersToolStripMenuItem_Click);
             // 
@@ -472,7 +472,7 @@
             // 
             this.optionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("optionsToolStripMenuItem.Image")));
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
@@ -510,7 +510,7 @@
             // txtCountB33
             // 
             this.txtCountB33.Enabled = false;
-            this.txtCountB33.Location = new System.Drawing.Point(73, 144);
+            this.txtCountB33.Location = new System.Drawing.Point(89, 144);
             this.txtCountB33.MaxLength = 1;
             this.txtCountB33.Name = "txtCountB33";
             this.txtCountB33.Size = new System.Drawing.Size(50, 20);
@@ -521,7 +521,7 @@
             // txtCountB32
             // 
             this.txtCountB32.Enabled = false;
-            this.txtCountB32.Location = new System.Drawing.Point(139, 144);
+            this.txtCountB32.Location = new System.Drawing.Point(155, 144);
             this.txtCountB32.MaxLength = 1;
             this.txtCountB32.Name = "txtCountB32";
             this.txtCountB32.Size = new System.Drawing.Size(50, 20);
@@ -532,7 +532,7 @@
             // txtCountB31
             // 
             this.txtCountB31.Enabled = false;
-            this.txtCountB31.Location = new System.Drawing.Point(205, 144);
+            this.txtCountB31.Location = new System.Drawing.Point(221, 144);
             this.txtCountB31.MaxLength = 1;
             this.txtCountB31.Name = "txtCountB31";
             this.txtCountB31.Size = new System.Drawing.Size(50, 20);
@@ -543,7 +543,7 @@
             // txtCountB30
             // 
             this.txtCountB30.Enabled = false;
-            this.txtCountB30.Location = new System.Drawing.Point(271, 144);
+            this.txtCountB30.Location = new System.Drawing.Point(287, 144);
             this.txtCountB30.MaxLength = 1;
             this.txtCountB30.Name = "txtCountB30";
             this.txtCountB30.Size = new System.Drawing.Size(50, 20);
@@ -554,7 +554,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 148);
+            this.label1.Location = new System.Drawing.Point(21, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 27;
@@ -563,7 +563,7 @@
             // txtCountB43
             // 
             this.txtCountB43.Enabled = false;
-            this.txtCountB43.Location = new System.Drawing.Point(73, 167);
+            this.txtCountB43.Location = new System.Drawing.Point(89, 167);
             this.txtCountB43.MaxLength = 1;
             this.txtCountB43.Name = "txtCountB43";
             this.txtCountB43.Size = new System.Drawing.Size(50, 20);
@@ -574,7 +574,7 @@
             // txtCountB42
             // 
             this.txtCountB42.Enabled = false;
-            this.txtCountB42.Location = new System.Drawing.Point(139, 167);
+            this.txtCountB42.Location = new System.Drawing.Point(155, 167);
             this.txtCountB42.MaxLength = 1;
             this.txtCountB42.Name = "txtCountB42";
             this.txtCountB42.Size = new System.Drawing.Size(50, 20);
@@ -585,7 +585,7 @@
             // txtCountB41
             // 
             this.txtCountB41.Enabled = false;
-            this.txtCountB41.Location = new System.Drawing.Point(205, 167);
+            this.txtCountB41.Location = new System.Drawing.Point(221, 167);
             this.txtCountB41.MaxLength = 1;
             this.txtCountB41.Name = "txtCountB41";
             this.txtCountB41.Size = new System.Drawing.Size(50, 20);
@@ -596,7 +596,7 @@
             // txtCountB40
             // 
             this.txtCountB40.Enabled = false;
-            this.txtCountB40.Location = new System.Drawing.Point(271, 167);
+            this.txtCountB40.Location = new System.Drawing.Point(287, 167);
             this.txtCountB40.MaxLength = 1;
             this.txtCountB40.Name = "txtCountB40";
             this.txtCountB40.Size = new System.Drawing.Size(50, 20);
@@ -607,7 +607,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 171);
+            this.label2.Location = new System.Drawing.Point(21, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 32;
@@ -618,7 +618,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 224);
+            this.ClientSize = new System.Drawing.Size(378, 224);
             this.Controls.Add(this.txtCountB43);
             this.Controls.Add(this.txtCountB42);
             this.Controls.Add(this.txtCountB41);
