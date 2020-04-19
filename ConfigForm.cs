@@ -50,6 +50,13 @@ namespace HandbellManager
 		[DllImport("user32.dll")]
 		private static extern bool IsWindow(IntPtr hWnd);
 
+		public delegate bool EnumWindowsProc(IntPtr hwnd, IntPtr lParam);
+
+		//[DllImport("user32.dll")]
+		//[return: MarshalAs(UnmanagedType.Bool)]
+		//public static extern bool EnumChildWindows(IntPtr hwndParent, EnumWindowsProc lpEnumFunc, IntPtr lParam);
+
+	
 		public static string GetWindowClassName(IntPtr hWnd)
 		{
 			StringBuilder buffer = new StringBuilder(128);
@@ -72,10 +79,11 @@ namespace HandbellManager
 		bool _suppressNoControllerMessage;
 		Simulator _sim;
 		MotionControllerManager.MotionControllerManager _mcm;
-        Handbell[] _hb = new Handbell[4];
+        Handbell[] _hb = new Handbell[Settings.numHandbells];
 
 		MonitorForm _monitorForm;
 		OptionsForm _optionsForm;
+		//Process clientProcess;
 
 		public ConfigForm()
 		{
@@ -99,20 +107,26 @@ namespace HandbellManager
 			else
 				btnFindControllers.Focus();
 			sendKeystrokesEnabled = true;
+
+			this.Text = "Handbell Manager - " + _sim.Name;
+
+			if (Settings.autoRunSimulator)
+				runSimulator();
+
 		}
 
-//		private bool IsSimulatorFocused()
-//		{
-//			foreach (Process p in Process.GetProcessesByName(_sim.ProcessName))
-//			{
-//				if (GetForegroundWindow() == p.MainWindowHandle)
-//				{
-//					return true;
-//				}
-//			}
-//
-//			return false;
-//		}
+		//		private bool IsSimulatorFocused()
+		//		{
+		//			foreach (Process p in Process.GetProcessesByName(_sim.ProcessName))
+		//			{
+		//				if (GetForegroundWindow() == p.MainWindowHandle)
+		//				{
+		//					return true;
+		//				}
+		//			}
+		//
+		//			return false;
+		//		}
 
 		private void InitDevices()
 		{
@@ -130,19 +144,19 @@ namespace HandbellManager
 					ControllerSequence[i] = i;
 				}
 				//Assign to handbells
-				for (int i = 0; i < 4; i++)
+				for (int i = 0; i < Settings.numHandbells; i++)
 				{
 					_hb[i] = new Handbell(_mcm, i);
-						if (i >= _mcm.Count)
-						{
-							_hb[i].Enabled = false;
-						}
-						else
-						{
-							_hb[i].Enabled = true;
-							_hb[i].UpdateSettings();
-							_hb[i].Update(0);
-						}
+					if (i >= _mcm.Count)
+					{
+						_hb[i].Enabled = false;
+					}
+					else
+					{
+						_hb[i].Enabled = true;
+						_hb[i].UpdateSettings();
+						_hb[i].Update(0);
+					}
 				}
 			}
 			catch (Exception ex)
@@ -160,53 +174,76 @@ namespace HandbellManager
 
 			if (_monitorForm != null)
 				_monitorForm.ReInitLines();
+#if EMULATE_CONTROLLER
+			tmrTurn.Interval = 1000;
+#endif
 			tmrTurn.Start();
 		}
 
+
 		private void GetSimulatorhWnd()
 		{
+			
 			//Simulator window already identified?
 			if (_Simulator_hWnd != IntPtr.Zero)
-			{
+			{				
 				//And still open?
 				if (IsWindow(_Simulator_hWnd))
 					return;
 			}
-			//If not find Simulator window
+
 			Process[] processlist = Process.GetProcesses();
-			int pcount=0;
-			foreach (Process p in processlist)
+			int pcount = 0;
+
+			if (_sim.Name == "RingingRoom") // RingingRoom
 			{
-				if (Convert.ToString(p.ProcessName).ToUpper() == _sim.ProcessName.ToUpper())
+				foreach (Process p in processlist)
 				{
-					_Simulator_hWnd = p.MainWindowHandle;
-					pcount++;
+					if (p.MainWindowHandle != IntPtr.Zero && p.MainWindowTitle.Contains(_sim.GrandchildWindowName))
+					{
+						p.Refresh();
+						_Simulator_hWnd = p.MainWindowHandle;
+						pcount++;
+					}
 				}
 			}
-			//For BelTower (VB), get the parent MDI window rather than the owner
-			string windowName = "";
-			string childWindowName = ""; 
-			string grandchildWindowName = "";
-			string processWindowClassName = GetWindowClassName(_Simulator_hWnd);
-			if (processWindowClassName == "ThunderRT6Main")
+			else  // Abel and Beltower
 			{
-				while (_Simulator_hWnd != IntPtr.Zero)
+				foreach (Process p in processlist)
 				{
-					windowName = GetWindowClassName(_Simulator_hWnd);
-					if (windowName == "ThunderRT6MDIForm")
-						break;
-					uint GW_HWNDPREV = 3;
-					_Simulator_hWnd = GetWindow(_Simulator_hWnd, GW_HWNDPREV);
+					if (Convert.ToString(p.ProcessName).ToUpper() == _sim.ProcessName.ToUpper())
+					{
+						_Simulator_hWnd = p.MainWindowHandle;
+						pcount++;
+					}
 				}
+				
+				//For BelTower (VB), get the parent MDI window rather than the owner
+				string windowName = "";
+				string childWindowName = "";
+				string grandchildWindowName = "";
+				string processWindowClassName = GetWindowClassName(_Simulator_hWnd);
+				if (processWindowClassName == "ThunderRT6Main")
+				{
+					while (_Simulator_hWnd != IntPtr.Zero)
+					{
+						windowName = GetWindowClassName(_Simulator_hWnd);
+						if (windowName == "ThunderRT6MDIForm")
+							break;
+						uint GW_HWNDPREV = 3;
+						_Simulator_hWnd = GetWindow(_Simulator_hWnd, GW_HWNDPREV);
+					}
+				}
+				windowName = GetWindowClassName(_Simulator_hWnd);
+				//Find child and grandchild windows if required
+				if (_sim.ChildWindowClassName.Length > 0)
+					_Simulator_hWnd = FindWindowEx(_Simulator_hWnd, IntPtr.Zero, _sim.ChildWindowClassName, _sim.ChildWindowName);
+				childWindowName = GetWindowClassName(_Simulator_hWnd);
+				if (_sim.GrandchildWindowClassName.Length > 0)
+					_Simulator_hWnd = FindWindowEx(_Simulator_hWnd, IntPtr.Zero, _sim.GrandchildWindowClassName, _sim.GrandchildWindowName);
+				grandchildWindowName = GetWindowClassName(_Simulator_hWnd);				
+				
 			}
-			windowName = GetWindowClassName(_Simulator_hWnd);
-			//Find child and grandchild windows if required
-			if (_sim.ChildWindowClassName.Length > 0)
-				_Simulator_hWnd = FindWindowEx(_Simulator_hWnd, IntPtr.Zero, _sim.ChildWindowClassName, _sim.ChildWindowName);
-			childWindowName = GetWindowClassName(_Simulator_hWnd);
-			if (_sim.GrandchildWindowClassName.Length > 0)
-				_Simulator_hWnd = FindWindowEx(_Simulator_hWnd, IntPtr.Zero, _sim.GrandchildWindowClassName, _sim.GrandchildWindowName);
-			grandchildWindowName = GetWindowClassName(_Simulator_hWnd);
 		}
 
 		private void SendKeystrokes(string cmd, bool keyDown, bool keyUp)
@@ -293,7 +330,22 @@ namespace HandbellManager
 			}
 
 			GetSimulatorhWnd();
-			if (_Simulator_hWnd != IntPtr.Zero)
+
+			// If the window is no longer open, just return. Nothing to do.
+			if (_Simulator_hWnd == IntPtr.Zero)
+				return;
+
+			// RingingRoom runs as Javascript in a Browser, so it has no WINPROC.
+			// We use brute foce SendKeys.Send().
+			if (_sim.Name == "RingingRoom")
+			{
+				if (GetForegroundWindow() == _Simulator_hWnd)
+				{
+					char character = (char)c;
+					SendKeys.Send(character.ToString());
+				}
+			}
+			else  // Abel
 			{
 				if (_sim.UseKeyUpDown & (keyDown | keyUp))
 				{
@@ -303,6 +355,7 @@ namespace HandbellManager
 						PostMessage(_Simulator_hWnd, WM_KEYUP, c, 0);
 				}
 				else
+				{
 					if (_functionkey)
 					{
 						PostMessage(_Simulator_hWnd, WM_KEYDOWN, c, 0);
@@ -310,6 +363,7 @@ namespace HandbellManager
 					}
 					else
 						PostMessage(_Simulator_hWnd, WM_CHAR, c, 0);
+				}
 			}
 		}
 
@@ -325,14 +379,24 @@ namespace HandbellManager
 			_mcm.update(_secsSinceUpdate);
 			_lastTick = Environment.TickCount;
 
+			// Here we just send an event every time the timer ticks, but with the timer slowed right down to 1 second intervals.
+			// Controller 0 HS and BS are the same key.
+
+			// APN: This is just to create events since we don't have an actual controller attached.
+			//	    COMMENT OUT THE FOLLOWING 2 LINES TO USE CONTROLLERS NORMALLY!
+#if EMULATE_CONTROLLER
+			SendKeystrokes(_sim.KeyHS[0], false, true);
+			this.Controls["txtCountHS" + 0].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountHS" + 0].Text) + 1);
+#endif
+
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				if (i < 4)
+				if (i < Settings.numHandbells)
 				{
 					_hb[i].Update(_lastTick);
 					if (_hb[i].HandstrokeStrike)
 					{
-						SendKeystrokes(_sim.KeyHS[i], false, true);
+						SendKeystrokes(_sim.KeyHS[i], false, true);						
 						this.Controls["txtCountHS" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountHS" + i].Text) + 1);
 					}
 					if (_hb[i].BackstrokeStrike)
@@ -342,22 +406,22 @@ namespace HandbellManager
 					}
 					if (_hb[i].Button1Pressed)
 					{
-						SendKeystrokes(_sim.KeyB1[i], false, false);
+						SendKeystrokes(_sim.KeyB1[i], false, false);						
 						this.Controls["txtCountB1" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB1" + i].Text) + 1);
 					}
 					if (_hb[i].Button2Pressed)
 					{
-						SendKeystrokes(_sim.KeyB2[i], false, false);
+						SendKeystrokes(_sim.KeyB2[i], false, false);						
 						this.Controls["txtCountB2" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB2" + i].Text) + 1);
 					}
 					if (_hb[i].Button3Pressed)
 					{
-						SendKeystrokes(_sim.KeyB3[i], false, false);
+						SendKeystrokes(_sim.KeyB3[i], false, false);						
 						this.Controls["txtCountB3" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB3" + i].Text) + 1);
 					}
 					if (_hb[i].Button4Pressed)
 					{
-						SendKeystrokes(_sim.KeyB4[i], false, false);
+						SendKeystrokes(_sim.KeyB4[i], false, false);						
 						this.Controls["txtCountB4" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB4" + i].Text) + 1);
 					}
 					if (_hb[i].Handstroke)
@@ -386,7 +450,7 @@ namespace HandbellManager
 						this.Controls["txtCountB4" + i].BackColor = SystemColors.Window;
 				}
 			}
-
+			
 			if (_monitorForm != null)
 				_monitorForm.UpdateGraph(_hb, _mcm.Count);
 
@@ -411,7 +475,7 @@ namespace HandbellManager
 
 		private void btnReset_Click(object sender, EventArgs e)
 		{
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < Settings.numHandbells; i++)
 			{
 				this.Controls["txtCountHS" + i].Text = "0";
 				this.Controls["txtCountHS" + i].BackColor = SystemColors.Window;
@@ -428,7 +492,6 @@ namespace HandbellManager
 			}
 		}
 
-
 		private void btnFindControllers_Click(object sender, EventArgs e)
 		{
 			InitDevices();
@@ -442,23 +505,66 @@ namespace HandbellManager
 			form.ShowDialog();
 		}
 
-		private void runToolStripMenuItem_Click(object sender, EventArgs e)
+		// Start the simulator running. This may be caused by Settings.autoRunSimulator == true, or the Run menu
+		// item has been clicked.
+		private void runSimulator()
 		{
-			string simulatorShortcut = Path.Combine(Application.StartupPath, _sim.ProcessName + ".lnk");
-			if (File.Exists(simulatorShortcut))
+			// Ringingroom launches the default web-browser. We just start a process with the URL
+			// which is set in the options. We therefore don't need a link
+			if (_sim.Name == "RingingRoom")
 			{
 				try
 				{
-					Process.Start(simulatorShortcut);
+					// First see if there is already a RingingRoom process running.
+					_Simulator_hWnd = IntPtr.Zero;
+					Process[] processlist = Process.GetProcesses();
+					foreach (Process p in processlist)
+					{
+						if (p.MainWindowHandle != IntPtr.Zero && p.MainWindowTitle.Contains(_sim.GrandchildWindowName))
+						{
+							p.Refresh();
+							_Simulator_hWnd = p.MainWindowHandle;
+						}
+					}
+					// If no RR process found, try to Start one.
+					if (_Simulator_hWnd == IntPtr.Zero)
+					{
+						Process.Start(_sim.ChildWindowClassName);
+					}
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(ex.Message, "Shortcut Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show(ex.Message, "Failed to bind to a RingingRoom session.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
+
 			}
-			else
-				MessageBox.Show(String.Format("To run {0} from Handbell Manager, place a shortcut to the {0} executable in the Handbell Manager installation folder with the name {1}.",
-					_sim.Name, _sim.ProcessName), String.Format("{0} Shortcut Not Found", _sim.Name), MessageBoxButtons.OK, MessageBoxIcon.Information);
+			else // Abel etc. Start a process with a shortcut (.lnk filename)
+			{
+				string simulatorShortcut = Path.Combine(Application.StartupPath, _sim.ProcessName + ".lnk");
+
+				if (File.Exists(simulatorShortcut))
+				{
+					try
+					{
+						Process.Start(simulatorShortcut);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message, "Shortcut Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					}
+				}
+				else
+					MessageBox.Show(String.Format("To run {0} from Handbell Manager, place a shortcut to the {0} executable in the Handbell Manager installation folder with the name {1}.",
+						_sim.Name, _sim.ProcessName), String.Format("{0} Shortcut Not Found", _sim.Name), MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+
+
+		}
+
+
+		private void runToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			runSimulator();			
 		}
 
 		private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -520,7 +626,7 @@ namespace HandbellManager
 				form.ShowDialog();
 			}
 		}
-
+		
 		private void abelToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
 			if (Settings.currentSimulator != 0)
@@ -529,14 +635,18 @@ namespace HandbellManager
 					beltowerToolStripMenuItem1.Image = runToolStripMenuItem.Image;
 				if (Settings.currentSimulator == 2)
 					ringingMasterToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+				if (Settings.currentSimulator == 3)
+					ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
 				runToolStripMenuItem.Image = abelToolStripMenuItem1.Image;
 				abelToolStripMenuItem1.Image = null;
 				abelToolStripMenuItem1.Checked = true;
 				beltowerToolStripMenuItem1.Checked = false;
 				ringingMasterToolStripMenuItem1.Checked = false;
+				ringingRoomToolStripMenuItem1.Checked = false;
 				Settings.currentSimulator = 0;
 				_sim = Settings.simulator[Settings.currentSimulator];
 				runToolStripMenuItem.Text = _sim.Name;
+				this.Text = "Handbell Manager - " + _sim.Name;
 				Settings.Save();
 				_Simulator_hWnd = IntPtr.Zero; //Reset Simulator handle
 			}
@@ -550,14 +660,18 @@ namespace HandbellManager
 					abelToolStripMenuItem1.Image = runToolStripMenuItem.Image;
 				if (Settings.currentSimulator == 2)
 					ringingMasterToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+				if (Settings.currentSimulator == 3)
+					ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
 				runToolStripMenuItem.Image = beltowerToolStripMenuItem1.Image;
 				beltowerToolStripMenuItem1.Image = null;
 				abelToolStripMenuItem1.Checked = false;
 				beltowerToolStripMenuItem1.Checked = true;
 				ringingMasterToolStripMenuItem1.Checked = false;
+				ringingRoomToolStripMenuItem1.Checked = false;
 				Settings.currentSimulator = 1;
 				_sim = Settings.simulator[Settings.currentSimulator];
 				runToolStripMenuItem.Text = _sim.Name;
+				this.Text = "Handbell Manager - " + _sim.Name;
 				Settings.Save();
 				_Simulator_hWnd = IntPtr.Zero; //Reset Simulator handle
 			}
@@ -571,14 +685,44 @@ namespace HandbellManager
 					abelToolStripMenuItem1.Image = runToolStripMenuItem.Image;
 				if (Settings.currentSimulator == 1)
 					beltowerToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+				if (Settings.currentSimulator == 3)
+					ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
 				runToolStripMenuItem.Image = ringingMasterToolStripMenuItem1.Image;
 				ringingMasterToolStripMenuItem1.Image = null;
 				abelToolStripMenuItem1.Checked = false;
 				beltowerToolStripMenuItem1.Checked = false;
 				ringingMasterToolStripMenuItem1.Checked = true;
+				ringingRoomToolStripMenuItem1.Checked = false;
 				Settings.currentSimulator = 2;
 				_sim = Settings.simulator[Settings.currentSimulator];
+				this.Text = "Handbell Manager - " + _sim.Name;
 				runToolStripMenuItem.Text = _sim.Name;
+				Settings.Save();
+				_Simulator_hWnd = IntPtr.Zero; //Reset Simulator handle
+			}
+		}
+
+		private void ringingRoomToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			if (Settings.currentSimulator != 3)
+			{
+				if (Settings.currentSimulator == 0)
+					abelToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+				if (Settings.currentSimulator == 1)
+					beltowerToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+				if (Settings.currentSimulator == 2)
+					ringingMasterToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+
+				runToolStripMenuItem.Image = ringingMasterToolStripMenuItem1.Image;
+				ringingRoomToolStripMenuItem1.Image = null;
+				abelToolStripMenuItem1.Checked = false;
+				beltowerToolStripMenuItem1.Checked = false;
+				ringingMasterToolStripMenuItem1.Checked = false;
+				ringingRoomToolStripMenuItem1.Checked = true;
+				Settings.currentSimulator = 3;
+				_sim = Settings.simulator[Settings.currentSimulator];
+				runToolStripMenuItem.Text = _sim.Name;
+				this.Text = "Handbell Manager - " + _sim.Name;
 				Settings.Save();
 				_Simulator_hWnd = IntPtr.Zero; //Reset Simulator handle
 			}
@@ -597,6 +741,7 @@ namespace HandbellManager
 					abelToolStripMenuItem1.Checked = false;
 					beltowerToolStripMenuItem1.Checked = true;
 					ringingMasterToolStripMenuItem1.Checked = false;
+					ringingRoomToolStripMenuItem1.Checked = false;
 					runToolStripMenuItem.Text = _sim.Name;
 					break;
 				case 2: //Set Run to RingingMaster
@@ -606,7 +751,19 @@ namespace HandbellManager
 					abelToolStripMenuItem1.Checked = false;
 					beltowerToolStripMenuItem1.Checked = false;
 					ringingMasterToolStripMenuItem1.Checked = true;
+					ringingRoomToolStripMenuItem1.Checked = false;
 					runToolStripMenuItem.Text = _sim.Name;
+					break;
+				case 3: // Set Ringing Room
+					abelToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+					runToolStripMenuItem.Image = ringingRoomToolStripMenuItem1.Image;
+					ringingMasterToolStripMenuItem1.Image = ringingMasterToolStripMenuItem1.Image;
+					ringingRoomToolStripMenuItem1.Image = null;
+					abelToolStripMenuItem1.Checked = false;
+					beltowerToolStripMenuItem1.Checked = false;
+					ringingMasterToolStripMenuItem1.Checked = false;
+					ringingRoomToolStripMenuItem1.Checked = true;
+					runToolStripMenuItem.Text = _sim.Name;					
 					break;
 			}
 		}
