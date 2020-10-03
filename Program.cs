@@ -22,41 +22,41 @@ using Microsoft.DirectX.DirectInput;
 
 namespace HandbellManager
 {
-	static class Program
-	{
-		static ConfigForm _configForm;
+    static class Program
+    {
+        static ConfigForm _configForm;
 
-		[STAThread]
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		static void Main()
-		{
-			try
-			{
-				Settings.Open();
+        [STAThread]
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        static void Main()
+        {
+            try
+            {
+                Settings.Open();
 
-				Application.EnableVisualStyles();
-				Application.SetCompatibleTextRenderingDefault(false);
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
-				//Create the config form
-				_configForm = new ConfigForm();
+                //Create the config form
+                _configForm = new ConfigForm();
 
-				Application.Run(_configForm);
+                Application.Run(_configForm);
 
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message + ex.StackTrace);
-			}
-		}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
 
-		public static ConfigForm ConfigForm
-		{
-			get
-			{
-				return _configForm;
-			}
-		}
-	}
+        public static ConfigForm ConfigForm
+        {
+            get
+            {
+                return _configForm;
+            }
+        }
+    }
 }
