@@ -36,13 +36,14 @@
             this.lnkemail = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(59, 18);
+            this.lblName.Location = new System.Drawing.Point(59, 23);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(171, 15);
             this.lblName.TabIndex = 0;
@@ -72,7 +73,7 @@
             // pnlLogo
             // 
             this.pnlLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlLogo.BackgroundImage")));
-            this.pnlLogo.Location = new System.Drawing.Point(12, 40);
+            this.pnlLogo.Location = new System.Drawing.Point(12, 23);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(32, 32);
             this.pnlLogo.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             this.lnkemail.AutoSize = true;
             this.lnkemail.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkemail.Location = new System.Drawing.Point(59, 76);
+            this.lnkemail.Location = new System.Drawing.Point(59, 71);
             this.lnkemail.Name = "lnkemail";
             this.lnkemail.Size = new System.Drawing.Size(171, 15);
             this.lnkemail.TabIndex = 4;
@@ -92,20 +93,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 105);
+            this.label1.Location = new System.Drawing.Point(59, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 13);
+            this.label1.Size = new System.Drawing.Size(293, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Support for RingingRoom and  Muster added by Adrian Nash.";
+            this.label1.Text = "Support for RingingRoom and Muster added by Adrian Nash.";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 127);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Contact: adrian.nashmail@btinternet.com";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 8;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(59, 126);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(190, 15);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "adrian.nashmail@btinternet.com";
             // 
             // AboutForm
             // 
@@ -113,6 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 198);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkemail);
@@ -141,5 +152,6 @@
 		private System.Windows.Forms.LinkLabel lnkemail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
