@@ -56,7 +56,7 @@
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(236, 15);
             this.lblCopyright.TabIndex = 1;
-            this.lblCopyright.Text = "Copyright (C) Graham A C John 2009-2018";
+            this.lblCopyright.Text = "Copyright (C) Graham A C John 2009-2020";
             // 
             // btnOK
             // 

@@ -4,7 +4,7 @@
 ;!include "DotNetMacro.nsh"
 
 ; The name of the installer
-Name "Handbell Manager v1.2.3"
+Name "Handbell Manager v2.0"
 
 ; The name of the installer icon
 

@@ -1,4 +1,4 @@
-Copyright (C) 2009 - 2018 Graham A C John
+Copyright (C) 2009 - 2020 Graham A C John
 
 Handbell Manager is free. You don't have to pay for it, and you can use it any way you want. 
 
