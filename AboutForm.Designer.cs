@@ -34,6 +34,8 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lnkemail = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblName
@@ -59,7 +61,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(234, 70);
+            this.btnOK.Location = new System.Drawing.Point(289, 163);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(81, 24);
             this.btnOK.TabIndex = 2;
@@ -87,12 +89,32 @@
             this.lnkemail.Text = "graham@changeringing.co.uk";
             this.lnkemail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkemail_LinkClicked);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Support for RingingRoom and  Muster added by Adrian Nash.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(59, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Contact: adrian.nashmail@btinternet.com";
+            // 
             // AboutForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 105);
+            this.ClientSize = new System.Drawing.Size(379, 198);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkemail);
             this.Controls.Add(this.pnlLogo);
             this.Controls.Add(this.btnOK);
@@ -117,5 +139,7 @@
 		private System.Windows.Forms.Button btnOK;
 		private System.Windows.Forms.Panel pnlLogo;
 		private System.Windows.Forms.LinkLabel lnkemail;
-	}
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+    }
 }

@@ -26,9 +26,9 @@ namespace HandbellManager
 
 	static class Settings
 	{
-		public static int settingsVersion = 120; //Change when Settings File format changes
-		public static int previousSettingsVersion = 110; //Change when Settings File format changes
-		public static Simulator[] simulator = new Simulator[3];
+		public static int settingsVersion = 141; //Change when Settings File format changes
+		public static int previousSettingsVersion = 140; //Change when Settings File format changes
+		public static Simulator[] simulator = new Simulator[5];
 		public static int currentSimulator = 0;
 		public static int[] swingAxis = new int[] { 2, 2, 2, 2 };
 		public static int[] BSP = new int[] { 0, 0, 0, 0 };
@@ -36,6 +36,9 @@ namespace HandbellManager
 		public static int debounceDelay = 0;
 		public static int handstrokeStrikeDelay = 0;
 		public static int backstrokeStrikeDelay = 0;
+		public const int numSimulators = 5;
+		public const int numHandbells = 4;
+		public static bool autoRunSimulator = false;   // Flag (not saved) to indicate -R command line to force simulator automatic start
 
 		public static void Default()
 		{
@@ -86,6 +89,37 @@ namespace HandbellManager
 					simulator[2].KeyB3 = new string[] { "S", " ", "S", " " };
 					simulator[2].KeyB4 = new string[] { " ", "C", " ", "C" };
 					break;
+				case 3:
+					simulator[3].Name = "RingingRoom";
+					simulator[3].ProcessName = "RingingRoom";
+					simulator[3].ChildWindowClassName = "www.ringingroom.com"; // Use as URL for Ringing Room (not actually a class) for compatibility with other sims.
+					simulator[3].ChildWindowName = "www.ringingroom.com"; 
+					simulator[3].GrandchildWindowClassName = "Ringing Room"; // Use as the window identifier name (not actually a class)  for compatibility with other sims.
+					simulator[3].GrandchildWindowName = "Ringing Room"; 
+					simulator[3].UseKeyUpDown = false;
+					simulator[3].KeyBS = new string[] { "j", "f", "r", "u" };
+					simulator[3].KeyHS = new string[] { "j", "f", "r", "u" };
+					simulator[3].KeyB1 = new string[] { "b", "h", "b", "h" };
+					simulator[3].KeyB2 = new string[] { "n", "g", "n", "g" };
+					simulator[3].KeyB3 = new string[] { "F9", "a", "F9", "a" };
+					simulator[3].KeyB4 = new string[] { "g", ";", "g", ";" };
+					break;
+				case 4:
+					simulator[4].Name = "Muster";
+					simulator[4].ProcessName = "Muster";
+					//simulator[4].ChildWindowClassName = "WindowsForms10.Window.8.app.0.2a45bdb_r16_ad1";
+					simulator[4].ChildWindowClassName = "";
+					simulator[4].ChildWindowName = "Muster";
+					simulator[4].GrandchildWindowClassName = "";
+					simulator[4].GrandchildWindowName = "";
+					simulator[4].UseKeyUpDown = false;
+					simulator[4].KeyBS = new string[] { "J", "F", "R", "U" };
+					simulator[4].KeyHS = new string[] { "J", "F", "R", "U" };
+					simulator[4].KeyB1 = new string[] { "F4", "A", "F4", "A" };
+					simulator[4].KeyB2 = new string[] { "G", ";", "G", ";" };
+					simulator[4].KeyB3 = new string[] { "F4", "A", "F4", "A" };
+					simulator[4].KeyB4 = new string[] { "G", ";", "G", ";" };
+					break;
 			}
 			//Calibration defaults
 			debounceDelay = 350;
@@ -125,7 +159,7 @@ namespace HandbellManager
 
 		public static void Open()
 		{
-			for (int j = 0; j < 3; j++)
+			for (int j = 0; j < numSimulators; j++)
 			{
 				currentSimulator = j;
 				simulator[j] = new Simulator();
@@ -136,8 +170,8 @@ namespace HandbellManager
 			if (!File.Exists(SettingsFilename))
 			{
 				//Get previous settings, if any
-				GetPreviousSettings();
-				//Save default settings
+				GetPreviousSettings();  // This function will just return because the file does not exist.
+				//Save default settings  This will be in the latest version format.
 				Save();
 				return;
 			}
@@ -150,39 +184,94 @@ namespace HandbellManager
 				br = new BinaryReader(fs);
 
 				int fileversion = br.ReadInt32();
-				if (fileversion == settingsVersion)
+				int numSimulatorsToLoad = numSimulators;
+
+				// Versions below 1.3 do not support RingingRoom. Only load first 3 simulator settings.
+				if (fileversion < settingsVersion)
 				{
-					//Get Calibration Settings
-					debounceDelay = br.ReadInt32();
-					handstrokeStrikeDelay = br.ReadInt32();
-					backstrokeStrikeDelay = br.ReadInt32();
-					for (int i = 0; i < 4; i++)
+					if (fileversion == previousSettingsVersion)
+						numSimulatorsToLoad = numSimulators - 1;  // Version 120
+					else
+						numSimulatorsToLoad = 1;   // Version 110
+				}
+
+				debounceDelay = br.ReadInt32();
+				handstrokeStrikeDelay = br.ReadInt32();
+				backstrokeStrikeDelay = br.ReadInt32();
+				for (int i = 0; i < numHandbells; i++)
+				{
+					BSP[i] = br.ReadInt32();
+					HSP[i] = br.ReadInt32();
+					swingAxis[i] = br.ReadInt32();
+				}
+				//Get Current Simulator
+				currentSimulator = br.ReadInt32();
+				//Get Simulator settings
+				for (int j = 0; j < numSimulatorsToLoad; j++)
+				{
+					simulator[j].Name = br.ReadString();
+					simulator[j].ProcessName = br.ReadString();
+					simulator[j].ChildWindowClassName = br.ReadString();
+					simulator[j].ChildWindowName = br.ReadString();
+					simulator[j].GrandchildWindowClassName = br.ReadString();
+					simulator[j].GrandchildWindowName = br.ReadString();
+					simulator[j].UseKeyUpDown = br.ReadBoolean();
+					for (int i = 0; i < numHandbells; i++)
 					{
-						BSP[i] = br.ReadInt32();
-						HSP[i] = br.ReadInt32();
-						swingAxis[i] = br.ReadInt32();
+						simulator[j].KeyBS[i] = br.ReadString();
+						simulator[j].KeyHS[i] = br.ReadString();
+						simulator[j].KeyB1[i] = br.ReadString();
+						simulator[j].KeyB2[i] = br.ReadString();
+						simulator[j].KeyB3[i] = br.ReadString();
+						simulator[j].KeyB4[i] = br.ReadString();
 					}
-					//Get Current Simulator
-					currentSimulator = br.ReadInt32();
-					//Get Simulator settings
-					for (int j = 0; j < 3; j++)
+				}
+
+				// Command line options
+				// -r        : run the current simulator upon startup
+				// -s <0-4>  : Set simulator 0 (Abel), 1 (Beltower), 2 (RingingMaster), 3 (RingingRoom) - overrides current setting.
+				// -c <name> : Set the child window class - or URL for RingingRoom
+				// -p        : Set the simulator process name
+				// -u <url>  : Sets the URL for RingingRoom (Simulator 3)
+				string[] arguments = Environment.GetCommandLineArgs();
+				int narg = arguments.GetLength(0);
+				int idx = 1;
+				while (narg > 1)
+				{
+					switch (arguments[idx++].ToUpper())
 					{
-						simulator[j].Name = br.ReadString();
-						simulator[j].ProcessName = br.ReadString();
-						simulator[j].ChildWindowClassName = br.ReadString();
-						simulator[j].ChildWindowName = br.ReadString();
-						simulator[j].GrandchildWindowClassName = br.ReadString();
-						simulator[j].GrandchildWindowName = br.ReadString();
-						simulator[j].UseKeyUpDown = br.ReadBoolean();
-						for (int i = 0; i < 4; i++)
-						{
-							simulator[j].KeyBS[i] = br.ReadString();
-							simulator[j].KeyHS[i] = br.ReadString();
-							simulator[j].KeyB1[i] = br.ReadString();
-							simulator[j].KeyB2[i] = br.ReadString();
-							simulator[j].KeyB3[i] = br.ReadString();
-							simulator[j].KeyB4[i] = br.ReadString();
-						}
+						// Simulator selection 0-3
+						case "-S":
+							narg--;
+							Int32 simNum = Int32.Parse(arguments[idx++]);
+							if (simNum >= 0 && simNum < numSimulators)
+								currentSimulator = simNum;
+							narg--;
+							break;
+						// auto-run simulator upon startup
+						case "-R":
+							autoRunSimulator = true;		
+							narg--;
+							break;
+						// Process name for simulator
+						case "-P":
+							narg--;
+							simulator[currentSimulator].ProcessName = arguments[idx++];
+							narg--;
+							break;
+						// ChildWindow name for simulator (e.g. URL for RingingRoom)
+						case "-C":
+							narg--;
+							simulator[currentSimulator].ChildWindowClassName = arguments[idx++];
+							narg--;
+							break;
+						case "-U":
+							narg--;
+							simulator[currentSimulator].ChildWindowName = arguments[idx++];
+							narg--;
+							break;
+						default:
+							break;
 					}
 				}
 			}
@@ -204,13 +293,13 @@ namespace HandbellManager
 				CreateFolder();
 				FileStream fs = new FileStream(SettingsFilename, FileMode.Create, FileAccess.ReadWrite);
 				BinaryWriter bw = new BinaryWriter(fs);
-
+				
 				bw.Write(settingsVersion);
 				//Write Calibration Settings
 				bw.Write(debounceDelay);
 				bw.Write(handstrokeStrikeDelay);
 				bw.Write(backstrokeStrikeDelay);
-				for (int i = 0; i < 4; i++)
+				for (int i = 0; i < numHandbells; i++)
 				{
 					bw.Write(BSP[i]);
 					bw.Write(HSP[i]);
@@ -219,7 +308,7 @@ namespace HandbellManager
 				//Write Current Simulator Index
 				bw.Write(currentSimulator);
 				//Write Simulator Settings
-				for (int j = 0; j < 3; j++)
+				for (int j = 0; j < numSimulators; j++)
 				{
 					bw.Write(simulator[j].Name);
 					bw.Write(simulator[j].ProcessName);
@@ -228,7 +317,7 @@ namespace HandbellManager
 					bw.Write(simulator[j].GrandchildWindowClassName); 
 					bw.Write(simulator[j].GrandchildWindowName);
 					bw.Write(simulator[j].UseKeyUpDown);
-					for (int i = 0; i < 4; i++)
+					for (int i = 0; i < numHandbells; i++)
 					{
 						bw.Write(simulator[j].KeyBS[i]);
 						bw.Write(simulator[j].KeyHS[i]);
@@ -255,12 +344,16 @@ namespace HandbellManager
 			int version = settingsVersion;
 			settingsVersion = previousSettingsVersion;
 
+			// If no Cfg file exists, set settingsVersion to latest version
+			// and exit. Save() will save out a cfg file with latest settings version.			
 			if (!File.Exists(SettingsFilename))
 			{
 				settingsVersion = version;
 				return;
 			}
 
+			// If a previous version config file exists it could be previous version 120, or 110
+			// then load it appropriately. The subsequent save will be in version 130 format.
 			FileStream fs = null;
 			BinaryReader br = null;
 			try
@@ -269,25 +362,42 @@ namespace HandbellManager
 				br = new BinaryReader(fs);
 
 				int fileversion = br.ReadInt32();
-				if (fileversion == settingsVersion)
+
+				if (fileversion == previousSettingsVersion)
 				{
-					simulator[0].ProcessName = br.ReadString();
+					int numSimulatorsToLoad = 3;
+
 					debounceDelay = br.ReadInt32();
 					handstrokeStrikeDelay = br.ReadInt32();
 					backstrokeStrikeDelay = br.ReadInt32();
-					for (int i = 0; i < 4; i++)
+					for (int i = 0; i < numHandbells; i++)
 					{
-						simulator[0].KeyBS[i] = br.ReadString();
-						simulator[0].KeyHS[i] = br.ReadString();
-						simulator[0].KeyB1[i] = br.ReadString();
-						simulator[0].KeyB2[i] = br.ReadString();
-						simulator[0].KeyB3[i] = br.ReadString();
-						simulator[0].KeyB4[i] = br.ReadString();
 						BSP[i] = br.ReadInt32();
 						HSP[i] = br.ReadInt32();
 						swingAxis[i] = br.ReadInt32();
 					}
-					simulator[0].UseKeyUpDown = br.ReadBoolean();
+					//Get Current Simulator
+					currentSimulator = br.ReadInt32();
+					//Get Simulator settings
+					for (int j = 0; j < numSimulatorsToLoad; j++)
+					{
+						simulator[j].Name = br.ReadString();
+						simulator[j].ProcessName = br.ReadString();
+						simulator[j].ChildWindowClassName = br.ReadString();
+						simulator[j].ChildWindowName = br.ReadString();
+						simulator[j].GrandchildWindowClassName = br.ReadString();
+						simulator[j].GrandchildWindowName = br.ReadString();
+						simulator[j].UseKeyUpDown = br.ReadBoolean();
+						for (int i = 0; i < numHandbells; i++)
+						{
+							simulator[j].KeyBS[i] = br.ReadString();
+							simulator[j].KeyHS[i] = br.ReadString();
+							simulator[j].KeyB1[i] = br.ReadString();
+							simulator[j].KeyB2[i] = br.ReadString();
+							simulator[j].KeyB3[i] = br.ReadString();
+							simulator[j].KeyB4[i] = br.ReadString();
+						}
+					}
 				}
 			}
 			catch (Exception ex)

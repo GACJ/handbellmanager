@@ -39,7 +39,7 @@ namespace HandbellManager
 			_initialisation = true;
 			_sim = Settings.simulator[Settings.currentSimulator];
 			//Handbell Calibration
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < Settings.numHandbells; i++)
 			{
 				ComboBox cb = (ComboBox) tabHandbellCalibration.Controls["cmbAxis" + i];
 				cb.SelectedIndex = Settings.swingAxis[i];
@@ -57,12 +57,43 @@ namespace HandbellManager
 			spnDelayBS.Value = Settings.backstrokeStrikeDelay;
 
 			//Simulator keystrokes
-			tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
-			lblSimulatorProcessName.Text = _sim.Name + " Process Name:";
-			txtProcessName.Text = _sim.ProcessName;
-            txtChildWindowClassName.Text = _sim.ChildWindowClassName;
-            txtGrandchildWindowClassName.Text = _sim.GrandchildWindowClassName;
-            for (int i = 0; i < 4; i++)
+			// Ringing Room is a little different. It is a web page so we only need to specify a URL.
+			if (_sim.Name=="RingingRoom")
+			{
+				tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
+				lblSimulatorProcessName.Hide();
+				txtProcessName.Hide();
+				lblChildWindowClassName.Text = "RingingRoom URL:";				
+				lblGrandchildWindowClassName.Text = "Window Name:";				
+				chkUseKeyUpDown.Hide();
+			}
+			// For Muster we hide the controls for process, window names and key-up/down. This
+			// may be temporary whilst Muster is still in development.
+			else if (_sim.Name =="Muster")
+			{
+				tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
+				lblSimulatorProcessName.Text = _sim.Name + " Process Name:";
+				txtProcessName.Text = _sim.ProcessName;
+				chkUseKeyUpDown.Checked = _sim.UseKeyUpDown;
+				lblSimulatorProcessName.Hide();
+				txtProcessName.Hide();
+				chkUseKeyUpDown.Hide();
+				lblChildWindowClassName.Hide();
+				lblGrandchildWindowClassName.Hide();
+				txtChildWindowClassName.Hide();
+				txtGrandchildWindowClassName.Hide();
+			}
+			else
+			{
+				tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
+				lblSimulatorProcessName.Text = _sim.Name + " Process Name:";
+				txtProcessName.Text = _sim.ProcessName;				
+				chkUseKeyUpDown.Checked = _sim.UseKeyUpDown;	
+			}
+
+			txtChildWindowClassName.Text = _sim.ChildWindowClassName;
+			txtGrandchildWindowClassName.Text = _sim.GrandchildWindowClassName;
+			for (int i = 0; i < 4; i++)
 			{
 				tabSimulatorKeyStrokes.Controls["txtKeyBS" + i].Text = _sim.KeyBS[i];
 				tabSimulatorKeyStrokes.Controls["txtKeyHS" + i].Text = _sim.KeyHS[i];
@@ -71,9 +102,9 @@ namespace HandbellManager
 				tabSimulatorKeyStrokes.Controls["txtKeyB3" + i].Text = _sim.KeyB3[i];
 				tabSimulatorKeyStrokes.Controls["txtKeyB4" + i].Text = _sim.KeyB4[i];
 			}
-			chkUseKeyUpDown.Checked = _sim.UseKeyUpDown;
-            //Bring previously selected tab to the front
-            if (ConfigForm.optionsTabKeystrokesSelected)
+
+			//Bring previously selected tab to the front
+			if (ConfigForm.optionsTabKeystrokesSelected)
                 tabControl1.SelectedIndex = 1;
             else
                 tabControl1.SelectedIndex = 0;
@@ -201,14 +232,14 @@ namespace HandbellManager
 			if (_initialisation)
 				return;
 			
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < Settings.numHandbells; i++)
 			{
 				Settings.BSP[i] = GetHandbellTextbox("txtBSP", i).Value;
 			}
 			//Update handbell settings
 			for (int i = 0; i < _mcm.Count; i++)
 			{
-				if (i < 4)
+				if (i < Settings.numHandbells)
 					_hb[i].UpdateSettings();
 			}
 
@@ -219,7 +250,7 @@ namespace HandbellManager
 			if (_initialisation)
 				return;
 
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < Settings.numHandbells; i++)
 			{
 				Settings.HSP[i] = GetHandbellTextbox("txtHSP", i).Value;
 			}
@@ -235,7 +266,7 @@ namespace HandbellManager
 		{
 			if (_initialisation)
 				return;
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < Settings.numHandbells; i++)
 			{
 				_sim.KeyBS[i] = tabSimulatorKeyStrokes.Controls["txtKeyBS" + i].Text;
 				_sim.KeyHS[i] = tabSimulatorKeyStrokes.Controls["txtKeyHS" + i].Text;
@@ -250,7 +281,7 @@ namespace HandbellManager
 		{
 			if (_initialisation)
 				return;
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < Settings.numHandbells; i++)
 			{
 				int z1, z2, z3, z4;
 				z1 = cmbAxis0.SelectedIndex;
@@ -282,7 +313,7 @@ namespace HandbellManager
 				//Update handbell settings
 				for (int i = 0; i < _mcm.Count; i++)
 				{
-					if (i < 4)
+					if (i < Settings.numHandbells)
 						_hb[i].UpdateSettings();
 				}
 				InitializeFields();
@@ -304,5 +335,14 @@ namespace HandbellManager
             ConfigForm.optionsTabKeystrokesSelected = false;
         }
 
+		private void textBox_rrURL_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox_rrID_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
