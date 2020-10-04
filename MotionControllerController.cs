@@ -230,6 +230,21 @@ namespace MotionControllerManager
                     return currentStates[joyStick].Y;
                 case 2:
                     return currentStates[joyStick].Z;
+                case 3:
+                    return currentStates[joyStick].Rx;
+                case 4:
+                    return currentStates[joyStick].Ry;
+                case 5:
+                    return currentStates[joyStick].Rz;
+                case 6:
+                    var slider6 = currentStates[joyStick].GetSlider();
+                    return slider6.Length > 0 ? slider6[0] : 0;
+                case 7:
+                    var slider7 = currentStates[joyStick].GetSlider();
+                    return slider7.Length > 1 ? slider7[1] : 0;
+                case 8:
+                    var slider8 = currentStates[joyStick].GetSlider();
+                    return slider8.Length > 2 ? slider8[2] : 0;
                 default:
                     return 0;
             }

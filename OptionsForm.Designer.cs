@@ -95,14 +95,6 @@
             this.txt2 = new System.Windows.Forms.TextBox();
             this.txt1 = new System.Windows.Forms.TextBox();
             this.txt0 = new System.Windows.Forms.TextBox();
-            this.txtBSP2 = new HandbellManager.NumericalTextBox();
-            this.txtBSP1 = new HandbellManager.NumericalTextBox();
-            this.txtBSP3 = new HandbellManager.NumericalTextBox();
-            this.txtBSP0 = new HandbellManager.NumericalTextBox();
-            this.txtHSP0 = new HandbellManager.NumericalTextBox();
-            this.txtHSP1 = new HandbellManager.NumericalTextBox();
-            this.txtHSP3 = new HandbellManager.NumericalTextBox();
-            this.txtHSP2 = new HandbellManager.NumericalTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -112,6 +104,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.txtBSP2 = new HandbellManager.NumericalTextBox();
+            this.txtBSP1 = new HandbellManager.NumericalTextBox();
+            this.txtBSP3 = new HandbellManager.NumericalTextBox();
+            this.txtBSP0 = new HandbellManager.NumericalTextBox();
+            this.txtHSP0 = new HandbellManager.NumericalTextBox();
+            this.txtHSP1 = new HandbellManager.NumericalTextBox();
+            this.txtHSP3 = new HandbellManager.NumericalTextBox();
+            this.txtHSP2 = new HandbellManager.NumericalTextBox();
             this.tabSimulatorKeyStrokes.SuspendLayout();
             this.tabHandbellCalibration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnDebounceDelay)).BeginInit();
@@ -696,7 +696,13 @@
             this.cmbAxis0.Items.AddRange(new object[] {
             "X",
             "Y",
-            "Z"});
+            "Z",
+            "RotX",
+            "RotY",
+            "RotZ",
+            "Slider",
+            "Dial",
+            "Wheel"});
             this.cmbAxis0.Location = new System.Drawing.Point(359, 24);
             this.cmbAxis0.Name = "cmbAxis0";
             this.cmbAxis0.Size = new System.Drawing.Size(60, 21);
@@ -710,7 +716,13 @@
             this.cmbAxis1.Items.AddRange(new object[] {
             "X",
             "Y",
-            "Z"});
+            "Z",
+            "RotX",
+            "RotY",
+            "RotZ",
+            "Slider",
+            "Dial",
+            "Wheel"});
             this.cmbAxis1.Location = new System.Drawing.Point(294, 24);
             this.cmbAxis1.Name = "cmbAxis1";
             this.cmbAxis1.Size = new System.Drawing.Size(60, 21);
@@ -724,7 +736,13 @@
             this.cmbAxis2.Items.AddRange(new object[] {
             "X",
             "Y",
-            "Z"});
+            "Z",
+            "RotX",
+            "RotY",
+            "RotZ",
+            "Slider",
+            "Dial",
+            "Wheel"});
             this.cmbAxis2.Location = new System.Drawing.Point(229, 24);
             this.cmbAxis2.Name = "cmbAxis2";
             this.cmbAxis2.Size = new System.Drawing.Size(60, 21);
@@ -738,7 +756,13 @@
             this.cmbAxis3.Items.AddRange(new object[] {
             "X",
             "Y",
-            "Z"});
+            "Z",
+            "RotX",
+            "RotY",
+            "RotZ",
+            "Slider",
+            "Dial",
+            "Wheel"});
             this.cmbAxis3.Location = new System.Drawing.Point(165, 24);
             this.cmbAxis3.Name = "cmbAxis3";
             this.cmbAxis3.Size = new System.Drawing.Size(60, 21);
@@ -900,86 +924,6 @@
             this.txt0.Text = "0";
             this.txt0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtBSP2
-            // 
-            this.txtBSP2.Location = new System.Drawing.Point(229, 131);
-            this.txtBSP2.MaxLength = 5;
-            this.txtBSP2.Name = "txtBSP2";
-            this.txtBSP2.Size = new System.Drawing.Size(60, 20);
-            this.txtBSP2.TabIndex = 20;
-            this.txtBSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBSP2.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
-            // 
-            // txtBSP1
-            // 
-            this.txtBSP1.Location = new System.Drawing.Point(294, 131);
-            this.txtBSP1.MaxLength = 5;
-            this.txtBSP1.Name = "txtBSP1";
-            this.txtBSP1.Size = new System.Drawing.Size(60, 20);
-            this.txtBSP1.TabIndex = 21;
-            this.txtBSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBSP1.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
-            // 
-            // txtBSP3
-            // 
-            this.txtBSP3.Location = new System.Drawing.Point(165, 131);
-            this.txtBSP3.MaxLength = 5;
-            this.txtBSP3.Name = "txtBSP3";
-            this.txtBSP3.Size = new System.Drawing.Size(60, 20);
-            this.txtBSP3.TabIndex = 19;
-            this.txtBSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBSP3.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
-            // 
-            // txtBSP0
-            // 
-            this.txtBSP0.Location = new System.Drawing.Point(359, 131);
-            this.txtBSP0.MaxLength = 5;
-            this.txtBSP0.Name = "txtBSP0";
-            this.txtBSP0.Size = new System.Drawing.Size(60, 20);
-            this.txtBSP0.TabIndex = 22;
-            this.txtBSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBSP0.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
-            // 
-            // txtHSP0
-            // 
-            this.txtHSP0.Location = new System.Drawing.Point(359, 105);
-            this.txtHSP0.MaxLength = 5;
-            this.txtHSP0.Name = "txtHSP0";
-            this.txtHSP0.Size = new System.Drawing.Size(60, 20);
-            this.txtHSP0.TabIndex = 17;
-            this.txtHSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtHSP0.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
-            // 
-            // txtHSP1
-            // 
-            this.txtHSP1.Location = new System.Drawing.Point(294, 105);
-            this.txtHSP1.MaxLength = 5;
-            this.txtHSP1.Name = "txtHSP1";
-            this.txtHSP1.Size = new System.Drawing.Size(60, 20);
-            this.txtHSP1.TabIndex = 16;
-            this.txtHSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtHSP1.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
-            // 
-            // txtHSP3
-            // 
-            this.txtHSP3.Location = new System.Drawing.Point(165, 105);
-            this.txtHSP3.MaxLength = 5;
-            this.txtHSP3.Name = "txtHSP3";
-            this.txtHSP3.Size = new System.Drawing.Size(60, 20);
-            this.txtHSP3.TabIndex = 14;
-            this.txtHSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtHSP3.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
-            // 
-            // txtHSP2
-            // 
-            this.txtHSP2.Location = new System.Drawing.Point(229, 105);
-            this.txtHSP2.MaxLength = 5;
-            this.txtHSP2.Name = "txtHSP2";
-            this.txtHSP2.Size = new System.Drawing.Size(60, 20);
-            this.txtHSP2.TabIndex = 15;
-            this.txtHSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtHSP2.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1065,6 +1009,86 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(439, 303);
             this.tabControl1.TabIndex = 0;
+            // 
+            // txtBSP2
+            // 
+            this.txtBSP2.Location = new System.Drawing.Point(229, 131);
+            this.txtBSP2.MaxLength = 5;
+            this.txtBSP2.Name = "txtBSP2";
+            this.txtBSP2.Size = new System.Drawing.Size(60, 20);
+            this.txtBSP2.TabIndex = 20;
+            this.txtBSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBSP2.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+            // 
+            // txtBSP1
+            // 
+            this.txtBSP1.Location = new System.Drawing.Point(294, 131);
+            this.txtBSP1.MaxLength = 5;
+            this.txtBSP1.Name = "txtBSP1";
+            this.txtBSP1.Size = new System.Drawing.Size(60, 20);
+            this.txtBSP1.TabIndex = 21;
+            this.txtBSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBSP1.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+            // 
+            // txtBSP3
+            // 
+            this.txtBSP3.Location = new System.Drawing.Point(165, 131);
+            this.txtBSP3.MaxLength = 5;
+            this.txtBSP3.Name = "txtBSP3";
+            this.txtBSP3.Size = new System.Drawing.Size(60, 20);
+            this.txtBSP3.TabIndex = 19;
+            this.txtBSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBSP3.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+            // 
+            // txtBSP0
+            // 
+            this.txtBSP0.Location = new System.Drawing.Point(359, 131);
+            this.txtBSP0.MaxLength = 5;
+            this.txtBSP0.Name = "txtBSP0";
+            this.txtBSP0.Size = new System.Drawing.Size(60, 20);
+            this.txtBSP0.TabIndex = 22;
+            this.txtBSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBSP0.TextChanged += new System.EventHandler(this.txtBSP_TextChanged);
+            // 
+            // txtHSP0
+            // 
+            this.txtHSP0.Location = new System.Drawing.Point(359, 105);
+            this.txtHSP0.MaxLength = 5;
+            this.txtHSP0.Name = "txtHSP0";
+            this.txtHSP0.Size = new System.Drawing.Size(60, 20);
+            this.txtHSP0.TabIndex = 17;
+            this.txtHSP0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHSP0.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
+            // 
+            // txtHSP1
+            // 
+            this.txtHSP1.Location = new System.Drawing.Point(294, 105);
+            this.txtHSP1.MaxLength = 5;
+            this.txtHSP1.Name = "txtHSP1";
+            this.txtHSP1.Size = new System.Drawing.Size(60, 20);
+            this.txtHSP1.TabIndex = 16;
+            this.txtHSP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHSP1.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
+            // 
+            // txtHSP3
+            // 
+            this.txtHSP3.Location = new System.Drawing.Point(165, 105);
+            this.txtHSP3.MaxLength = 5;
+            this.txtHSP3.Name = "txtHSP3";
+            this.txtHSP3.Size = new System.Drawing.Size(60, 20);
+            this.txtHSP3.TabIndex = 14;
+            this.txtHSP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHSP3.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
+            // 
+            // txtHSP2
+            // 
+            this.txtHSP2.Location = new System.Drawing.Point(229, 105);
+            this.txtHSP2.MaxLength = 5;
+            this.txtHSP2.Name = "txtHSP2";
+            this.txtHSP2.Size = new System.Drawing.Size(60, 20);
+            this.txtHSP2.TabIndex = 15;
+            this.txtHSP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHSP2.TextChanged += new System.EventHandler(this.txtHSP_TextChanged);
             // 
             // OptionsForm
             // 
