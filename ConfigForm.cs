@@ -183,10 +183,9 @@ namespace HandbellManager
 
         private void GetSimulatorhWnd()
         {
-            
             //Simulator window already identified?
             if (_Simulator_hWnd != IntPtr.Zero)
-            {				
+            {
                 //And still open?
                 if (IsWindow(_Simulator_hWnd))
                     return;
@@ -199,11 +198,16 @@ namespace HandbellManager
             {
                 foreach (Process p in processlist)
                 {
-                    if (p.MainWindowHandle != IntPtr.Zero && ( p.MainWindowTitle.Contains(_sim.GrandchildWindowName)) || p.MainWindowTitle.Contains(_sim.GrandchildWindowClassName))
+                    if (p.MainWindowHandle != IntPtr.Zero)
                     {
-                        p.Refresh();
-                        _Simulator_hWnd = p.MainWindowHandle;
-                        pcount++;
+                        var winTitle = p.MainWindowTitle;
+                        if (winTitle.Contains(_sim.GrandchildWindowName) || winTitle.Contains(_sim.GrandchildWindowClassName))
+                    {
+                            p.Refresh();
+                            _Simulator_hWnd = p.MainWindowHandle;
+                            pcount++;
+                            break;
+                        } 
                     }
                 }
             }
@@ -243,8 +247,7 @@ namespace HandbellManager
                 childWindowName = GetWindowClassName(_Simulator_hWnd);
                 if (_sim.GrandchildWindowClassName.Length > 0)
                     _Simulator_hWnd = FindWindowEx(_Simulator_hWnd, IntPtr.Zero, _sim.GrandchildWindowClassName, _sim.GrandchildWindowName);
-                grandchildWindowName = GetWindowClassName(_Simulator_hWnd);				
-                
+                grandchildWindowName = GetWindowClassName(_Simulator_hWnd);
             }
         }
 
@@ -342,7 +345,7 @@ namespace HandbellManager
                 return;
 
             // RingingRoom runs as Javascript in a Browser, so it has no WINPROC.
-            // We use brute foce SendKeys.Send().
+            // We use brute force SendKeys.Send().
             if (_sim.Name == "RingingRoom")
             {
                 if (GetForegroundWindow() == _Simulator_hWnd)
@@ -406,7 +409,7 @@ namespace HandbellManager
                     _hb[i].Update(_lastTick);
                     if (_hb[i].HandstrokeStrike)
                     {
-                        SendKeystrokes(_sim.KeyHS[i], false, true);						
+                        SendKeystrokes(_sim.KeyHS[i], false, true);
                         this.Controls["txtCountHS" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountHS" + i].Text) + 1);
                     }
                     if (_hb[i].BackstrokeStrike)
@@ -416,22 +419,22 @@ namespace HandbellManager
                     }
                     if (_hb[i].Button1Pressed)
                     {
-                        SendKeystrokes(_sim.KeyB1[i], false, false);						
+                        SendKeystrokes(_sim.KeyB1[i], false, false);
                         this.Controls["txtCountB1" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB1" + i].Text) + 1);
                     }
                     if (_hb[i].Button2Pressed)
                     {
-                        SendKeystrokes(_sim.KeyB2[i], false, false);						
+                        SendKeystrokes(_sim.KeyB2[i], false, false);
                         this.Controls["txtCountB2" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB2" + i].Text) + 1);
                     }
                     if (_hb[i].Button3Pressed)
                     {
-                        SendKeystrokes(_sim.KeyB3[i], false, false);						
+                        SendKeystrokes(_sim.KeyB3[i], false, false);
                         this.Controls["txtCountB3" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB3" + i].Text) + 1);
                     }
                     if (_hb[i].Button4Pressed)
                     {
-                        SendKeystrokes(_sim.KeyB4[i], false, false);						
+                        SendKeystrokes(_sim.KeyB4[i], false, false);
                         this.Controls["txtCountB4" + i].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountB4" + i].Text) + 1);
                     }
                     if (_hb[i].Handstroke)
