@@ -36,7 +36,7 @@
             this.lnkemail = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lnkemail1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblName
@@ -106,16 +106,17 @@
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 8;
             // 
-            // linkLabel1
+            // lnkemail1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(59, 126);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(190, 15);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "adrian.nashmail@btinternet.com";
+            this.lnkemail1.AutoSize = true;
+            this.lnkemail1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkemail1.Location = new System.Drawing.Point(59, 126);
+            this.lnkemail1.Name = "lnkemail1";
+            this.lnkemail1.Size = new System.Drawing.Size(190, 15);
+            this.lnkemail1.TabIndex = 7;
+            this.lnkemail1.TabStop = true;
+            this.lnkemail1.Text = "adrian.nashmail@btinternet.com";
+            this.lnkemail1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkemail1_LinkClicked);
             // 
             // AboutForm
             // 
@@ -123,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 198);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lnkemail1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkemail);
@@ -152,6 +153,6 @@
 		private System.Windows.Forms.LinkLabel lnkemail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lnkemail1;
     }
 }

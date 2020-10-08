@@ -20,31 +20,42 @@ using System.Diagnostics;
 
 namespace HandbellManager
 {
-	public partial class AboutForm : Form
-	{
-		public AboutForm()
-		{
-			InitializeComponent();
+    public partial class AboutForm : Form
+    {
+        public AboutForm()
+        {
+            InitializeComponent();
 
-			Text = String.Format("About {0}", Application.ProductName);
-			lblName.Text = String.Format("{0} Version {1}", Application.ProductName, Application.ProductVersion);
-			lblCopyright.Text = "Copyright © Graham A C John 2009-2020";
-		}
+            Text = String.Format("About {0}", Application.ProductName);
+            lblName.Text = String.Format("{0} Version {1}", Application.ProductName, Application.ProductVersion);
+            lblCopyright.Text = "Copyright © Graham A C John 2009-2020";
+        }
 
-		private void btnOK_Click(object sender, EventArgs e)
-		{
-			Close();
-		}
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
-		private void lnkemail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			try
-			{
-				Process.Start("mailto:graham@changeringing.co.uk?subject=Handbell Manager");
-			}
-			catch
-			{
-			}
-		}
-	}
+        private void lnkemail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("mailto:graham@changeringing.co.uk?subject=Handbell Manager");
+            }
+            catch
+            {
+            }
+        }
+
+        private void lnkemail1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("mailto:adrian.nashmail@btinternet.com?subject=Handbell Manager");
+            }
+            catch
+            {
+            }
+        }
+    }
 }
