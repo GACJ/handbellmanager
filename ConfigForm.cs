@@ -354,7 +354,7 @@ namespace HandbellManager
                     SendKeys.Send(character.ToString());
                 }
             }
-            else  // Abel, Beltower, Muster
+            else  // Abel, Beltower, Musterf
             {
                 if (_sim.UseKeyUpDown & (keyDown | keyUp))
                 {
