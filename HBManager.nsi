@@ -74,6 +74,7 @@ Section "Handbell Manager"
   File "Abel3.lnk"
   File "Beltow95.lnk"
   File "RingingMaster.lnk"
+  File "Muster.lnk"
   File "Copying.txt"
   File /r "HMHelp_files"
   
@@ -128,6 +129,7 @@ Section "Uninstall"
   Delete $INSTDIR\Abel3.lnk
   Delete $INSTDIR\Beltow95.lnk
   Delete $INSTDIR\RingingMaster.lnk
+  Delete $INSTDIR\Muster.lnk
   Delete $INSTDIR\HMHelp.htm
   Delete $INSTDIR\HMHelp_files\*.*
   Delete $INSTDIR\Copying.txt
