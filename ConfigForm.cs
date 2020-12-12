@@ -147,7 +147,7 @@ namespace HandbellManager
                 for (int i = 0; i < Settings.numHandbells; i++)
                 {
                     _hb[i] = new Handbell(_mcm, i);
-                    if (i >= _mcm.Count)
+                    if (i >= _mcm.Count && !Settings.emulateControllers)
                     {
                         _hb[i].Enabled = false;
                     }
@@ -163,6 +163,17 @@ namespace HandbellManager
             {
                 if (ex.Message != "No Motion Controller Found" && _suppressNoControllerMessage)
                     MessageBox.Show(ex.Message,"Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (_mcm != null && Settings.emulateControllers)
+                {
+                    for (int i = 0; i < Settings.numHandbells; i++)
+                    {
+                        _hb[i] = new Handbell(_mcm, i);
+                        _hb[i].Enabled = true;
+                        _hb[i].UpdateSettings();
+                        _hb[i].Update(0);
+                    }
+                }
+
             }
 
             _lastTick = Environment.TickCount;
@@ -209,6 +220,24 @@ namespace HandbellManager
                             break;
                         } 
                     }
+                }
+            }
+            else if (_sim.Name == "Ding")
+            {
+                var dingProcessNames = new string[2] { "DING", "DING_CLIENT" };
+
+                Process ding = Array.Find(processlist, p => Array.IndexOf(dingProcessNames, p.ProcessName.ToUpper()) >= 0);
+
+                if (ding == null)
+                {
+                    _Simulator_hWnd = IntPtr.Zero;
+                }
+                else
+                {
+                    ding.Refresh();
+                    if (ding.ProcessName.ToUpper() == "DING_CLIENT") // Ding Standard - fetch the "1" button 
+                        _Simulator_hWnd = FindWindowEx(ding.MainWindowHandle, IntPtr.Zero, "Button", "1");
+                    else _Simulator_hWnd = ding.MainWindowHandle; // Ding Unity - use the main window
                 }
             }
             else  // Abel, Beltower and Muster
@@ -330,6 +359,11 @@ namespace HandbellManager
                     _functionkey = true;
                     break;
                     default:
+                        if (_sim.Name == "Ding")
+                        {
+                            c = 0;
+                            break;
+                        }
                     return;
                 }
             }
@@ -354,7 +388,19 @@ namespace HandbellManager
                     SendKeys.Send(character.ToString());
                 }
             }
-            else  // Abel, Beltower, Musterf
+            else if (_sim.Name == "Ding")
+            {
+                if (c != 0)
+                    PostMessage(_Simulator_hWnd, WM_KEYDOWN, c, 0);
+                else
+                {
+                    foreach (long ch in cmd)
+                    {
+                        PostMessage(_Simulator_hWnd, WM_KEYDOWN, ch, 0);
+                    }
+                }
+            }
+            else  // Abel, Beltower, Muster, Ding
             {
                 if (_sim.UseKeyUpDown & (keyDown | keyUp))
                 {
@@ -372,9 +418,9 @@ namespace HandbellManager
                     }
                     else
                         if (_sim.Name == "Muster")
-                            PostMessage(_Simulator_hWnd, WM_KEYDOWN, c, 0);
-                        else
-                            PostMessage(_Simulator_hWnd, WM_CHAR, c, 0);
+                        PostMessage(_Simulator_hWnd, WM_KEYDOWN, c, 0);
+                    else
+                        PostMessage(_Simulator_hWnd, WM_CHAR, c, 0);
                 }
             }
 #endif
@@ -402,7 +448,7 @@ namespace HandbellManager
             this.Controls["txtCountHS" + 0].Text = Convert.ToString(Convert.ToInt32(this.Controls["txtCountHS" + 0].Text) + 1);
 #endif
 
-            for (int i = 0; i < _mcm.Count; i++)
+            for (int i = 0; i < (Settings.emulateControllers ? Settings.numHandbells : _mcm.Count); i++)
             {
                 if (i < Settings.numHandbells)
                 {
@@ -552,6 +598,38 @@ namespace HandbellManager
                 }
 
             }
+            else if (_sim.Name == "Ding")
+            {
+                try
+                {
+                    if (Process.GetProcessesByName("ding").Length == 0 && Process.GetProcessesByName("ding_client").Length == 0)
+                    {
+                        string[] dingShortcuts = new string[3] { "dingUnity64.lnk", "dingUnity32.lnk", "dingStandard.lnk" };
+                        foreach(var dingShortcut in dingShortcuts)
+                        {
+                            string simulatorShortcut = Path.Combine(Application.StartupPath, dingShortcut);
+                            if (File.Exists(simulatorShortcut))
+                            {
+                                try
+                                {
+                                    Process.Start(simulatorShortcut);
+                                    return;
+                                }
+                                catch (Exception ex)
+                                {
+                                    continue;
+                                }
+                            } 
+                        }
+                        MessageBox.Show("To run Ding from Handbell Manager, place a shortcut to the Ding executable in the Handbell Manager installation folder with the name dingUnity64, dingUnity32 or dingStandard.",
+                            "Ding Shortcut Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Failed to bind to a Ding session.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
             else if (_sim.Name == "Muster")
             {
                 try
@@ -590,7 +668,7 @@ namespace HandbellManager
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Failed to bind to a RingingRoom session.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.Message, "Failed to bind to a Muster session.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 
@@ -696,6 +774,8 @@ namespace HandbellManager
                     ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
                 if (Settings.currentSimulator == 4)
                     musterToolStripMenuItem.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 5)
+                    dingToolStripMenuItem.Image = runToolStripMenuItem.Image;
 
                 runToolStripMenuItem.Image = abelToolStripMenuItem1.Image;
                 abelToolStripMenuItem1.Image = null;
@@ -704,6 +784,7 @@ namespace HandbellManager
                 ringingMasterToolStripMenuItem1.Checked = false;
                 ringingRoomToolStripMenuItem1.Checked = false;
                 musterToolStripMenuItem.Checked = false;
+                dingToolStripMenuItem.Checked = false;
                 Settings.currentSimulator = 0;
                 _sim = Settings.simulator[Settings.currentSimulator];
                 runToolStripMenuItem.Text = _sim.Name;
@@ -725,6 +806,8 @@ namespace HandbellManager
                     ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
                 if (Settings.currentSimulator == 4)
                     musterToolStripMenuItem.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 5)
+                    dingToolStripMenuItem.Image = runToolStripMenuItem.Image;
 
                 runToolStripMenuItem.Image = beltowerToolStripMenuItem1.Image;
                 beltowerToolStripMenuItem1.Image = null;
@@ -733,6 +816,7 @@ namespace HandbellManager
                 ringingMasterToolStripMenuItem1.Checked = false;
                 ringingRoomToolStripMenuItem1.Checked = false;
                 musterToolStripMenuItem.Checked = false;
+                dingToolStripMenuItem.Checked = false;
                 Settings.currentSimulator = 1;
                 _sim = Settings.simulator[Settings.currentSimulator];
                 runToolStripMenuItem.Text = _sim.Name;
@@ -754,6 +838,8 @@ namespace HandbellManager
                     ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
                 if (Settings.currentSimulator == 4)
                     musterToolStripMenuItem.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 5)
+                    dingToolStripMenuItem.Image = runToolStripMenuItem.Image;
 
                 runToolStripMenuItem.Image = ringingMasterToolStripMenuItem1.Image;
                 ringingMasterToolStripMenuItem1.Image = null;
@@ -762,6 +848,7 @@ namespace HandbellManager
                 ringingMasterToolStripMenuItem1.Checked = true;
                 ringingRoomToolStripMenuItem1.Checked = false;
                 musterToolStripMenuItem.Checked = false;
+                dingToolStripMenuItem.Checked = false;
                 Settings.currentSimulator = 2;
                 _sim = Settings.simulator[Settings.currentSimulator];
                 this.Text = "Handbell Manager - " + _sim.Name;
@@ -783,6 +870,8 @@ namespace HandbellManager
                     ringingMasterToolStripMenuItem1.Image = runToolStripMenuItem.Image;
                 if (Settings.currentSimulator == 4)
                     musterToolStripMenuItem.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 5)
+                    dingToolStripMenuItem.Image = runToolStripMenuItem.Image;
 
                 runToolStripMenuItem.Image = ringingMasterToolStripMenuItem1.Image;
                 ringingRoomToolStripMenuItem1.Image = null;
@@ -791,6 +880,7 @@ namespace HandbellManager
                 ringingMasterToolStripMenuItem1.Checked = false;
                 ringingRoomToolStripMenuItem1.Checked = true;
                 musterToolStripMenuItem.Checked = false;
+                dingToolStripMenuItem.Checked = false;
                 Settings.currentSimulator = 3;
                 _sim = Settings.simulator[Settings.currentSimulator];
                 runToolStripMenuItem.Text = _sim.Name;
@@ -812,6 +902,8 @@ namespace HandbellManager
                     ringingMasterToolStripMenuItem1.Image = runToolStripMenuItem.Image;
                 if (Settings.currentSimulator == 3)
                     ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 5)
+                    dingToolStripMenuItem.Image = runToolStripMenuItem.Image;
 
                 runToolStripMenuItem.Image = musterToolStripMenuItem.Image;
                 ringingRoomToolStripMenuItem1.Image = null;
@@ -820,7 +912,40 @@ namespace HandbellManager
                 ringingMasterToolStripMenuItem1.Checked = false;
                 ringingRoomToolStripMenuItem1.Checked = false;
                 musterToolStripMenuItem.Checked = true;
+                dingToolStripMenuItem.Checked = false;
                 Settings.currentSimulator = 4;
+                _sim = Settings.simulator[Settings.currentSimulator];
+                runToolStripMenuItem.Text = _sim.Name;
+                this.Text = "Handbell Manager - " + _sim.Name;
+                Settings.Save();
+                _Simulator_hWnd = IntPtr.Zero; //Reset Simulator handle
+            }
+        }
+
+        private void dingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Settings.currentSimulator != 5)
+            {
+                if (Settings.currentSimulator == 0)
+                    abelToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 1)
+                    beltowerToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 2)
+                    ringingMasterToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 3)
+                    ringingRoomToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+                if (Settings.currentSimulator == 4)
+                    musterToolStripMenuItem.Image = runToolStripMenuItem.Image;
+
+                runToolStripMenuItem.Image = dingToolStripMenuItem.Image;
+                dingToolStripMenuItem.Image = null;
+                abelToolStripMenuItem1.Checked = false;
+                beltowerToolStripMenuItem1.Checked = false;
+                ringingMasterToolStripMenuItem1.Checked = false;
+                ringingRoomToolStripMenuItem1.Checked = false;
+                musterToolStripMenuItem.Checked = false;
+                dingToolStripMenuItem.Checked = true;
+                Settings.currentSimulator = 5;
                 _sim = Settings.simulator[Settings.currentSimulator];
                 runToolStripMenuItem.Text = _sim.Name;
                 this.Text = "Handbell Manager - " + _sim.Name;
@@ -844,6 +969,7 @@ namespace HandbellManager
                     ringingMasterToolStripMenuItem1.Checked = false;
                     ringingRoomToolStripMenuItem1.Checked = false;
                     musterToolStripMenuItem.Checked = false;
+                    dingToolStripMenuItem.Checked = false;
                     runToolStripMenuItem.Text = _sim.Name;
                     break;
                 case 2: //Set Run to RingingMaster
@@ -855,6 +981,7 @@ namespace HandbellManager
                     ringingMasterToolStripMenuItem1.Checked = true;
                     ringingRoomToolStripMenuItem1.Checked = false;
                     musterToolStripMenuItem.Checked = false;
+                    dingToolStripMenuItem.Checked = false;
                     runToolStripMenuItem.Text = _sim.Name;
                     break;
                 case 3: // Set Ringing Room
@@ -866,6 +993,7 @@ namespace HandbellManager
                     ringingMasterToolStripMenuItem1.Checked = false;
                     ringingRoomToolStripMenuItem1.Checked = true;
                     musterToolStripMenuItem.Checked = false;
+                    dingToolStripMenuItem.Checked = false;
                     runToolStripMenuItem.Text = _sim.Name;					
                     break;
                 case 4: // Set Muster
@@ -877,9 +1005,50 @@ namespace HandbellManager
                     ringingMasterToolStripMenuItem1.Checked = false;
                     ringingRoomToolStripMenuItem1.Checked = false;
                     musterToolStripMenuItem.Checked = true;
+                    dingToolStripMenuItem.Checked = false;
+                    runToolStripMenuItem.Text = _sim.Name;
+                    break;
+                case 5: //Set Run to Ding
+                    abelToolStripMenuItem1.Image = runToolStripMenuItem.Image;
+                    runToolStripMenuItem.Image = dingToolStripMenuItem.Image;
+                    dingToolStripMenuItem.Image = null;
+                    abelToolStripMenuItem1.Checked = false;
+                    beltowerToolStripMenuItem1.Checked = false;
+                    ringingMasterToolStripMenuItem1.Checked = false;
+                    ringingRoomToolStripMenuItem1.Checked = false;
+                    musterToolStripMenuItem.Checked = false;
+                    dingToolStripMenuItem.Checked = true;
                     runToolStripMenuItem.Text = _sim.Name;
                     break;
             }
-        }		
+            if (Settings.emulateControllers)
+            {
+                txtCountHS0.Enabled = txtCountBS0.Enabled = txtCountHS1.Enabled = txtCountBS1.Enabled = true;
+            }
+        }
+
+        private void txtCountHS0_DoubleClick(object sender, EventArgs e)
+        {
+            if (Settings.emulateControllers)
+                _hb[0].HandstrokeStrikePending = true;
+        }
+
+        private void txtCountBS0_DoubleClick(object sender, EventArgs e)
+        {
+            if (Settings.emulateControllers)
+                _hb[0].BackstrokeStrikePending = true;
+        }
+
+        private void txtCountBS1_DoubleClick(object sender, EventArgs e)
+        {
+            if (Settings.emulateControllers)
+                _hb[1].BackstrokeStrikePending = true;
+        }
+
+        private void txtCountHS1_DoubleClick(object sender, EventArgs e)
+        {
+            if (Settings.emulateControllers)
+                _hb[1].HandstrokeStrikePending = true;
+        }
     }
 }

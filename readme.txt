@@ -21,7 +21,7 @@ Adrian Nash
 
 INSTALLATION STEPS
 ------------------
-To install Handbell Manager v 1.4.0:
+To install Handbell Manager v 2.1.0:
 
 1. Download HandbellManager140.zip to your computer.
 
@@ -36,6 +36,13 @@ To install Handbell Manager v 1.4.0:
 4. Double-click the short-cut to open Handbell Manager. If your computer warns you not
    to run it, don't worry it is safe! On Windows 10 for example, click on "more info" then
    "Run anyway".
+
+   To use HM with Ding
+   -------------------
+1. To Start HM with Ding, when Handbell Manager starts, click on Run > Choose Simulator > Ding
+2. Then click Run > Ding. Handbell Manager will then launch Ding Unity or Ding Standard.
+3. Enter your name and choose or create a tower as usual.  If you have motion
+   Controllers set up, you should now find that moving the motion controllers will ring the bells assigned to you.
 
    To Use HM with RingingRoom
    --------------------------
@@ -80,6 +87,7 @@ To install Handbell Manager v 1.4.0:
    " -s 3 -r" To select RingingRoom and automatically start a web-browser session. You will then need to enter the tower name
               or ID into RingingRoom (unless you use a shortcut for that; see below)
    " -s 4 -r" To select Muster and automatically start the muster app.
+   " -s 5 -r" To select Ding and automatically start Ding Unity or Ding Standard, if it is not already running.
 
    Note: if you want to set the URL for RingingRoom in the shortcut you can use -u <ringingroom URL>:
    e.g. -s 3 -r -u www.ringingroom.com/mytower where "mytower" can be your tower name or an ID number.
@@ -95,4 +103,6 @@ VERSION HISTORY
 v. 1.3.0a Initial release
 v. 1.3.0b Initial Beta Release, key-stroke defaults for RingingRoom changed. Simulator name displayed in the Title bar.
 v. 1.4.0  Added support for Muster
+v. 2.0.0  Gyro support for eBells, callibration for any selected axis.  Formal installation release.
+v. 2.1.0  Added support for Ding
 

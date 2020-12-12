@@ -64,6 +64,8 @@
             this.beltowerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ringingMasterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ringingRoomToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.musterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -83,15 +85,15 @@
             this.txtCountB41 = new System.Windows.Forms.TextBox();
             this.txtCountB40 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.musterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFindControllers
             // 
-            this.btnFindControllers.Location = new System.Drawing.Point(83, 196);
+            this.btnFindControllers.Location = new System.Drawing.Point(111, 241);
+            this.btnFindControllers.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindControllers.Name = "btnFindControllers";
-            this.btnFindControllers.Size = new System.Drawing.Size(127, 23);
+            this.btnFindControllers.Size = new System.Drawing.Size(169, 28);
             this.btnFindControllers.TabIndex = 25;
             this.btnFindControllers.Text = "Check for Controllers";
             this.btnFindControllers.UseCompatibleTextRendering = true;
@@ -101,9 +103,10 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(87, 33);
+            this.label17.Location = new System.Drawing.Point(116, 41);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 13);
+            this.label17.Size = new System.Drawing.Size(73, 16);
             this.label17.TabIndex = 1;
             this.label17.Text = "Handbell 4";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,9 +114,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(152, 33);
+            this.label16.Location = new System.Drawing.Point(203, 41);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 13);
+            this.label16.Size = new System.Drawing.Size(73, 16);
             this.label16.TabIndex = 2;
             this.label16.Text = "Handbell 3";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,9 +125,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(218, 33);
+            this.label15.Location = new System.Drawing.Point(291, 41);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.Size = new System.Drawing.Size(73, 16);
             this.label15.TabIndex = 3;
             this.label15.Text = "Handbell 2";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,18 +136,20 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(285, 33);
+            this.label14.Location = new System.Drawing.Point(380, 41);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(73, 16);
             this.label14.TabIndex = 4;
             this.label14.Text = "Handbell 1";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(215, 196);
+            this.btnReset.Location = new System.Drawing.Point(287, 241);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(123, 23);
+            this.btnReset.Size = new System.Drawing.Size(164, 28);
             this.btnReset.TabIndex = 26;
             this.btnReset.Text = "Reset Counts";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -151,10 +158,11 @@
             // txtCountB23
             // 
             this.txtCountB23.Enabled = false;
-            this.txtCountB23.Location = new System.Drawing.Point(89, 121);
+            this.txtCountB23.Location = new System.Drawing.Point(119, 149);
+            this.txtCountB23.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB23.MaxLength = 1;
             this.txtCountB23.Name = "txtCountB23";
-            this.txtCountB23.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB23.Size = new System.Drawing.Size(65, 22);
             this.txtCountB23.TabIndex = 21;
             this.txtCountB23.Text = "0";
             this.txtCountB23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -162,10 +170,11 @@
             // txtCountB22
             // 
             this.txtCountB22.Enabled = false;
-            this.txtCountB22.Location = new System.Drawing.Point(155, 121);
+            this.txtCountB22.Location = new System.Drawing.Point(207, 149);
+            this.txtCountB22.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB22.MaxLength = 1;
             this.txtCountB22.Name = "txtCountB22";
-            this.txtCountB22.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB22.Size = new System.Drawing.Size(65, 22);
             this.txtCountB22.TabIndex = 22;
             this.txtCountB22.Text = "0";
             this.txtCountB22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -173,10 +182,11 @@
             // txtCountB21
             // 
             this.txtCountB21.Enabled = false;
-            this.txtCountB21.Location = new System.Drawing.Point(221, 121);
+            this.txtCountB21.Location = new System.Drawing.Point(295, 149);
+            this.txtCountB21.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB21.MaxLength = 1;
             this.txtCountB21.Name = "txtCountB21";
-            this.txtCountB21.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB21.Size = new System.Drawing.Size(65, 22);
             this.txtCountB21.TabIndex = 23;
             this.txtCountB21.Text = "0";
             this.txtCountB21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -184,10 +194,11 @@
             // txtCountB20
             // 
             this.txtCountB20.Enabled = false;
-            this.txtCountB20.Location = new System.Drawing.Point(287, 121);
+            this.txtCountB20.Location = new System.Drawing.Point(383, 149);
+            this.txtCountB20.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB20.MaxLength = 1;
             this.txtCountB20.Name = "txtCountB20";
-            this.txtCountB20.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB20.Size = new System.Drawing.Size(65, 22);
             this.txtCountB20.TabIndex = 24;
             this.txtCountB20.Text = "0";
             this.txtCountB20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -195,10 +206,11 @@
             // txtCountB13
             // 
             this.txtCountB13.Enabled = false;
-            this.txtCountB13.Location = new System.Drawing.Point(89, 98);
+            this.txtCountB13.Location = new System.Drawing.Point(119, 121);
+            this.txtCountB13.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB13.MaxLength = 1;
             this.txtCountB13.Name = "txtCountB13";
-            this.txtCountB13.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB13.Size = new System.Drawing.Size(65, 22);
             this.txtCountB13.TabIndex = 16;
             this.txtCountB13.Text = "0";
             this.txtCountB13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -206,10 +218,11 @@
             // txtCountB12
             // 
             this.txtCountB12.Enabled = false;
-            this.txtCountB12.Location = new System.Drawing.Point(155, 98);
+            this.txtCountB12.Location = new System.Drawing.Point(207, 121);
+            this.txtCountB12.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB12.MaxLength = 1;
             this.txtCountB12.Name = "txtCountB12";
-            this.txtCountB12.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB12.Size = new System.Drawing.Size(65, 22);
             this.txtCountB12.TabIndex = 17;
             this.txtCountB12.Text = "0";
             this.txtCountB12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -217,10 +230,11 @@
             // txtCountB11
             // 
             this.txtCountB11.Enabled = false;
-            this.txtCountB11.Location = new System.Drawing.Point(221, 98);
+            this.txtCountB11.Location = new System.Drawing.Point(295, 121);
+            this.txtCountB11.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB11.MaxLength = 1;
             this.txtCountB11.Name = "txtCountB11";
-            this.txtCountB11.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB11.Size = new System.Drawing.Size(65, 22);
             this.txtCountB11.TabIndex = 18;
             this.txtCountB11.Text = "0";
             this.txtCountB11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -228,10 +242,11 @@
             // txtCountB10
             // 
             this.txtCountB10.Enabled = false;
-            this.txtCountB10.Location = new System.Drawing.Point(287, 98);
+            this.txtCountB10.Location = new System.Drawing.Point(383, 121);
+            this.txtCountB10.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB10.MaxLength = 1;
             this.txtCountB10.Name = "txtCountB10";
-            this.txtCountB10.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB10.Size = new System.Drawing.Size(65, 22);
             this.txtCountB10.TabIndex = 19;
             this.txtCountB10.Text = "0";
             this.txtCountB10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -239,10 +254,11 @@
             // txtCountBS3
             // 
             this.txtCountBS3.Enabled = false;
-            this.txtCountBS3.Location = new System.Drawing.Point(89, 52);
+            this.txtCountBS3.Location = new System.Drawing.Point(119, 64);
+            this.txtCountBS3.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountBS3.MaxLength = 1;
             this.txtCountBS3.Name = "txtCountBS3";
-            this.txtCountBS3.Size = new System.Drawing.Size(50, 20);
+            this.txtCountBS3.Size = new System.Drawing.Size(65, 22);
             this.txtCountBS3.TabIndex = 6;
             this.txtCountBS3.Text = "0";
             this.txtCountBS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -250,10 +266,11 @@
             // txtCountBS2
             // 
             this.txtCountBS2.Enabled = false;
-            this.txtCountBS2.Location = new System.Drawing.Point(155, 52);
+            this.txtCountBS2.Location = new System.Drawing.Point(207, 64);
+            this.txtCountBS2.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountBS2.MaxLength = 1;
             this.txtCountBS2.Name = "txtCountBS2";
-            this.txtCountBS2.Size = new System.Drawing.Size(50, 20);
+            this.txtCountBS2.Size = new System.Drawing.Size(65, 22);
             this.txtCountBS2.TabIndex = 7;
             this.txtCountBS2.Text = "0";
             this.txtCountBS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -261,32 +278,37 @@
             // txtCountBS1
             // 
             this.txtCountBS1.Enabled = false;
-            this.txtCountBS1.Location = new System.Drawing.Point(221, 52);
+            this.txtCountBS1.Location = new System.Drawing.Point(295, 64);
+            this.txtCountBS1.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountBS1.MaxLength = 1;
             this.txtCountBS1.Name = "txtCountBS1";
-            this.txtCountBS1.Size = new System.Drawing.Size(50, 20);
+            this.txtCountBS1.Size = new System.Drawing.Size(65, 22);
             this.txtCountBS1.TabIndex = 8;
             this.txtCountBS1.Text = "0";
             this.txtCountBS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCountBS1.DoubleClick += new System.EventHandler(this.txtCountBS1_DoubleClick);
             // 
             // txtCountBS0
             // 
             this.txtCountBS0.Enabled = false;
-            this.txtCountBS0.Location = new System.Drawing.Point(287, 52);
+            this.txtCountBS0.Location = new System.Drawing.Point(383, 64);
+            this.txtCountBS0.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountBS0.MaxLength = 1;
             this.txtCountBS0.Name = "txtCountBS0";
-            this.txtCountBS0.Size = new System.Drawing.Size(50, 20);
+            this.txtCountBS0.Size = new System.Drawing.Size(65, 22);
             this.txtCountBS0.TabIndex = 9;
             this.txtCountBS0.Text = "0";
             this.txtCountBS0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCountBS0.DoubleClick += new System.EventHandler(this.txtCountBS0_DoubleClick);
             // 
             // txtCountHS3
             // 
             this.txtCountHS3.Enabled = false;
-            this.txtCountHS3.Location = new System.Drawing.Point(89, 75);
+            this.txtCountHS3.Location = new System.Drawing.Point(119, 92);
+            this.txtCountHS3.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountHS3.MaxLength = 1;
             this.txtCountHS3.Name = "txtCountHS3";
-            this.txtCountHS3.Size = new System.Drawing.Size(50, 20);
+            this.txtCountHS3.Size = new System.Drawing.Size(65, 22);
             this.txtCountHS3.TabIndex = 11;
             this.txtCountHS3.Text = "0";
             this.txtCountHS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -294,10 +316,11 @@
             // txtCountHS2
             // 
             this.txtCountHS2.Enabled = false;
-            this.txtCountHS2.Location = new System.Drawing.Point(155, 75);
+            this.txtCountHS2.Location = new System.Drawing.Point(207, 92);
+            this.txtCountHS2.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountHS2.MaxLength = 1;
             this.txtCountHS2.Name = "txtCountHS2";
-            this.txtCountHS2.Size = new System.Drawing.Size(50, 20);
+            this.txtCountHS2.Size = new System.Drawing.Size(65, 22);
             this.txtCountHS2.TabIndex = 12;
             this.txtCountHS2.Text = "0";
             this.txtCountHS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -305,58 +328,66 @@
             // txtCountHS1
             // 
             this.txtCountHS1.Enabled = false;
-            this.txtCountHS1.Location = new System.Drawing.Point(221, 75);
+            this.txtCountHS1.Location = new System.Drawing.Point(295, 92);
+            this.txtCountHS1.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountHS1.MaxLength = 1;
             this.txtCountHS1.Name = "txtCountHS1";
-            this.txtCountHS1.Size = new System.Drawing.Size(50, 20);
+            this.txtCountHS1.Size = new System.Drawing.Size(65, 22);
             this.txtCountHS1.TabIndex = 13;
             this.txtCountHS1.Text = "0";
             this.txtCountHS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCountHS1.DoubleClick += new System.EventHandler(this.txtCountHS1_DoubleClick);
             // 
             // txtCountHS0
             // 
             this.txtCountHS0.Enabled = false;
-            this.txtCountHS0.Location = new System.Drawing.Point(287, 75);
+            this.txtCountHS0.Location = new System.Drawing.Point(383, 92);
+            this.txtCountHS0.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountHS0.MaxLength = 1;
             this.txtCountHS0.Name = "txtCountHS0";
-            this.txtCountHS0.Size = new System.Drawing.Size(50, 20);
+            this.txtCountHS0.Size = new System.Drawing.Size(65, 22);
             this.txtCountHS0.TabIndex = 14;
             this.txtCountHS0.Text = "0";
             this.txtCountHS0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCountHS0.DoubleClick += new System.EventHandler(this.txtCountHS0_DoubleClick);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(21, 125);
+            this.label27.Location = new System.Drawing.Point(28, 154);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(50, 13);
+            this.label27.Size = new System.Drawing.Size(58, 16);
             this.label27.TabIndex = 20;
             this.label27.Text = "Button 2:";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(21, 102);
+            this.label28.Location = new System.Drawing.Point(28, 126);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(50, 13);
+            this.label28.Size = new System.Drawing.Size(58, 16);
             this.label28.TabIndex = 15;
             this.label28.Text = "Button 1:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(21, 56);
+            this.label29.Location = new System.Drawing.Point(28, 69);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(64, 13);
+            this.label29.Size = new System.Drawing.Size(79, 16);
             this.label29.TabIndex = 5;
             this.label29.Text = "Backstroke:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(21, 79);
+            this.label30.Location = new System.Drawing.Point(28, 97);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(65, 13);
+            this.label30.Size = new System.Drawing.Size(81, 16);
             this.label30.TabIndex = 10;
             this.label30.Text = "Handstroke:";
             // 
@@ -368,7 +399,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(378, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(504, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "mainMenuStrip";
             // 
@@ -388,7 +420,7 @@
             this.runToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.runToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("runToolStripMenuItem.Image")));
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.runToolStripMenuItem.Text = "Abel";
             this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
             // 
@@ -399,9 +431,10 @@
             this.beltowerToolStripMenuItem1,
             this.ringingMasterToolStripMenuItem1,
             this.ringingRoomToolStripMenuItem1,
-            this.musterToolStripMenuItem});
+            this.musterToolStripMenuItem,
+            this.dingToolStripMenuItem});
             this.changeSimulatorToolStripMenuItem.Name = "changeSimulatorToolStripMenuItem";
-            this.changeSimulatorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeSimulatorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.changeSimulatorToolStripMenuItem.Text = "Choose Simulator";
             // 
             // abelToolStripMenuItem1
@@ -438,6 +471,22 @@
             this.ringingRoomToolStripMenuItem1.Text = "RingingRoom";
             this.ringingRoomToolStripMenuItem1.Click += new System.EventHandler(this.ringingRoomToolStripMenuItem1_Click);
             // 
+            // musterToolStripMenuItem
+            // 
+            this.musterToolStripMenuItem.Image = global::HandbellManager.Properties.Resources.handbell;
+            this.musterToolStripMenuItem.Name = "musterToolStripMenuItem";
+            this.musterToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.musterToolStripMenuItem.Text = "Muster";
+            this.musterToolStripMenuItem.Click += new System.EventHandler(this.musterToolStripMenuItem_Click);
+            // 
+            // dingToolStripMenuItem
+            // 
+            this.dingToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dingToolStripMenuItem.Image")));
+            this.dingToolStripMenuItem.Name = "dingToolStripMenuItem";
+            this.dingToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dingToolStripMenuItem.Text = "Ding";
+            this.dingToolStripMenuItem.Click += new System.EventHandler(this.dingToolStripMenuItem_Click);
+            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -446,27 +495,27 @@
             this.controllersToolStripMenuItem,
             this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // monitorToolStripMenuItem
             // 
             this.monitorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("monitorToolStripMenuItem.Image")));
             this.monitorToolStripMenuItem.Name = "monitorToolStripMenuItem";
-            this.monitorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monitorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.monitorToolStripMenuItem.Text = "Monitor";
             this.monitorToolStripMenuItem.Click += new System.EventHandler(this.monitorToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // controllersToolStripMenuItem
             // 
             this.controllersToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controllersToolStripMenuItem.Image")));
             this.controllersToolStripMenuItem.Name = "controllersToolStripMenuItem";
-            this.controllersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controllersToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.controllersToolStripMenuItem.Text = "Assign Controllers";
             this.controllersToolStripMenuItem.Click += new System.EventHandler(this.controllersToolStripMenuItem_Click);
             // 
@@ -474,7 +523,7 @@
             // 
             this.optionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("optionsToolStripMenuItem.Image")));
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
@@ -512,10 +561,11 @@
             // txtCountB33
             // 
             this.txtCountB33.Enabled = false;
-            this.txtCountB33.Location = new System.Drawing.Point(89, 144);
+            this.txtCountB33.Location = new System.Drawing.Point(119, 177);
+            this.txtCountB33.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB33.MaxLength = 1;
             this.txtCountB33.Name = "txtCountB33";
-            this.txtCountB33.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB33.Size = new System.Drawing.Size(65, 22);
             this.txtCountB33.TabIndex = 28;
             this.txtCountB33.Text = "0";
             this.txtCountB33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -523,10 +573,11 @@
             // txtCountB32
             // 
             this.txtCountB32.Enabled = false;
-            this.txtCountB32.Location = new System.Drawing.Point(155, 144);
+            this.txtCountB32.Location = new System.Drawing.Point(207, 177);
+            this.txtCountB32.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB32.MaxLength = 1;
             this.txtCountB32.Name = "txtCountB32";
-            this.txtCountB32.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB32.Size = new System.Drawing.Size(65, 22);
             this.txtCountB32.TabIndex = 29;
             this.txtCountB32.Text = "0";
             this.txtCountB32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -534,10 +585,11 @@
             // txtCountB31
             // 
             this.txtCountB31.Enabled = false;
-            this.txtCountB31.Location = new System.Drawing.Point(221, 144);
+            this.txtCountB31.Location = new System.Drawing.Point(295, 177);
+            this.txtCountB31.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB31.MaxLength = 1;
             this.txtCountB31.Name = "txtCountB31";
-            this.txtCountB31.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB31.Size = new System.Drawing.Size(65, 22);
             this.txtCountB31.TabIndex = 30;
             this.txtCountB31.Text = "0";
             this.txtCountB31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -545,10 +597,11 @@
             // txtCountB30
             // 
             this.txtCountB30.Enabled = false;
-            this.txtCountB30.Location = new System.Drawing.Point(287, 144);
+            this.txtCountB30.Location = new System.Drawing.Point(383, 177);
+            this.txtCountB30.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB30.MaxLength = 1;
             this.txtCountB30.Name = "txtCountB30";
-            this.txtCountB30.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB30.Size = new System.Drawing.Size(65, 22);
             this.txtCountB30.TabIndex = 31;
             this.txtCountB30.Text = "0";
             this.txtCountB30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -556,19 +609,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 148);
+            this.label1.Location = new System.Drawing.Point(28, 182);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Button 3:";
             // 
             // txtCountB43
             // 
             this.txtCountB43.Enabled = false;
-            this.txtCountB43.Location = new System.Drawing.Point(89, 167);
+            this.txtCountB43.Location = new System.Drawing.Point(119, 206);
+            this.txtCountB43.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB43.MaxLength = 1;
             this.txtCountB43.Name = "txtCountB43";
-            this.txtCountB43.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB43.Size = new System.Drawing.Size(65, 22);
             this.txtCountB43.TabIndex = 33;
             this.txtCountB43.Text = "0";
             this.txtCountB43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -576,10 +631,11 @@
             // txtCountB42
             // 
             this.txtCountB42.Enabled = false;
-            this.txtCountB42.Location = new System.Drawing.Point(155, 167);
+            this.txtCountB42.Location = new System.Drawing.Point(207, 206);
+            this.txtCountB42.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB42.MaxLength = 1;
             this.txtCountB42.Name = "txtCountB42";
-            this.txtCountB42.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB42.Size = new System.Drawing.Size(65, 22);
             this.txtCountB42.TabIndex = 34;
             this.txtCountB42.Text = "0";
             this.txtCountB42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -587,10 +643,11 @@
             // txtCountB41
             // 
             this.txtCountB41.Enabled = false;
-            this.txtCountB41.Location = new System.Drawing.Point(221, 167);
+            this.txtCountB41.Location = new System.Drawing.Point(295, 206);
+            this.txtCountB41.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB41.MaxLength = 1;
             this.txtCountB41.Name = "txtCountB41";
-            this.txtCountB41.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB41.Size = new System.Drawing.Size(65, 22);
             this.txtCountB41.TabIndex = 35;
             this.txtCountB41.Text = "0";
             this.txtCountB41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -598,10 +655,11 @@
             // txtCountB40
             // 
             this.txtCountB40.Enabled = false;
-            this.txtCountB40.Location = new System.Drawing.Point(287, 167);
+            this.txtCountB40.Location = new System.Drawing.Point(383, 206);
+            this.txtCountB40.Margin = new System.Windows.Forms.Padding(4);
             this.txtCountB40.MaxLength = 1;
             this.txtCountB40.Name = "txtCountB40";
-            this.txtCountB40.Size = new System.Drawing.Size(50, 20);
+            this.txtCountB40.Size = new System.Drawing.Size(65, 22);
             this.txtCountB40.TabIndex = 36;
             this.txtCountB40.Text = "0";
             this.txtCountB40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -609,26 +667,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 171);
+            this.label2.Location = new System.Drawing.Point(28, 210);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 32;
             this.label2.Text = "Button 4:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // musterToolStripMenuItem
-            // 
-            this.musterToolStripMenuItem.Image = global::HandbellManager.Properties.Resources.handbell;
-            this.musterToolStripMenuItem.Name = "musterToolStripMenuItem";
-            this.musterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.musterToolStripMenuItem.Text = "Muster";
-            this.musterToolStripMenuItem.Click += new System.EventHandler(this.musterToolStripMenuItem_Click);
-            // 
             // ConfigForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 224);
+            this.ClientSize = new System.Drawing.Size(504, 276);
             this.Controls.Add(this.txtCountB43);
             this.Controls.Add(this.txtCountB42);
             this.Controls.Add(this.txtCountB41);
@@ -669,6 +720,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ConfigForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -736,6 +788,7 @@
 		private System.Windows.Forms.ToolStripMenuItem ringingMasterToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ringingRoomToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem musterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dingToolStripMenuItem;
     }
 }
 
