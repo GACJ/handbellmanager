@@ -147,10 +147,10 @@ namespace HandbellManager
                     simulator[5].UseKeyUpDown = true;
                     simulator[5].KeyBS = new string[] { "HBJN", "DC", "K", "S" };
                     simulator[5].KeyHS = new string[] { "HJ", "D", "M", "X" };
-                    simulator[5].KeyB1 = new string[] { "t", "q", "t", "q" };
-                    simulator[5].KeyB2 = new string[] { "y", "w", "y", "w" };
-                    simulator[5].KeyB3 = new string[] { "w", "e", "w", "e" };
-                    simulator[5].KeyB4 = new string[] { "e", "r", "e", "r" };
+                    simulator[5].KeyB1 = new string[] { "T", "T", "T", "T" };
+                    simulator[5].KeyB2 = new string[] { "Y", "Y", "Y", "Y" };
+                    simulator[5].KeyB3 = new string[] { "Q", "E", "Q", "E" };
+                    simulator[5].KeyB4 = new string[] { "W", "R", "W", "R" };
                     break;
             }
             //Calibration defaults
