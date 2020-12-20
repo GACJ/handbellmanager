@@ -94,6 +94,11 @@ namespace HandbellManager
 
         public void Update(int tick)
         {
+            if (Settings.emulateControllers)
+            {
+                UpdateStrokes(tick);
+            }
+
             if (_motionController == null)
                 return;
 

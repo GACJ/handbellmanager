@@ -133,6 +133,15 @@
     <None Include="Beltow95.lnk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DingStandard.lnk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DingUnity32.lnk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DingUnity64.lnk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="HBManager.nsi">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

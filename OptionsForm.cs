@@ -83,6 +83,25 @@ namespace HandbellManager
                 txtChildWindowClassName.Hide();
                 txtGrandchildWindowClassName.Hide();
             }
+            // For Ding we hide the controls for window names and key-up/down.  
+            // Some of the keystroke fields are allowed to be longer in order to accomodate different user settings within Ding
+            else if (_sim.Name == "Ding")
+            {
+                tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";
+                lblSimulatorProcessName.Text = _sim.Name + " Process Name:";
+                txtProcessName.Text = _sim.ProcessName;
+                chkUseKeyUpDown.Checked = _sim.UseKeyUpDown;
+                lblSimulatorProcessName.Hide();
+                txtProcessName.Hide();
+                chkUseKeyUpDown.Hide();
+                lblChildWindowClassName.Hide();
+                lblGrandchildWindowClassName.Hide();
+                txtChildWindowClassName.Hide();
+                txtGrandchildWindowClassName.Hide();
+                txtKeyBS0.MaxLength = 4;
+                txtKeyHS0.MaxLength = 2;
+                txtKeyBS1.MaxLength = 2;
+            }
             else
             {
                 tabSimulatorKeyStrokes.Text = _sim.Name + " Settings";

@@ -57,5 +57,16 @@ namespace HandbellManager
             {
             }
         }
+
+        private void lnkemail2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("mailto:gilesrwood@gmail.com?subject=Handbell%20Manager");
+            }
+            catch
+            {
+            }
+        }
     }
 }

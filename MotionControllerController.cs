@@ -76,6 +76,15 @@ namespace MotionControllerManager
 //DELETE		}
             }
 
+/*
+            if (applicationDevices.Count == 0)
+            {
+                applicationDevices.Add(null);
+                currentStates.Add(new JoystickState());
+                lastStates.Add(new JoystickState());
+            }
+*/
+
             if (applicationDevices.Count == 0)
             {
                 //fail
