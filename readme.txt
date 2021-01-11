@@ -21,17 +21,13 @@ Adrian Nash
 
 INSTALLATION STEPS
 ------------------
-To install Handbell Manager v 2.1.0:
+To install Handbell Manager v 2.2.0:
 
-1. Download HandbellManager140.zip to your computer.
+1. Download HMinstall.exe to your computer.
 
-2. Extract the files to a folder: C:\HandbellManager140 by right-clicking on the zip file and
-   and select "Extract All". The folder called HandbellManager140 will be created.
-(you may require admin rights for this)
+2. Run the downloaded installer.
 
-3. Navigate into HandbellManager140 folder and right-click on the file called
-   HandbellManager.exe. Select Send to... then Desktop (create shortcut). This will
-   create a shortcut on your desktop for Handbell Manager.
+3. This will create a shortcut on your desktop for Handbell Manager.
 
 4. Double-click the short-cut to open Handbell Manager. If your computer warns you not
    to run it, don't worry it is safe! On Windows 10 for example, click on "more info" then
@@ -105,4 +101,5 @@ v. 1.3.0b Initial Beta Release, key-stroke defaults for RingingRoom changed. Sim
 v. 1.4.0  Added support for Muster
 v. 2.0.0  Gyro support for eBells, callibration for any selected axis.  Formal installation release.
 v. 2.1.0  Added support for Ding
+v. 2.2.0  Fixed bells not striking when the computer's system timer (Environment.TickCount) is negative.
 

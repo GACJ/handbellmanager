@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("www.changeringing.co.uk")]
 [assembly: AssemblyProduct("Handbell Manager")]
-[assembly: AssemblyCopyright("Copyright © Graham A C John 2009-2020")]
+[assembly: AssemblyCopyright("Copyright © Graham A C John 2009-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,5 +21,5 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("4e553fbb-ddf8-43ff-b09c-f15db3bdca2b")]
 
-[assembly: AssemblyVersion("2.1")]
-[assembly: AssemblyFileVersion("2.1")]
+[assembly: AssemblyVersion("2.2")]
+[assembly: AssemblyFileVersion("2.2")]

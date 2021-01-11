@@ -1,5 +1,5 @@
 ﻿// This file is part of Handbell Manager.
-// Copyright Graham John 2009-2020. graham@changeringing.co.uk
+// Copyright Graham John 2009-2021. graham@changeringing.co.uk
 //
 // Handbell Manager is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ namespace HandbellManager
             return buffer.ToString();
         }
 
-        int _lastTick;
+        long _lastTick;
 
         IntPtr _Simulator_hWnd;
         double _secsSinceUpdate;
@@ -99,7 +99,7 @@ namespace HandbellManager
 
             _suppressNoControllerMessage = false;
 
-            _lastTick = Environment.TickCount;
+            _lastTick = GetLongTickCount(Environment.TickCount);
 
             Color controlBGColor = Color.White;
             if (_mcm.Count > 0)
@@ -112,7 +112,19 @@ namespace HandbellManager
 
             if (Settings.autoRunSimulator)
                 runSimulator();
+        }
 
+        /// <summary>
+        /// Returns the number of milliseconds since the program started
+        /// allowing for cycling of Environment.TickCount
+        /// </summary>
+        /// <returns>The number of milliseconds since the program started</returns>
+        private long GetLongTickCount(int tick)
+        {
+            long currentTick = (uint)tick | (_lastTick & ~0xFFFFFFFFL);
+            if (currentTick < _lastTick)
+                currentTick += 1L << 32;
+            return currentTick; 
         }
 
         //		private bool IsSimulatorFocused()
@@ -176,7 +188,8 @@ namespace HandbellManager
 
             }
 
-            _lastTick = Environment.TickCount;
+            _lastTick = GetLongTickCount(Environment.TickCount);
+
             btnReset_Click(null, EventArgs.Empty);
             if (_mcm.Count > 0)
                 btnReset.Focus();
@@ -428,7 +441,7 @@ namespace HandbellManager
 
         private void tmrTurn_Tick(object sender, EventArgs e)
         {
-            _ticksSinceUpdate = Environment.TickCount - _lastTick;
+            _ticksSinceUpdate = (int)(GetLongTickCount(Environment.TickCount) - _lastTick);
             _updates++;
             _sumticks += _ticksSinceUpdate;
             _averageticks = _sumticks / _updates;
@@ -436,7 +449,7 @@ namespace HandbellManager
             if (_secsSinceUpdate < 0)
                 _secsSinceUpdate = 0;
             _mcm.update(_secsSinceUpdate);
-            _lastTick = Environment.TickCount;
+            _lastTick = GetLongTickCount(Environment.TickCount);
 
             // Here we just send an event every time the timer ticks, but with the timer slowed right down to 1 second intervals.
             // Controller 0 HS and BS are the same key.

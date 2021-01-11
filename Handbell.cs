@@ -29,7 +29,7 @@ namespace HandbellManager
         private int _backstrokeStrikePoint;
         private int _handstrokeStrikePoint;
         private int _currentSwingValue;
-        private int _lasttick;
+        private long _lasttick;
         private int _axis;
         private int _controller;
         private int _handbell;
@@ -92,7 +92,7 @@ namespace HandbellManager
             SwingAxis = Settings.swingAxis[_handbell];
         }
 
-        public void Update(int tick)
+        public void Update(long tick)
         {
             if (Settings.emulateControllers)
             {
@@ -108,7 +108,7 @@ namespace HandbellManager
             UpdateStrokes(tick);
         }
 
-        private void UpdateStrokes(int tick)
+        private void UpdateStrokes(long tick)
         {
             _handstrokeStrike = false;
             _backstrokeStrike = false;
